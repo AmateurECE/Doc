@@ -1,0 +1,155 @@
+################################################################################
+# TITLE: Assembly Reference.txt
+#
+# DESCRIPTION: This reference file contains useful information about Assembler
+#              programming on the x86_64 architecture for Mac OS X, but also
+#              general guidelines and instructions for assembler coding in
+#              general.
+# 
+# AUTHOR: Ethan D. Twardy
+#
+# DATE CREATED: 05/23/17
+#
+# DATE LAST MODIFIED: 05/23/17
+################################################################################
+
+
+################################################################################
+# REGISTERS
+####
+
+    With all of the architectures in modern computing, there are many different
+register configurations, each with slightly different properties, however, they
+all share some very basic properties. One way to view the complete set of
+registers on your box is to view register info using gdb or lldb. Of course,
+Google is just as good a resource for this.
+
+IDENTIFIERS:
+************
+
+    The name of a register is the greatest key in denoting the purpose and size
+of a register. Each of the letters in the name have a specific meaning, all of
+which we will cover here.
+
+Size:
+    * /R/ - The whole of the register is being used; all 64-bits. Unavailable on
+      32-bit architectures. Ex. %rax
+    * /E/ - The lower half of the register is being used. (32 bits). Ex. %eax
+    * /L/$ - signifies that the lowest 8 bits of a register are being used.
+      Ex. %al. Used only for data registers.
+    * /H/$ - the highest 8 bits of the lowest 16 bits are being used
+      (bits 8 - 15). Ex. %ah. Used only for data registers.
+    * /X/$ - The standard final character for a data register when either 'r'
+      or 'e' is used. Can also be used alone to refer to the lower 16 bits of
+      a register. Ex. %ax
+    * /P/$ - The standard final character for a pointer register.
+    * /I/$ - The standard final character for an index register.
+    * /F/$ - Character denoting a flag in a control register.
+    * /S/$ - Character denoting a segment register.
+
+Type:
+    * General Registers
+        * Data Registers - Used mostly for arithmetic, logical, and other
+          Operations
+            * AX - The accumulator; used in I/O and arithmetic.
+            * BX - the base register; used in indexed addressing.
+            * CX - the count register; store loop count in iterative operations
+            * DX - the data register; also used in I/O and arithmetic.
+        * Pointer Registers
+            * IP - instruction pointer; has the offset of the next instruction
+              from the CS register.
+            * SP - stack pointer; the current offset value within the stack
+              segment.
+            * BP - base pointer; mainly used to reference variables passed to
+              a subroutine.
+        * Index Registers
+            * SI - source index; used as a source index for string operations.
+            * DI - destination index; used as destination index for string 
+              operations.
+    * Control Registers - usually, each bit of these registers is referred to as
+      a flag, and contains data relevant to the type of flag. Some common flags
+      are:
+        * Overflow Flag - indicates bit overflow after a signed operation.
+        * Direction Flag - indicates left or right direction for comparing
+          string data.
+        * Interrupt Flag - indicates whether interrupts are to be ignored or
+          processed.
+        * Trap Flag - puts the processor into a trap state.
+        * Sign Flag - sign of the result of a signed operation.
+        * Zero Flag - indicates whether the result of an operation is 0.
+        * Auxiliary Carry Flag - indicates if there was a carry from bit 3
+          to bit 4. Used in a special kind of arithmetic.
+        * Parity Flag - indicates number of 1 bits in a result. Values depend on
+          whether the processor is even or odd parity.
+        * Carry Flag - contains the carry of a high order bit after an
+          arithmetic operation.
+    * Segment Reigsters - registers for the purpose of containing large amounts
+      of memory.
+        * CS - code segment; contains all of the instructions to be performed.
+        * DS - data segment; contains the starting address of the data segment.
+        * SS - stack segment; contains the starting address of the stack, which
+          contains data and return addresses for subroutines.
+        * ES, FS, GS - extra segment registers for referencing other segments.
+
+
+################################################################################
+# CODE SEGMENTS
+####
+
+
+################################################################################
+# VARIABLES
+####
+
+    There are two main types of variables used in assembly programming: Global
+and Local. Since there is little to no type system, it is up to the programmer
+to determine the type and correctly interpret the memory of variables.
+    In addition, there are also global constants, which use the .set directive
+in x86_64 for the i386 architecture. This directive operates very similarly to
+the #define preprocessor directive in C. Example:
+
+    .set SYS_EXIT 1
+
+However, they can also appear in different forms in different architectures:
+
+    %define SYS_EXIT 1
+    %assign SYS_EXIT 1    
+    SYS_EXIT equ 1
+
+GLOBAL VARIABLES:
+*****************
+
+    Global variables are defined under the __DATA segment, under the section
+corresponding to the type of data. They are created with a label, which is
+henceforth used to reference them in the code segment. Of course, most of the
+time, these references appear in the form of a call to the global offset table
+to get the effective address of the variable. Below is a few examples of global
+variable definitions. For instructions on using or referencing these variables,
+please refer to the sections ADDRESSING MODES and INSTRUCTIONS.
+
+    .section __DATA, __data
+    _var:    .byte 0x12       ; Define _var to be "\n"
+    _str:    .
+
+
+################################################################################
+# ADDRESSING MODES
+####
+
+
+################################################################################
+# INSTRUCTIONS
+####
+
+
+################################################################################
+# FUNCTIONS AND LOOPS
+####
+
+
+################################################################################
+# COMPILATION
+####
+
+
+################################################################################

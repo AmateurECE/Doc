@@ -1,0 +1,253 @@
+################################################################################
+# NAME: C_Coding_Standards.txt
+# AUTHOR: Ethan D. Twardy
+# DESCRIPTION: A full disclosure of the C Programming Style guidelines followed
+#              by the author(s) of these C repositories.
+# CREATED: 06/05/17
+# LAST EDITED: 06/05/17
+################################################################################
+
+################################################################################
+# HEADER FILES
+###
+
+Banner:
+*******
+
+    All files must begin with a banner consisting of a single C style comment.
+The first line must be a backslash, followed by a line of '*' characters and
+terminating at the 80th column. The banner will contain at least the fields
+specified below. Any additional fields will be at the discretion of the author.
+There will be one line between each field, consisting of a '*' character,
+correctly aligned, and no more. If any field must exceed the 80th column,
+it must continue on a new line beginning with a '*' character and the text
+aligned with that above. See below for an example. The final line of the comment
+will consist of three '*' characters followed by a backslash to terminate the 
+comment.
+
+    /****************************************************(...to the 80th column)
+     * NAME: The name of the file, including the extension.
+     *
+     * AUTHOR: The author of the file.
+     *
+     * DESCRIPTION: A thorough description of the contents contained within the
+     *              file. Text will wrap onto the next line as shown here.
+     *
+     * CREATED: The date that the file was created.
+     *
+     * LAST EDITED: The date of the last edition of the file.
+     ***/
+
+Organization:
+*************
+
+    The organization of declarations in the header files follows the layout
+given below:
+
+    * Includes
+    * External References
+    * Defines
+    * Constants
+    * Type Definitions
+    * Enumerated Definitions
+    * Structures (Can be typedef IF the type names contain _t at the end)
+    * Function Prototypes (Always declared extern)
+
+Naming Conventions:
+*******************
+
+    No conventions exist for naming files. Variable and function names must be
+lowercase. If more than one word is required, the words must be separated by an
+underscore. An example is shown below:
+
+    int * p_to_int;
+
+    As shown, words may be abbreviated. Macros and Preprocessor directives must
+be capitalized, and words must be separated by underscores. An example is shown
+below:
+
+    #define A_MACRO_NAME
+
+Notes:
+******
+
+    Functions are not to be defined within header files. Header files must
+always contain define guards of the form below:
+
+    #ifndef __HEADER_H__
+    #define __HEADER_H__
+    ...
+    #endif /* __HEADER_H__ */
+
+    It may also be necessary to include define guards around function
+prototypes, which may be conditionally compiled, implementation pending,
+however function prototypes do not need to have banners documenting the function
+and its uses..
+    It may be necessary to have define guards for API functions. An example of
+this is shown below:
+
+    (In cmd.h)
+    ...
+    #ifdef COMPILE_CMD
+    ...
+    #define CMD
+    extern void do_cmd(void);
+    ...
+    #endif
+
+    (In cmd.c)
+    ...
+    #ifdef CMD
+    void do_cmd(void)
+    {
+        ...
+    }
+
+    In this way, compilation of each individual function is controlled by the
+header file.
+    Sections are separated by a C style comment that contains '*' characters
+up to but not exceeding the 80th column, followed by a line that contains a '*'
+character followed by a space and a section title in uppercase which accurately
+describes the contents of the section. The final line contains three '*'
+characters terminated by a backslash, ending the comment.
+    The final line in the file is a C style comment, consisting of a backslash,
+a line of '*' characters, and terminating on the 80th column with a backslash.
+    Function prototypes will not have named parameters. Names will be included
+only in the definition of these functions.
+
+################################################################################
+# SOURCE FILES
+###
+
+Banner:
+*******
+
+    All files must begin with a banner consisting of a single C style comment.
+The first line must be a backslash, followed by a line of '*' characters and
+terminating at the 80th column. The banner will contain at least the fields
+specified below. Any additional fields will be at the discretion of the author.
+There will be one line between each field, consisting of a '*' character,
+correctly aligned, and no more. If any field must exceed the 80th column,
+it must continue on a new line beginning with a '*' character and the text
+aligned with that above. See below for an example. The final line of the comment
+will consist of three '*' characters followed by a backslash to terminate the 
+comment.
+
+    /****************************************************(...to the 80th column)
+     * NAME: The name of the file, including the extension.
+     *
+     * AUTHOR: The author of the file.
+     *
+     * DESCRIPTION: A thorough description of the contents contained within the
+     *              file. Text will wrap onto the next line as shown here.
+     *
+     * CREATED: The date that the file was created.
+     *
+     * LAST EDITED: The date of the last edition of the file.
+     ***/
+
+Organization:
+*************
+
+    Source code files must follow the organization detailed below: 
+
+    * Includes
+    * External References
+    * Defines
+    * Global Variables
+    * Constants
+    * Function Prototypes (Static only - API functions are to be declared in .h)
+    * API Functions (Defined here, declared in header)
+    * Main Function (If applicable)
+    * Static/Local Functions
+
+    Use of static and/or inline keywords is preferred, whenever appropriate, and
+ONLY when appropriate. In addition, use const and/or restrict keywords whenever
+possible.
+
+Function Banners:
+*****************
+
+    All functions must have a banner describing the use and purpose of the
+function. This banner is not required in the header file, and must follow
+the form shown below:
+
+    /**********************************************************(...to column 80)
+    * Function:         <Text aligned to 20th column>
+    * 
+    * Description:      <Text aligned to 20th column>
+    * 
+    * Arguments:        <Text aligned to 20th column>
+    * 
+    * Returns:          <Text aligned to 20th column>
+    * 
+    * Notes:            <Text aligned to 20th column. Detail side-effects here.>
+    ***/
+
+    This is larger than my previous banners, however it will contain more
+information, look a little neater, and also use only C style comments.
+
+Naming Conventions:
+*******************
+
+    No conventions exist for naming files. Variable and function names must be
+lowercase. If more than one word is required, the words must be separated by an
+underscore. An example is shown below:
+
+    int * p_to_int;
+
+    As shown, words may be abbreviated. Macros and Preprocessor directives must
+be capitalized, and words must be separated by underscores. An example is shown
+below:
+
+    #define A_MACRO_NAME
+
+Notes:
+******
+
+    For all functions, the opening bracket must start on a new line. This is
+not necessary for conditional and loop statements. Conditional and loop 
+statements do not require brackets if it is possible to omit them. If a function
+definition exceeds 80 characters, it is to continue on the next line, in such a
+way as to neatly provide the function parameters. An example is shown below:
+
+    static  void a_really_long_func_name(const void * restrict long_pointer_name1,
+    	    	       		 	 const void * restrict long_pointer_name2)
+    {
+        ...
+    }
+
+    It may be necessary to have define guards for API functions. An example of
+this is shown below:
+
+    (In cmd.h)
+    ...
+    #ifdef COMPILE_CMD
+    ...
+    #define CMD
+    extern void do_cmd(void);
+    ...
+    #endif
+
+    (In cmd.c)
+    ...
+    #ifdef CMD
+    void do_cmd(void)
+    {
+        ...
+    }
+
+    In this way, compilation of each individual function is controlled by the
+header file.
+    Sections are separated by a C style comment that contains '*' characters
+up to but not exceeding the 80th column, followed by a line that contains a '*'
+character followed by a space and a section title in uppercase which accurately
+describes the contents of the section. The final line contains three '*'
+characters terminated by a backslash, ending the comment.
+    The final line in the file is a C style comment, consisting of a backslash,
+a line of '*' characters, and terminating on the 80th column with a backslash.
+    Function prototypes will not have named parameters. Named parameters will
+be included only in the definition of functions, in order to preserve variable
+name consistency.
+
+################################################################################
