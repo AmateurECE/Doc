@@ -2,7 +2,7 @@
 # NAME: C_Coding_Standards.txt
 # AUTHOR: Ethan D. Twardy
 # DESCRIPTION: A full disclosure of the C Programming Style guidelines followed
-#              by the author(s) of these C repositories.
+#	       by the author(s) of these C repositories.
 # CREATED: 06/05/17
 # LAST EDITED: 06/05/17
 ################################################################################
@@ -31,7 +31,7 @@ comment.
      * AUTHOR: The author of the file.
      *
      * DESCRIPTION: A thorough description of the contents contained within the
-     *              file. Text will wrap onto the next line as shown here.
+     *		    file. Text will wrap onto the next line as shown here.
      *
      * CREATED: The date that the file was created.
      *
@@ -100,7 +100,7 @@ this is shown below:
     #ifdef CMD
     void do_cmd(void)
     {
-        ...
+	...
     }
 
     In this way, compilation of each individual function is controlled by the
@@ -139,7 +139,7 @@ comment.
      * AUTHOR: The author of the file.
      *
      * DESCRIPTION: A thorough description of the contents contained within the
-     *              file. Text will wrap onto the next line as shown here.
+     *		    file. Text will wrap onto the next line as shown here.
      *
      * CREATED: The date that the file was created.
      *
@@ -173,15 +173,15 @@ function. This banner is not required in the header file, and must follow
 the form shown below:
 
     /**********************************************************(...to column 80)
-    * Function:         <Text aligned to 20th column>
+    * Function:		<Text aligned to 20th column>
     * 
-    * Description:      <Text aligned to 20th column>
+    * Description:	<Text aligned to 20th column>
     * 
-    * Arguments:        <Text aligned to 20th column>
+    * Arguments:	<Text aligned to 20th column>
     * 
-    * Returns:          <Text aligned to 20th column>
+    * Returns:		<Text aligned to 20th column>
     * 
-    * Notes:            <Text aligned to 20th column. Detail side-effects here.>
+    * Notes:		<Text aligned to 20th column. Detail side-effects here.>
     ***/
 
     This is larger than my previous banners, however it will contain more
@@ -212,9 +212,9 @@ definition exceeds 80 characters, it is to continue on the next line, in such a
 way as to neatly provide the function parameters. An example is shown below:
 
     static  void a_really_long_func_name(const void * restrict long_pointer_name1,
-    	    	       		 	 const void * restrict long_pointer_name2)
+					 const void * restrict long_pointer_name2)
     {
-        ...
+	...
     }
 
     It may be necessary to have define guards for API functions. An example of
@@ -234,7 +234,7 @@ this is shown below:
     #ifdef CMD
     void do_cmd(void)
     {
-        ...
+	...
     }
 
     In this way, compilation of each individual function is controlled by the
