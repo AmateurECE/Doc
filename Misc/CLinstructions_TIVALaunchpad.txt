@@ -1,2 +1,0 @@
-Go here for some great instructions on how to build and flash for the TIVA from the Linux command line!
-http://chrisrm.com/howto-develop-on-the-ti-tiva-launchpad-using-linux/
