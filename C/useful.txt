@@ -1,0 +1,5 @@
+http://blog.vinceliu.com/2009/06/examining-binary-files-in-linux.html -- Shows commands for examining obj files in Linux.
+http://byobu.info/articles/Building_a_simple_Beowulf_cluster_with_Ubuntu.html -- Cluster
+https://emacs.stackexchange.com/questions/7823/how-do-you-return-from-a-function-at-an-arbitrary-point
+https://yoo2080.wordpress.com/2011/12/31/lexical-scoping-and-dynamic-scoping-in-emacs-lisp/
+https://google.github.io/styleguide/pyguide.html
