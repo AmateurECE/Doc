@@ -1,0 +1,21 @@
+################################################################################
+# NAME:		    .idea
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    Just some ideas.
+#
+# CREATED:	    09/11/2017
+#
+# LAST EDITED:	    09/11/2017
+###
+
+glove controller:
+    * A glove with a few conductive fibers and some peripheral sensors to use
+    thumb as a 'virtual joystick.' Touch fingers to palm (conductive fibers
+    will connect, handshake procedure will ensue) then move thumb in different
+    directions to control. Use microcontroller, bluetooth interface, etc. WiFi?
+    This could get really fucking cool. Create a simple interface for it. You
+    could write extensions to control web browsers, mice, anything.
+
+################################################################################
