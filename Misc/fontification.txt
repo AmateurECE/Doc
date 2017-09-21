@@ -1,0 +1,66 @@
+################################################################################
+# NAME:		    fontification.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This file is just a note to myself about the *general*
+#		    scheme for fontification in emacs major-mode creation.
+#
+# CREATED:	    09/20/2017
+#
+# LAST EDITED:	    09/20/2017
+###
+
+Fontification:
+**************
+
+    1. Define a constant `rx-constituents' which contains dotted name-regex
+	pairs. This usually looks something like the below:
+
+	(defconst mode-rx-constituents
+	    `((<symbol-type>	    . ,(rx symbol-start
+					    <sexp expressions>)))
+	    ...
+	)
+
+    2. Define a macro `<mode>-rx' which expands to a regular expression that
+	uses the standard rx-constituents, in addition to the ones defined in
+	the previous step. Below is an example from GNU Emacs Python mode:
+
+	(defmacro python-rx (&rest regexps)
+	    (let
+		((rx-constituents
+		    (append python-rx-constituents rx-constituents)))
+		(cond ((null regexps)
+			(error "No regexp"))
+		    ((cdr regexps)
+			(rx-to-string `(and ,@regexps) t))
+		    (t
+			(rx-to-string (car regexps) t))))))
+
+    3. Define a variable `mode-font-lock-keywords' which is a list of regex-face
+	OR symbol-face pairs to be utilized by emacs' internal matching
+	function. If one wishes to use symbols, the symbols must evaluate to a
+	regex which can be used for matching. An example is given below:
+
+	(defvar <mode>-font-lock-keywords
+	    ;; Regex example
+	    `((,(rx symbol-start
+		    <sexp expressions>
+		    symbol-end)) ;; Default font-lock-keyword-face
+		(,(rx symbol-start
+			<sexp expressions>
+			symbol-end)
+		    (<group> <face> &optional ...)) ;; Or specify a face.
+		;; Lambda example
+		(,(lambda (limit)
+		    (let ((...))
+			(<Search for string and return)))
+		    (<group> <face> &optional ...))
+		...))
+
+    4. In the definition of the mode, create a buffer-local variable with the
+	name `font-lock-keywords' and set it to the value of the result obtained
+	from 3. Note: Steps 1 & 2 Can be put into an (eval-and-compile) block.
+
+################################################################################
