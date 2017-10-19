@@ -1,0 +1,43 @@
+################################################################################
+# NAME:		    programming.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This is just a couple of notes I've taken about programming
+#		    in general. This is an opinion piece.
+#
+# CREATED:	    10/19/2017
+#
+# LAST EDITED:	    10/19/2017
+###
+
+ * Functions should maintain a very simple interface--they should take as few
+ arguments as possible and return as few arguments as possible.
+ * Functions should do only one thing (on a high level). While this task may be
+ composed of many smaller subtasks, it should perform only the thing that it was
+ created to do.
+ * There needs to be balance in a source file. Too many functions creates
+ illegible code. Functions that are too long create illegible code. Creating
+ balance between these two extremes will generate a useful and well-designed
+ interface.
+ * An interface should have the fewest number of functions possible. This is
+ probably one of the only things that OO-Programming got right.
+ * All functions in an interface should be related by some common factor.
+ * The best interface is no interface.
+ * Do not waste your time being concerned with aesthetic front-ends. There are
+ many people who will do it much better than yourself. Utilize them, and spend
+ your time doing more useful things.
+ * In some cases, it is impossible to avoid a global variable without a complete
+ restructuring of the code. This is fine. The issue becomes when there are too
+ many for a reader to easily keep track of.
+ * An API should have more lines of documentation than code.
+ * A programmer's commenting style should be consistent and legible, and most
+ importantly, consistent.
+ * On every line of code, ask yourself "What is this code doing? Can it be done
+ better?"
+ * “There are two ways of constructing a software design: One way is to make it
+ so simple that there are obviously no deficiencies and the other way is to make
+ it so complicated that there are no obvious deficiencies.”
+    – C.A.R. Hoare, The 1980 ACM Turing Award Lecture
+
+################################################################################

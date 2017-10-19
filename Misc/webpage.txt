@@ -1,0 +1,19 @@
+################################################################################
+# NAME:		    webpage.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This is potentially a layout for a webpage. We'll see.
+#
+# CREATED:	    10/19/2017
+#
+# LAST EDITED:	    10/19/2017
+###
+
+Blog-style css/scrolling. White opaque centerlay container overtop an
+'artistically' blurred picture of the Husky in the center of campus.
+
+Every time we load, display a page with a snarky comment about Tech. Just for
+funsies.
+
+################################################################################
