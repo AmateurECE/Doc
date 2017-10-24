@@ -41,3 +41,13 @@
     – C.A.R. Hoare, The 1980 ACM Turing Award Lecture
 
 ################################################################################
+# How to Test Software
+###
+
+    * Test output (or result) to see if it did the thing
+    * Run it a bunch of times consistently to be sure
+    * Account for all bogus inputs
+    * If you aren't writing in a language that has built-in garbage collection,
+    test for memleaks.
+
+################################################################################
