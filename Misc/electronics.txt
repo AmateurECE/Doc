@@ -10,21 +10,52 @@
 # LAST EDITED:	    10/24/2017
 ###
 
-(03:41:32 PM) Rick Hakes: [SI references]
+(03:41:32 PM) Rick -----: [SI references]
 1. This is Dr. Howard Johnson's "High-Speed Signal Propagation" text of mine
 that u had borrowed for a while. I met Dr. Johnson at a conference out in CA a
-# of yrs back. Got his autograph too. Nice guy, smart and very practical. Has a knack for explaining difficult SI concepts and then practically applying them to real-world problems and design.
-https://www.amazon.com/High-Speed-Signal-Propagation-Advanced/dp/013084408X/ref=sr_1_1?ie=UTF8&qid=1508520167&sr=8-1&keywords=high+speed+signal+propagation+howard+johnson
-2. This is the 1st edition of Dr. Johnson's high-speed digital design texts but still has a ton of very useful and applicable info/theory. I still refer to it often.
-https://www.amazon.com/High-Speed-Digital-Design-Handbook/dp/0133957241/ref=sr_1_1?ie=UTF8&qid=1508518334&sr=8-1&keywords=high+speed+digital+design+howard+johnson
-3. A great SI reference from Dr. Bogatin. Covers some subjects not covered by Dr. Johnson. Looks at some things in Dr. Johnson's books from a different angle. I took a seminar class of Dr. Bogatin's a # of yrs back out in CA. Great, nice, down to earth guy. Gonna probably put this one on my Christmas list this yr.
-https://www.amazon.com/Signal-Power-Integrity-Simplified-2nd/dp/0132349795/ref=sr_1_1?ie=UTF8&qid=1508518386&sr=8-1&keywords=signal+integrity+simplified+bogatin
-4. Here's a couple of references from Stephen Hall that look to b good but i haven't specifically seen the books, just some sample text. I use to work with Stephen when he was a summer intern at the Mayo Clinic. Didn't seem like the technical, authoring kinda guy to me at the time but whatta i know.
-https://www.amazon.com/Advanced-Integrity-High-Speed-Digital-Designs/dp/0470192356/ref=sr_1_1?ie=UTF8&qid=1508518969&sr=8-1&keywords=signal+integrity+stephen+hall
-https://www.amazon.com/High-Speed-Digital-System-Design-Interconnect/dp/0471360902/ref=sr_1_1?ie=UTF8&qid=1508519661&sr=8-1&keywords=high+speed+system+design+stephen+hall
-(03:47:19 PM) etwardy@xes-mad.com/Office: Thank you! Those are pretty cool stories. It must have been funny for you when Stephen came out with a book, haha. I don't know if any of these touch on it or not, but do you know any books that do really in-depth semiconductor theory? Like deriving the characteristic equations from differential equations and the like? I haven't been able to find a resource that covers the math. Thanks again!
+# of yrs back. Got his autograph too. Nice guy, smart and very practical. Has a
+knack for explaining difficult SI concepts and then practically applying them
+to real-world problems and design.
+https://www.amazon.com/High-Speed-Signal-Propagation-Advanced/dp/013084408X/ref=
+sr_1_1?ie=UTF8&qid=1508520167&sr=8-1&keywords=high+speed+signal+propagation+howa
+rd+johnson
+2. This is the 1st edition of Dr. Johnson's high-speed digital design texts but
+still has a ton of very useful and applicable info/theory. I still refer to it
+often.
+https://www.amazon.com/High-Speed-Digital-Design-Handbook/dp/0133957241/ref=sr_1
+_1?ie=UTF8&qid=1508518334&sr=8-1&keywords=high+speed+digital+design+howard+johns
+on
+3. A great SI reference from Dr. Bogatin. Covers some subjects not covered by
+Dr. Johnson. Looks at some things in Dr. Johnson's books from a different
+angle. I took a seminar class of Dr. Bogatin's a # of yrs back out in CA.
+Great, nice, down to earth guy. Gonna probably put this one on my Christmas
+list this yr.
+https://www.amazon.com/Signal-Power-Integrity-Simplified-2nd/dp/0132349795/ref=s
+r_1_1?ie=UTF8&qid=1508518386&sr=8-1&keywords=signal+integrity+simplified+bogatin
+4. Here's a couple of references from Stephen Hall that look to b good but i
+haven't specifically seen the books, just some sample text. I use to work with
+Stephen when he was a summer intern at the Mayo Clinic. Didn't seem like the
+technical, authoring kinda guy to me at the time but whatta i know.
+https://www.amazon.com/Advanced-Integrity-High-Speed-Digital-Designs/dp/04701923
+56/ref=sr_1_1?ie=UTF8&qid=1508518969&sr=8-1&keywords=signal+integrity+stephen+ha
+ll
+https://www.amazon.com/High-Speed-Digital-System-Design-Interconnect/dp/04713609
+02/ref=sr_1_1?ie=UTF8&qid=1508519661&sr=8-1&keywords=high+speed+system+design+st
+ephen+hall
+(03:47:19 PM) etwardy@xes-mad.com/Office: Thank you! Those are pretty cool
+stories. It must have been funny for you when Stephen came out with a book,
+haha. I don't know if any of these touch on it or not, but do you know any
+books that do really in-depth semiconductor theory? Like deriving the
+characteristic equations from differential equations and the like? I haven't
+been able to find a resource that covers the math. Thanks again!
 
-(10/20/2017 04:01:27 PM) Rick Hakes: from the reviews, it sounds like Stephen Hall's "Advanced Signal Integrity for High-Speed Digital Designs" is suppose to b pretty mathy but i'm guessing it doesn't get down to the semiconductor level.
-(10/20/2017 04:05:34 PM) Rick Hakes: i do have a text tho from one of my college classes at the UW from way back when that might have some of the math and diffy q at the semiconductor level that ur looking for. I'll put it on my desk and u can take a look at ur leisure. It's a blue text titled "Analysis and Design of Digital Integrated Circuits" by Hodges and Jackson.
+(10/20/2017 04:01:27 PM) Rick -----: from the reviews, it sounds like Stephen
+Hall's "Advanced Signal Integrity for High-Speed Digital Designs" is suppose to
+b pretty mathy but i'm guessing it doesn't get down to the semiconductor level.
+(10/20/2017 04:05:34 PM) Rick -----: i do have a text tho from one of my
+college classes at the UW from way back when that might have some of the math
+and diffy q at the semiconductor level that ur looking for. I'll put it on my
+desk and u can take a look at ur leisure. It's a blue text titled "Analysis and
+Design of Digital Integrated Circuits" by Hodges and Jackson.
 
 ################################################################################
