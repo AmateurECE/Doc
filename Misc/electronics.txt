@@ -42,7 +42,7 @@ ll
 https://www.amazon.com/High-Speed-Digital-System-Design-Interconnect/dp/04713609
 02/ref=sr_1_1?ie=UTF8&qid=1508519661&sr=8-1&keywords=high+speed+system+design+st
 ephen+hall
-(03:47:19 PM) etwardy@xes-mad.com/Office: Thank you! Those are pretty cool
+(03:47:19 PM) etwardy-------------------: Thank you! Those are pretty cool
 stories. It must have been funny for you when Stephen came out with a book,
 haha. I don't know if any of these touch on it or not, but do you know any
 books that do really in-depth semiconductor theory? Like deriving the
