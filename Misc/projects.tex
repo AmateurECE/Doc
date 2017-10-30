@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             projects.tex
+%
+% AUTHOR:           Ethan D. Twardy
+%
+% DESCRIPTION:      This is a LaTeX file containing some info about my projects.
+%
+% CREATED:          10/30/2017
+%
+% LAST EDITED:      10/30/2017
+%%%
+
+\documentclass[10pt]{article}
+\usepackage{fancyhdr}
+\usepackage[margin=0.75in]{geometry}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{24pt}
+\rhead{Ethan D. Twardy\\Project Information}
+\lhead{October 30, 2017}
+
+\begin{document}
+\begin{abstract}
+  This document is to serve as a declaration of intention. It outlines many of
+  my larger projects, describing their goals, procedures \& workflows, and any
+  other relevant information necessary to begin the project. This brief contains
+  a simple list of projects, each with a number. That number is the
+  corresponding section under which a more detailed description of the project
+  can be found. Any entry which begins with the word \emph{(Undocumented)} in
+  parentheses is included in the list, but not documented in further detail
+  elsewhere in the document. This is usually temporary.
+
+  \begin{enumerate}
+  \item \emph{(Undocumented)} \textbf{Femtofs} - Develop a small EEPROM based
+    filesystem for the TIVA Board
+  \item \emph{(Undocumented)} \textbf{Brew-inator} - An automatic beer brewing
+    machine, built from scratch.
+    \begin{itemize}
+    \item Develop an impeller pump system, which requires developing a
+      homemade brushless DC motor and controller. Create a state diagram for the
+      controller (Moore machine?) and design a test circuit for the controller.
+      Then design and build the motor. Finally, use the motor to implement an
+      impeller pump.
+    \end{itemize}
+  \item \emph{(Undocumented)} \textbf{Hey, Porter} - Computer system and intranet
+    which implements ``smart-home'' technology. ``Hey, Porter'' will be the
+    keywords which start the listener, much like ``OK, Google'', or ``Alexa''.
+    It is named after the Johnny Cash song.
+    \begin{itemize}
+    \item Utilize Google's speech-to-text engine, develop a microcontroller
+      node which will communicate with the master node via Ethernet. Create a
+      voice that has character, for once. Decision trees that affect
+      pronunciation?
+    \item Cannibalize a commercial PC motherboard, reverse-engineering the BIOS
+      chip and replacing the BIOS and operating system with a compatible
+      bootloader and custom-built OS or RTOS.
+    \end{itemize}
+  \item \emph{(Undocumented)} \textbf{Adviser} - (No, that's not a spelling
+    mistake) Program which builds a schedule for a student.
+    \begin{itemize}
+    \item Finish implementing the audit-JSON parser
+    \item Implement the web-crawling facilities
+    \item Implement the schedule building facilities
+    \item Consider using a Flask App for delivery.
+    \end{itemize}
+  \item \emph{(Undocumented)} \textbf{Matlab Compiler} - Implement a basic
+    MATLAB-target binary compiler, with a standard library written in Fortran \&
+    C.
+  \end{enumerate}
+\end{abstract}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
