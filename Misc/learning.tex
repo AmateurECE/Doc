@@ -7,14 +7,30 @@
 %
 % CREATED:          10/27/2017
 %
-% LAST EDITED:      10/27/2017
+% LAST EDITED:      10/30/2017
 %%%
 
 \documentclass[a4paper]{article}
 \usepackage[margin=0.75in]{geometry}
+\usepackage{fancyhdr}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{24pt}
+\rhead{Ethan D. Twardy\\"A Definitive List of Things"}
+\lhead{10/27/2017}
 
 \begin{document}
 \title{``A Definitive List of Things''}
+
+This document is a list of things, some of which I have learned already in the
+course of my academic career, some of which I hope to learn as a result of my
+incredibly \emph{expensive} education, some of which I will learn as a result
+of my undying thirst for knowledge, and some of which I will endeavour to learn,
+but never succeed. It will be updated as I learn or discover. Its purpose is to
+outline all of the things that I feel I should know, as an engineer, and as an
+inventor.
 
 %%%
 \section{Electrical Engineering}
@@ -33,8 +49,30 @@
 \item Ideal transformers
 \item Diodes
 \item Transistors (BJT \& FET)
-\item Amplifiers, Class A, AB, B, phase inverter, cascode arrangement, power
-  amplifiers, differential amplifiers
+\item Two-port networks
+\item Amplifiers: TODO: Finish listing all the things to cover here.\\
+  Characteristics:
+  \begin{itemize}
+  \item Gain
+  \item Bandwidth
+  \item Efficiency
+  \item Linearity
+  \item Noise
+  \item Output Dynamic Range
+  \item Slew Rate
+  \item Rise time, settle time, ringing, and overshoot
+  \item Stability
+  \item Common Mode Rejection Ratio
+  \end{itemize}
+  Types:
+  \begin{itemize}
+  \item Class A, AB, B
+  \item Common Emitter (Source)
+  \item Common Collector (Drain, Emitter Follower)
+  \item Common Base (Gate)
+  \item Darlington Pair, Sziklai Pair, Cascode, Long-tailed Pair (Differential)
+  \item Misc - Power Amplifiers, Tube Phase Inverter
+  \end{itemize}
 \item Operational Amplifiers (R \& RC)
 \item Logic Gates
 \item Transmission lines, Electromagnetism
@@ -91,6 +129,7 @@
 \item Pipe Soldering
 \item Basic Woodworking with hand tools
 \item Refrigeration
+\item Fluid Dynamics
 \end{itemize}
 
 \end{document}
