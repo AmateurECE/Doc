@@ -15,9 +15,20 @@ Sharing the Screen With Another Buffer
 **************************************
 
     * C-x 3 Creates a second buffer adjacent (right side) of the current buffer.
+    * C-x 2 Creates a second buffer below the current buffer.
     * The default size is half the screen, but to make the current buffer
     slightly larger, use C-x }. Likewise, C-x { makes it smaller.
+    * C-x ^ Makes the current buffer larger horizontally. Alternatively, C-x -
+    shrinks the window if there is empty space showing in the buffer.
+    * C-x + Makes all of the windows the same height.
     * Use C-x o (oh) to switch to the other window.
+
+But What If I Don't Want to Share?
+**********************************
+
+    * C-x 0 deletes the current window, without killing the buffer
+    * C-x 1 deletes all windows except the current one, w/o killing the buffer.
+    * C-x 4 0 deletes the current window and kills the buffer that it showed.
 
 Switching Buffers
 *****************
