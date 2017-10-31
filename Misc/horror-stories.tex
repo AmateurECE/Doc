@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             horror-stories.tex
+%
+% AUTHOR:           Ethan D. Twardy
+%
+% DESCRIPTION:      This is a list of some of the strangest errors I've
+%                   encountered during my days of programming.
+%
+% CREATED:          10/31/2017
+%
+% LAST EDITED:      10/31/2017
+%%%
+
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Ethan D. Twardy\\Programming Horror Stories}
+\lhead{October 31, 2017}
+
+\begin{document}
+% Off by one error, and how I discovered that malloc() is deterministic.
+% Never use feof(FILE *) as a while switch--a printf broke my code.
+% Creating bad blocks in SPI Flash.
+
+% ...Moral of the story is that no matter how strange your issue is, it's
+% usually caused by something pretty commonplace.
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
