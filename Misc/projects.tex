@@ -13,6 +13,8 @@
 \documentclass[10pt]{article}
 \usepackage{fancyhdr}
 \usepackage[margin=0.75in]{geometry}
+\usepackage{tikz}
+\usepackage{wrapfig}
 
 % Header
 \pagestyle{fancy}
@@ -33,8 +35,18 @@
   elsewhere in the document. This is usually temporary.
 
   \begin{enumerate}
-  \item \emph{(Undocumented)} \textbf{Femtofs} - Develop a small EEPROM based
-    filesystem for the TIVA Board
+  \item \emph{(Undocumented)} \textbf{Adviser} - (No, that's not a spelling
+    mistake) Program which builds a schedule for a student.
+    \begin{itemize}
+    \item Finish implementing the audit-JSON parser
+    \item Implement the web-crawling facilities
+    \item Implement the schedule building facilities
+    \item Consider using a Flask App for delivery.
+    \end{itemize}
+  \item \emph{(Undocumented)} \textbf{Femtofs} - Develop a micro filesystem
+    for use with embedded projects or projects using small external peripheral
+    bus memory devices. The goal is for barebones functionality and ease of
+    extension.
   \item \emph{(Undocumented)} \textbf{Brew-inator} - An automatic beer brewing
     machine, built from scratch.
     % Parts for computer:
@@ -93,19 +105,26 @@
       chip and replacing the BIOS and operating system with a compatible
       bootloader and custom-built OS or RTOS.
     \end{itemize}
-  \item \emph{(Undocumented)} \textbf{Adviser} - (No, that's not a spelling
-    mistake) Program which builds a schedule for a student.
-    \begin{itemize}
-    \item Finish implementing the audit-JSON parser
-    \item Implement the web-crawling facilities
-    \item Implement the schedule building facilities
-    \item Consider using a Flask App for delivery.
-    \end{itemize}
   \item \emph{(Undocumented)} \textbf{Matlab Compiler} - Implement a basic
     MATLAB-target binary compiler, with a standard library written in Fortran \&
     C.
   \end{enumerate}
 \end{abstract}
+
+\pagebreak
+\section{Adviser}
+
+\textbf{Summary:} Implement a web application which students will sign
+into using their Banweb username and password. This application will use the
+information contained in the student's degree audit to generate a few potential
+schedules, taking the difficulty out of scheduling yourself every semester.
+
+\textbf{Workflow:}
+\begin{wrapfigure}{l}{0pt}
+  \begin{tikzpicture}
+  \end{tikzpicture}
+\end{wrapfigure}
+% \noindent ...
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
