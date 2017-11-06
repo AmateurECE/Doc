@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             formulas.tex
+%
+% AUTHOR:           Ethan D. Twardy
+%
+% DESCRIPTION:      This file is a humongous formula sheet.
+%
+% CREATED:          11/06/2017
+%
+% LAST EDITED:      11/06/2017
+%%%
+
+\documentclass[10pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{gensymb}
+
+% Header
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{24pt}
+\rhead{Ethan D. Twardy\\Formulae}
+\lhead{November 06, 2017}
+
+\begin{document}
+
+%%%
+\subsection*{Integrated Circuits}
+Formulae courtesy of \textit{Hodges \& Jackson} \cite{hodges}\\
+\begin{tabular}{llll}
+  Name & Symbol & Magnitude & Units \\
+  Electron Charge & $q$ & $1.6\times10^{-19}$ & Coulomb \\
+  Boltzmann's Constant & $k$ & $1.38\times10^{-23}$ & Joule/\degree K \\
+  Room Temperature & $T$ & 300 & \degree K(27\degree C) \\
+  Thermal Voltage & $\frac{kT}{q}$ & .026 & Volts (at 27\degree C) \\
+  Dielectric Constant of a Vacuum & $\epsilon_0$ & $8.85\times10^{-14}$
+  & Farad/cm \\
+  Dielectric Constant of Silicon & $\epsilon_{si}$ & $11.7\times \epsilon_0$
+  & Farad/cm \\
+  Dielectric Constant of $SiO_2$ & $\epsilon_{ox}$ & $3.9\times \epsilon_0$
+  & Farad/cm \\
+  Intrinsic Carrier Concentration: \\
+  \indent\llap{} of Silicon (Squared) & $n_{i^2}$
+  & $1.5\times10^{32}T^3e^{\frac{-1.15q}{kT}}$ & $(carriers/cm^8)^2$ \\
+  \indent\llap{} Room Temperature Value & $n_{i^2}$
+  & $= 2.1\times10^{20}$ & $(carriers/cm^8)^2$ \\
+  Nominal Surface Mobility: \\
+  \indent\llap{} of Electrons & $\mu_n$ & 580 & $cm^2/volt-sec$ \\
+  \indent\llap{} of Holes & $\mu_p$ & 230 & $cm^2/volt-sec$
+\end{tabular}
+
+% Bibliography
+\begin{thebibliography}{9}
+\bibitem{hodges}David A. Hodges, Horace G. Jackson.
+  \textit{Analysis and Design of Integrated Circuits}.
+  McGraw Hill, Reading, 1983.
+\end{thebibliography}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
