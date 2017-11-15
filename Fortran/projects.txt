@@ -3,15 +3,15 @@
 #
 # AUTHOR:	    Ethan D. Twardy
 #
-# DESCRIPTION:	    A of FORTRAN programs to write.
+# DESCRIPTION:	    A list of FORTRAN programs to write.
 #
 # CREATED:	    11/10/2017
 #
-# LAST EDITED:	    11/10/2017
+# LAST EDITED:	    11/15/2017
 ###
 
-* A program that calculates the position of the stars in a constellation given
-a latitude, longitude, and date.
+* calculate the position of the stars in a constellation given a latitude,
+longitude, and date.
 * A discrete Laplace transform.
 * Program that determines a combination of resistors, capacitors, inductors, to
 achieve an exact or close approximation of an impedance.
