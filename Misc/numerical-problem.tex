@@ -12,26 +12,72 @@
 %%%
 
 \documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage[colorlinks=true]{hyperref}
 
 \begin{document}
 Heyo. I've been thinking about this for a couple of days. I think there must be
-a method for something like this, but I lack the background for it.
+a method for something like this, but I lack the background for it. The problem
+statement is also poorly formed, so if you can think of a better way to
+represent this problem, please don't hesitate to say.
 
-Given a system of linear equations
+You are given a vector, $C$, such as this: \\
+
+\begin{center}
+  \begin{math}
+    \begin{bmatrix}
+      f(a_1, a_2, a_3) \\
+      f(a_4) \\
+      f(a_1, a_2, a_3, a_4) \\
+      f(a_1, a_4, a_5) \\
+    \end{bmatrix}
+  \end{math}
+\end{center}
+
+The exact nature of the functions is not given. You are given a vector,
+$A$, of input parameters. \\
+\begin{center}
+  \begin{math}
+    \begin{bmatrix}
+      a_1 \\ a_2 \\ a_3 \\ a_4 \\ a_5
+    \end{bmatrix}
+  \end{math}
+\end{center}
+
+Finally, you are given a vector, $B$, of constraints. \\
+\begin{center}
+  \begin{math}
+    \begin{bmatrix}
+      b_1 \\ \vdots \\ b_4
+    \end{bmatrix}
+  \end{math}
+\end{center}
+(Each entry in the vector is a linear constraint)
+
+The goal is to tune the vector of input parameters, so that each function in $C$
+returns a real number which adheres to the constraints in $B$. Note that it is
+entirely likely that for some combinations of $B$ and $C$, there does not exist
+a set of parameters which satisfies all constraints.
+
+Does this kind of problem seem at all familiar? Do you know of a method that can
+be used to solve this kind of thing? I'm not even sure what to call it. It's
+similar to {\color{blue}\href{https://en.wikipedia.org/wiki/Linear_Programming}
+  {Linear Programming}}, however I don't know enough about the subject to say
+with certainty that's what it is.
 
 % Inputs:
-% A = [ f,  Vout,   Vf, Vin,    Vsat,   i_out,  v_ripple]
-% A = [ a_1, a_2, a_3, a_4, a_5, a_6, a_7 ]
+% A = [ f, Vout, Vin, i_out, v_ripple]
+% A = [ a_1, a_2, a_3, a_4, a_5 ]
 
-% c_t = f(f, Vout, Vf, Vin, Vsat)
+% c_t = f(f, Vout, Vin)
 % r_sc = f(i_out)
-% l_min = f(Vin, Vsat, Vout, i_out, f, Vf)
+% l_min = f(Vin, Vout, i_out, f)
 % c_o = f(i_out, f, v_ripple)
 
-% f(a_1, a_2, a_3, a_4, a_5)
-% f(a_6)
-% f(a_1, a_2, a_3, a_4, a_5, a_6)
-% f(a_1, a_6, a_7)
+% f(a_1, a_2, a_3)
+% f(a_4)
+% f(a_1, a_2, a_3, a_4)
+% f(a_1, a_4, a_5)
 
 % Outputs:
 % B = [ c_t,    r_sc,   l_min,  c_o ]
