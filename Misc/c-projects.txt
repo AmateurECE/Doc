@@ -1,0 +1,30 @@
+################################################################################
+# NAME:		    c-projects.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    Just a list of things I need to finish for my C repos.
+#
+# CREATED:	    11/22/2017
+#
+# LAST EDITED:	    11/22/2017
+###
+
+* Data Structures:
+  - Finish Binary Tree
+  - Finish Binary Search Tree (AVL)
+  - N-Ary tree
+  - Red-Black Tree?
+
+* Scientific Computing
+  - Component Library
+  - Library for Linear Optimization
+  - MC34063-Analyses
+  - Gauss-Legendre Quadrature
+  - Finite Element Method
+
+* Miscellaneous
+  - XMP reading/writing library.
+  - Library Organizer 2.0
+
+################################################################################
