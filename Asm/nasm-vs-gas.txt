@@ -1,0 +1,66 @@
+################################################################################
+# NAME:		    nasm-vs-gas.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This document, mostly for my personal use, is an overview of
+#		    the major differences between NASM and GAS syntaxes for
+#		    assembly programming.
+#
+# CREATED:	    12/12/2017
+#
+# LAST EDITED:	    12/12/2017
+###
+
+################################################################################
+# REGISTER ORDER
+###
+
+    NASM employs the Intel Assembly syntax, which specifies the destination
+register first, and any source or auxiliary registers following. AT&T syntax,
+which is used by the GAS assembler, specifies sources first, and destinations
+second. In addition, in AT&T syntax, registers are specified with a percent (%)
+sign.
+
+################################################################################
+# DECLARING SYMBOLS
+###
+
+Intel (NASM)				AT&T (GAS)
+
+global _start				.globl _start
+
+################################################################################
+# SECTIONS
+###
+
+Intel (NASM)				AT&T (GAS)
+
+section .data				.section .data
+					.data
+section .text				.section .text
+					.text
+
+################################################################################
+# VARIABLES AND MEMORY ACCESSES
+###
+
+Declaring a global variable:
+****************************
+
+Intel (NASM)				AT&T (GAS)
+
+var1	db  0x40			var1:
+					    .byte 0x40
+var2	dw  0xdead			var2:
+					    .word 0xdead
+var3	dd  20				var3:
+					    .int 20
+var4	dq  0xdeadbedbeef		var4:
+					    .quad 0xdeadbedbeef
+
+; Accessing memory			# Accessing memory
+mov ecx, [var1]				movl (var1),%ecx
+
+
+################################################################################
