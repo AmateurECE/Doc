@@ -1,0 +1,22 @@
+################################################################################
+# NAME:		    useful-git.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    Some very useful git commands that I've picked up.
+#
+# CREATED:	    12/21/2017
+#
+# LAST EDITED:	    12/21/2017
+###
+
+*   Sometimes it's nice to push to a repository that's on a remote filesystem,
+    or a different place on the current filesystem. To do this, make sure that
+    you have the remote repository set up to be a bare repository, like so:
+
+	git config --local --bool core.bare true
+
+    Then you can delete all files except for the .git directory, and push to
+    this repository like a normal remote.
+
+################################################################################
