@@ -1,4 +1,4 @@
-################################################################################
+###############################################################################
 # NAME:		    useful-emacs.txt
 #
 # AUTHOR:	    Ethan D. Twardy
@@ -8,14 +8,14 @@
 #
 # CREATED:	    09/14/2017
 #
-# LAST EDITED:	    09/14/2017
+# LAST EDITED:	    01/17/2018
 ###
 
 Sharing the Screen With Another Buffer
 **************************************
 
-    * C-x 3 Creates a second buffer adjacent (right side) of the current buffer.
-    * C-x 2 Creates a second buffer below the current buffer.
+    * C-x 3 Create a second buffer adjacent (right side) of the current buffer.
+    * C-x 2 Create a second buffer below the current buffer.
     * The default size is half the screen, but to make the current buffer
     slightly larger, use C-x }. Likewise, C-x { makes it smaller.
     * C-x ^ Makes the current buffer larger horizontally. Alternatively, C-x -
@@ -47,14 +47,15 @@ Scrolling
 Jumping Around the Buffer
 *************************
 
-    * C-<SPC> C-<SPC> will activate and deactivate the mark, which puts the mark
-    on the global mark stack.
+    * M-g g can be used to go to a specific line number.
+    * C-<SPC> C-<SPC> will activate and deactivate the mark, which puts the
+    mark on the global mark stack.
     * C-u C-<SPC> will jump to the mark on the top of the stack, remove it, and
     then place the position before jumping on the top of the stack. This can
     be used to jump quickly between two positions (buffer-local).
     * C-x C-<SPC> will pop a mark off the top of the stack and move point to
-    that mark. The mark is not restored. This operates on the global mark stack,
-    so it can be used to jump between buffers.
+    that mark. The mark is not restored. This operates on the global mark
+    stack, so it can be used to jump between buffers.
     * Hot-Shit-Key-Combo (Set the mark, jump, yank and insert text elsewhere):
 	C-<SPC> C-<SPC> (Put the mark on top of the stack w/o activating it.)
     	<Move point to text-to-yank>
@@ -69,7 +70,8 @@ Marking text
 ************
 
     * C-<SPC> Sets the mark and activates the region. Any text between the mark
-    and the point are activated. This is useful for executing commands in region
+    and the point are activated. This is useful for executing commands in
+    region.
     * C-w with marked text yanks it (cuts it). C-y will place the text at point
     * C-x h Activates the whole buffer.
 
@@ -99,4 +101,4 @@ Replacing String
     * M-x 'replace-regexp' This is good, too. Will interactively replace all
     strings that match the regexp with the replacement text.
 
-################################################################################
+###############################################################################
