@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             bjt-transistor.tex
+%
+% AUTHOR:           Ethan D. Twardy
+%
+% DESCRIPTION:      A paper about designing REAL circuits with BJTs.
+%
+% CREATED:          01/03/2018
+%
+% LAST EDITED:      01/03/2018
+%%%
+
+\documentclass[12pt]{article}
+\pagestyle{empty} % Prevent style conflicts with `fancy'
+\usepackage[margin=1in]{geometry} % Pretty much just to set the margins
+\usepackage{fancyhdr} % Header & Footer
+\usepackage{setspace} % Spacing.
+
+% Header
+% pdflatex will probably complain about \headheight.
+%% \setlength{\headheight}{28pt}
+\pagestyle{fancy}
+\fancyhf{}
+% Header
+\rhead{Ethan D.Twardy}
+\lhead{BJT: Real vs. Ideal}
+
+% This may come in handy.
+%% \setlength{\emergencystretch}{15pt}
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\doublespacing
+%
+\begin{abstract}
+  When I first began studying active circuits, I noticed that the majority of
+  the material available---in textbooks, on the internet, etc---caters
+  either to academics or to technicians. In this paper, I will provide a
+  detailed comparison of the two schools of analysis. We will examine how to
+  analyze bipolar junction transistor circuits using the numerically equivalent
+  methods one would develop in an undergraduate course on electronics, and then
+  take a step back and use the values from a datasheet to design a functional
+  circuit.
+\end{abstract}
+%
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
