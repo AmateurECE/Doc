@@ -1,0 +1,12 @@
+Misc/useful-tools.txt: ping | id:09e1980e8971671e4f3597a0de2646f35b0d502b
+Misc/useful-tools.txt: fdisk | id:14f5cd7c9f6d20f3dbec58f64f6493b48ef9427d
+Misc/useful-tools.txt: ifconfig | id:157f2a2757cbb88cd135537777b4b83c1ab06d0b
+Misc/learning.tex: Create a document template here. | id:167e6c2f8f6bbcd47f6bf418be985aa99b7bea46
+Misc/useful-tools.txt: netstat | id:19d94d854f2be4e4cc0c61aafbbc1af1ccda4cb8
+Misc/useful-tools.txt: route | id:3f154d237f1ebc6f2bdeac59f6f541faae97cd80
+Misc/useful-tools.txt: route for OS X. It's different. | id:4d575ecd67b2457696e9150b795f68a23c03bf56
+Misc/useful-tools.txt: fstab | id:520708f551611819ff58cc14c1061735547044ca
+Misc/useful-tools.txt: ip, explain difference between ifconfig | id:705b8d2676915462d153b154cfa207bf95e69892
+Misc/learning.tex: Finish listing all the things to cover here.\ | id:85b914799d2a300b34e26ecec35c42264fd3b61d
+Misc/useful-tools.txt: diskutil | id:a8a84528cc9b3a886cbdf523665e7091c24a67f1
+Misc/useful-tools.txt: hdiutil, explain difference between hdid and hdik | id:fc0688ec4311644982e8f30ed67416eebd41464e
