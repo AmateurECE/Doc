@@ -1,0 +1,52 @@
+###############################################################################
+# NAME:		    useful-tools.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This file is a list of useful Linux and OS X tools, and
+#		    generally how to use them. None of these tools are very
+#		    difficult to use, but I find that I have to look up their
+#		    names and parameters when I actually need them once every
+#		    month or so.
+#
+# CREATED:	    02/13/2018
+#
+# LAST EDITED:	    02/13/2018
+###
+
+###############################################################################
+# OS X Disk/Filesystem Tools
+###
+
+diskutil list # TODO: diskutil
+hdiutil # TODO: hdiutil, explain difference between hdid and hdik
+ioreg
+
+###############################################################################
+# Linux Disk/Filesystem Tools
+###
+
+fdisk # TODO: fdisk
+fstab # TODO: fstab
+mount
+umount
+lshw
+lspci
+
+###############################################################################
+# OS X Network Tools
+###
+
+ifconfig # TODO: ifconfig
+route # TODO: route for OS X. It's different.
+
+###############################################################################
+# Linux Network Tools
+###
+
+route # TODO: route
+netstat # TODO: netstat
+ping # TODO: ping
+ip # TODO: ip, explain difference between ifconfig
+
+###############################################################################
