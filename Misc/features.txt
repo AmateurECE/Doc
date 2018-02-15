@@ -8,7 +8,7 @@
 #
 # CREATED:	    12/11/2017
 #
-# LAST EDITED:	    01/11/2018
+# LAST EDITED:	    02/14/2018
 ###
 
 ###############################################################################
@@ -111,14 +111,29 @@
 *   It may be important to simply get it up and running, and then move towards
     system compliance in the future.
 
+*   One tool for attaching block devices, `attach'. Works with real block
+    devices and with disk images (*.img files in the sense of hdiutil, OS X).
+    Will also have an analog, `detach'. Self-Explanatory. Obviously, some
+    devices which implement bridges or interfaces generate an interrupt when
+    a downstream device is discovered. This is called `hot-swapping'. There
+    should be a kernel parameter which allows you to turn automatic attachment
+    off. Either way, these events should be logged in dmesg. The tools `mount'
+    and `umount' will also be supported.
+
+*   Observe:
+    ibm.com/developerworks/linux/library/l-kernel-logging-apis/index.html
+    For a great article on kernel messaging APIs.
+
+*   Should allow for memory protection via an EFI or hypervisor, in the case
+    that the device does not have an MMU.
+
 ###############################################################################
 # FEMTOFS FEATURES
 ###
 
 *   Dynamically generated inodes (Oooooh, Ahhhhh)
 
-*   Full read/write/execute permissions support. Support for ACL, uid and gid
-    permissions.
+*   Unix permissions support.
 
 *   Limited size? For example, perhaps we should limit ourselves by size.
     If we can get the inode size down to 64 or 128 bytes, that would be great.
