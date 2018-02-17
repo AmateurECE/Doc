@@ -10,12 +10,64 @@
 # LAST EDITED:	    02/17/2018
 ###
 
-glove controller:
-    * A glove with a few conductive fibers and some peripheral sensors to use
-    thumb as a 'virtual joystick.' Touch fingers to palm (conductive fibers
-    will connect, handshake procedure will ensue) then move thumb in different
-    directions to control. Use microcontroller, bluetooth interface, etc. WiFi?
-    This could get really fucking cool. Create a simple interface for it. You
-    could write extensions to control web browsers, mice, anything.
+###############################################################################
+# MATHEMATICS
+###
+
+*   Determine a mathematically accurate method for describing an algorithm.
+    The purpose of this is to optimize and perfect interfaces and algorithms
+    before translating them into source code. This has applications in
+    scientific computing and operating systems research. I'm not convinced that
+    I know the math yet to be able to do this, but we should be able to
+    represent:
+	- Algorithms and Data Structures BOTH as tuples, which have sets of
+	inputs, sets of outputs, and functions which match inputs to outputs,
+	as well as functions which relate the time and space complexity of
+	the system.
+	- The functions should be able to be represented in a common format
+	which can be analyzed.
+	- Data types of the inputs and outputs should be specified, but they
+	should not be integral to the understanding of the system.
+	- Pseudocode should NOT be necessary for understanding the system.
+*   Research Linear Programming as a method for optimizing parallel computing.
+*   Research using the discrete derivative of a vector of integers to determine
+    the best algorithm to sort the vector. This will probably require examining
+    the discrete derivative of the best and worst cases of many common types of
+    sorting algorithms.
+
+###############################################################################
+# PROGRAMMING
+###
+
+*   Fortran,C,Verilog - A constant time logarithm calculator (base 2).
+*   Fortran,C - calculate the position of the stars in a constellation given a
+    latitude, longitude, and date.
+*   Fortran,C - A discrete Laplace transform.
+*   Fortran,C - Determine a combination of resistors, capacitors, inductors, to
+    achieve an exact or close approximation of an impedance.
+*   Fortran,C - Program to convert an RC filter to an equivalent LC filter, and
+    vice versa.
+*   C - Create a parallel NFA with fork() and/or OpenMP.
+
+###############################################################################
+# ENGINEERING
+###
+
+*   Compact Cluster - A compact, loosely coupled computing cluster that uses
+    dynamically replaceable mezzanine compute modules. These modules should
+    have a common form factor--for example, (SO-)DIMM--as well as their own
+    dedicated private memory, but the system will provide shared memory. The
+    individual modules should be invisible to the user. The operating system
+    will provide a relatively simple scripting interface that will allow for
+    custom work queues, scheduling, and symmetric processing.
+*   Capacitive virtual joystick - This idea needs some refining. The gist is
+    that I would like a way to translate motion of the thumb into vector
+    motion, with a simple program API, so that this `virtual joystick' can be
+    used to control things such as mice, remote-controlled devices, etc. One
+    theory is to use a pair of differential three-axis accelerometers to
+    measure acceleration in one axis. The control would be momentary--i.e.
+    acceleration in one direction would cause a vector in that direction, but
+    the vector will persist after the acceleration goes to zero. The vector
+    not be zeroed until an equal and opposite acceleration is experience.
 
 ###############################################################################

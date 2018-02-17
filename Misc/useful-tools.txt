@@ -8,10 +8,11 @@
 #		    difficult to use, but I find that I have to look up their
 #		    names and parameters when I actually need them once every
 #		    month or so.
+#		    TODO: useful-tools.txt
 #
 # CREATED:	    02/13/2018
 #
-# LAST EDITED:	    02/13/2018
+# LAST EDITED:	    02/17/2018
 ###
 
 ###############################################################################
@@ -32,6 +33,21 @@ mount
 umount
 lshw
 lspci
+lsof
+df
+du
+file
+strings
+od
+readelf
+objdump
+nm
+ldd
+dtrace
+magic
+swapon	Used to specify devices in a system on which swapping and paging are
+	allowed to take place.
+losetup	Used to setup looback devices.
 
 ###############################################################################
 # OS X Network Tools

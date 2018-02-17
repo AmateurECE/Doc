@@ -9,18 +9,51 @@
 #
 # CREATED:	    02/14/2018
 #
-# LAST EDITED:	    02/14/2018
+# LAST EDITED:	    02/16/2018
 ###
 
 ###############################################################################
-# BIOS/BOOTLOADER INTERFACE
+# CONTENTS
 ###
 
-The BIOS/EFI interacts with the kernel during the boot process via the
-kernel command line.
+    0. INTRODUCTION
+    1. BIOS/BOOTLOADER INTERFACE
+    2. DEVICE DRIVERS
+    3. PROCESS COMMUNICATION
+    4. RESOURCE MANAGEMENT
+    5. SCHEDULING
+    6. CONTEXTS AND INTERRUPTS
+    7. USER PROCESS SERVICES
+    8. USER INTERFACES
+    9. THE ROOT FILESYSTEM
+    10. FAILING AND LOGGING
+    11. VIRTUALIZATION
 
 ###############################################################################
-# DEVICE DRIVERS
+# 0. INTRODUCTION
+###
+
+# TODO: Introduction
+
+###############################################################################
+# 1. BIOS/BOOTLOADER INTERFACE
+###
+
+Kernel Command Line
+*******************
+
+    The BIOS/EFI interacts with the kernel during the boot process via the
+kernel command line. This is a bit of a misnomer--it's not actually a `command
+line' in the traditional sense. It is a region of memory which is used to set
+certain parameters which will affect the boot condition of the machine.
+# TODO: More work on Kernel Command Line
+
+Initial RAM-Disk (initrd)
+*************************
+# TODO: Initial RAM-Disk (initrd)
+
+###############################################################################
+# 2. DEVICE DRIVERS
 ###
 
     Device drivers communicate with the hardware on behalf of the kernel or
@@ -28,58 +61,76 @@ user-space processes. These drivers can be controlled via system calls or
 directly by interfaces that are exported by the driver. The driver also
 communicates with the kernel to arrange for resource management.
 
+Linux Driver Numbering
+**********************
+# TODO: Linux Driver Numbering
+    - Major and Minor nodes
+
 Monolithic drivers
 ******************
-
+# TODO: Monolithic drivers
     In monolithic kernels, the drivers are part of the kernel--this has a few
 implications.
 
 Exokernel drivers
 *****************
+# TODO: Exokernel drivers
 
 Microkernel drivers
 *******************
+# TODO: Microkernel drivers
 
 Hybrid drivers
 **************
+# TODO: Hybrid drivers
 
 EFI drivers
 ***********
+# TODO: Drivers via the EFI
 
 ###############################################################################
-# PROCESS COMMUNICATION
+# 3. PROCESS COMMUNICATION
 ###
 
 File
 ****
+# TODO: File
 
 Signal
 ******
+# TODO: Signal
 
 Sockets & Unix Domain Sockets
 *****************************
+# TODO: Sockets & Unix Domain Sockets
 
 Message Queue
 *************
+# TODO: Message Queue
 
 Pipes & Named Pipes
 *******************
+# TODO: Pipes & Named Pipes
 
 Shared Memory
 *************
+# TODO: Shared Memory
 
 Message Passing
 ***************
+# TODO: Message Passing
 
 Memory-Mapped File
 ******************
+# TODO: Memory-Mapped File
 
 ###############################################################################
-# RESOURCE MANAGEMENT
+# 4. RESOURCE MANAGEMENT
 ###
 
 Semaphores
 **********
+# TODO: Semaphores
 
 Spinlocks
 *********
@@ -89,21 +140,26 @@ if a resource is not available, there is no reason for context to be updated
 simply so that a process can do nothing for the entirety of its quanta.
 Preemption may or may not exist in single processor systems. See the section
 on scheduling for a description of preemption.
+# TODO: More work on spinlocks
 
 Mutex (Mutual Exclusion)
 ************************
+# TODO: Mutex (Mutual Exclusion)
 
 Barrier
 *******
+# TODO: Barrier
 
 Memory Protection (With a HW MMU)
 *********************************
+# TODO: Memory Protection (With a HW MMU)
 
 Memory Protection (Without an MMU)
 **********************************
+# TODO: Memory Protection (Without an MMU)
 
 ###############################################################################
-# SCHEDULING
+# 5. SCHEDULING
 ###
 
 Preemption
@@ -122,12 +178,26 @@ The most important thing to remember about writing kernel code in version 2.6+
 is that code must be reentrant even on single-processor systems, as the kernel
 views them pretty similarly.
 
+Scheduling in Linux Kernel Versions 2.6+
+****************************************
+# TODO: Scheduling in Linux Kernel Versions 2.6+
+
 ###############################################################################
-# CONTEXTS AND INTERRUPTS
+# 6. CONTEXTS AND INTERRUPTS
 ###
 
 Contexts
 ********
+
+    `Context' is a term used to refer to which system the processor is
+currently executing on behalf of. Another way of putting this is that context
+refers to the space of code that is directly accessible from the current
+instruction. For example, if the processor is currently executing code that was
+developed by a user, the processor is in USER CONTEXT because only the user's
+code is directly accessible from the current instruction. If a hardware device
+in the system triggers an interrupt and the processor moves to begin executing
+an interrupt handler, the processor is now in INTERRUPT CONTEXT. See below for
+a description of the main contexts in Linux.
 
     - User context (different from user-space; this is the KERNEL executing on
     behalf of a user-space process) can be interrupted by sirq or hirq.
@@ -137,7 +207,7 @@ Contexts
 
 Interrupts
 **********
-
+# TODO: More work on Interrupts.
     - Hardware Interrupt: Not preemptible. This is an interrupt generated by a
     hardware device, such as a timer, the processor, an interface, or
     peripheral.
@@ -149,18 +219,281 @@ Interrupts
     - Timer: A dynamically-registerable sirq, which is run at (or close to) a
     particular time. Very similar to a Tasklet.
 
+Traps
+*****
+# TODO: More work on Traps.
+    These are hardware implemented, and usually force a context switch. See the
+section on Signals in PROCESS COMMUNICATION for an explanation of this kind of
+service.
+
+Runlevel
+********
+
+    A runlevel is a preset operating state for a system. They ususally
+designate what kind of processes or programs can be executed. Shown below are
+the seven runlevels on a Linux operating system.
+
+    0 - System halt; No activity and the system can be safely shut down.
+    1 - Single user; rarely used.
+    2 - Multiple users, no NFS; rarely used.
+    3 - Multiple users, cli (text-mode) interface; standard for servers.
+    4 - User-definable.
+    5 - Multiple users, GUI; standard for most desktop based systems.
+    6 - Reboot.
+
 ###############################################################################
-# USER PROCESS SERVICES
+# 7. USER PROCESS SERVICES
 ###
 
 System Calls (syscalls)
 ***********************
+# TODO: System Calls (syscalls)
 
-Traps
-*****
+Manual pages (manpages)
+***********************
+# TODO: Manual pages (manpages)
 
-    These are hardware implemented, and usually force a context switch. See the
-section on Signals in PROCESS COMMUNICATION for an explanation of this kind of
-service.
+###############################################################################
+# 8. USER INTERFACES
+###
+
+Terminals & Shells
+******************
+
+    On a Unix system, a terminal (or tty) is a device file which implements a
+number of additional commands beyond the standard read/write. These commands
+are called ioctls. These device files can be used to moderate communication
+between two systems with different impedances, such as the OS and a hardware
+device, two OSes, or an OS and a serial port.
+    In some sense, it may be simplest to imagine that a terminal is a point of
+termination (a junction) through which a system or device can interact with
+another system or device. For example, Xterm is the termination point for the
+system to communicate with the X Windowing System. A keyboard has a designated
+terminal. On some systems, a user also has a terminal, to which a shell program
+connects.
+    A Shell is the primary interface between a user and a terminal. These
+shells are capable of starting other programs and performing functions outside
+of even the standard ioctls. Shells usually also contain flow control
+constructs to automate the execution and chaining of commands. Examples of
+common shells are `bash', `zsh', and `csh'. Most common Unix shells are based
+from the original Unix shell, the Bourne shell.
+
+Graphical User Interfaces
+*************************
+# TODO: Graphical User Interfaces
+
+    - The Windowing System:
+
+    - The Desktop Environment:
+
+###############################################################################
+# 9. THE ROOT FILESYSTEM
+###
+
+The root filesystem is a simple filesystem which is used to mount other
+(usually user-level) filesystems onto it. The root filesystem also contains
+tools, which can be useful during or after the boot process operations. This is
+not to be confused with the initrd (Initial RAM-Disk). See the section on the
+BIOS/BOOTLOADER INTERFACE for a full description of the initrd.
+
+Root and Common Linux Filesystem Structure
+******************************************
+
+    /bin    Binaries necessary during bootup that may be used by normal users.
+
+    /boot   Files used by the bootstrap loader, e.g. GRUB. Kernel images may be
+	    kept here.
+
+    /sbin   Like /bin, but these binaries are not intended for non-root users.
+	    They may be used by non-root users if permissions are granted.
+
+    /etc    Machine specific configuration files
+	./rc.d		Scripts to run at startup or when changing the
+			runlevel.
+	./passwd	User database--holds username, real name, home
+			directory, and other info about each user.
+	./shadow	An encrypted file to hold passwords.
+	./fdprm		Floppy Disk parameter table.
+	./fstab		Static information about filesystems. Also contains
+			info about swap regions.
+	./group		Group database, similar to passwd but for groups.
+	./inittab	Configuration file for `init.'
+	./issue		Output by `getty' before the login prompt.
+	./magic		Configuration file for the `file' tool.
+	./motd		Message of the day--output after a successful login.
+	./mtab		List of currently mounted filesystems. Updated
+			automatically by `mount'.
+	./login.defs	Configuration file for the `login' command.
+	./printcap	Printer capability database (how to control a printer).
+	./profile	File(s) executed at login by a shell, e.g. bash.
+	./securetty	Identifies secure terminals, e.g. terminals which root
+			is allowed to login to. Usually only virtual terminals.
+	./shells	Lists trusted shells. The daemon `ftpd' will not allow
+			users to login to the machine unless the user's shell
+			is listed here.
+	./termcap	Terminal capability database. Outlines escape sequences
+			that can be used to control the terminal. In this way,
+			programs can be written to look up the escape sequences
+			to perform necessary operations no matter what terminal
+			is being used.
+
+    /root   Home directory for the root user
+
+    /lib    Shared libraries necessary for programs on the root filesystem
+	./modules   Loadable kernel modules, including those which are
+		    necessary to boot recover from a disaster.
+
+    /dev    Device files. Similar to /proc, these file pointers do not reside
+	    on any disk, instead they point to regions in memory which can be
+	    used to interface with system devices.
+	./dsp	    CHAR - The digital signal processor (kinda). This is part
+		    of the Open Sound System, which is no longer part of the
+		    kernel.
+	./fd0	    CHAR - The first floppy drive attached to the system.
+	./fb0	    CHAR - The first framebuffer device. A framebuffer is an
+		    abstraction layer between software and graphics hardware.
+		    This means that software does not need to know how to
+		    communicate with the graphics hardware, only with the
+		    framebuffer's API, which is documented and standardized.
+	./hda	    BLOCK - hda is the master IDE drive on the primary IDE
+		    controller. hdb is the slave drive on the primary
+		    controller. This scheme is inductive. Each disk is divided
+		    into partitions, which are so named by <disk><number>, e.g.
+		    hda2 is the second primary partition on the disk hda.
+		    Partitions 1-4 are primary partitions and partitions 5 and
+		    above are logical partitions inside extended partitions.
+	./ht0	    CHAR - First IDE tape drive. Subsequent drives are named
+		    ht1, etc.
+	./js0	    CHAR - First Analogue joystick. Subsequent joysticks are
+		    named js1, etc. Digital joysticks are named djs0, etc.
+	./lp0	    CHAR - First parallel printer. Subsequent printers are
+		    named lp1, etc.
+	./loop0	    BLOCK - First loopback device. These are devices which are
+		    used to mount filesystems which do not exist on other
+		    block devices. For example, this is used to mount an iso
+		    image that exists on a filesystem.
+	./md0	    BLOCK - First metadisk group. Related to RAID devices.
+	./mixer	    CHAR - part of the OSS driver, which is now deprecated.
+	./null	    CHAR - The bit bucket. Data that is sent here is never seen
+		    again.
+	./psaux	    CHAR - The PS/2 mouse port.
+	./pda	    BLOCK - Parallel port IDE disks. Due to the major/minor
+		    node numbering characteristics for these devices on Linux,
+		    each system is limited to 4 disks of 15 partitions each.
+	./pcd0	    BLOCK - Parallel port CDROM drives. Numbered 0 onwards.
+	./pt0	    CHAR - Parallel port tape devices. Tapes do not have
+		    partitions, so these are numbered sequentially.
+	./parport0  CHAR - Raw parallel ports. Most devices which are attached
+		    to the parallel ports have their own drivers. This is a
+		    device to access the port directly. Subsequent ports are
+		    named sequentially.
+	./random    CHAR - non-deterministic pseudo-random number generator.
+		    on Linux, it uses the entropy of the system hardware to
+		    generate numbers. When it has no more entropy to use, it
+		    will not allow any more numbers to be read until it has
+		    collected more entropy.
+	./sda	    BLOCK - the first SCSI or SATA drive on the first SCSI or
+		    SATA bus. Named similarly to IDE drives--sdb is the second.
+	./ttys0	    CHAR - The first serial port on the system.
+	./tty.USB0  CHAR - Refers to a USB port to which a serial char driver
+		    is attached. There is also a variety of tty file which can
+		    be used to refer to the Bluetooth incoming/outgoing ports.
+	./zero	    CHAR - Every time this device is read, it will return 0. 
+
+    /tmp    Temporary files, and storage for temporary program data
+
+    /mnt    Mount point for temporary or device filesystems, created by root or
+	    the system administrator.
+
+    /usr    The mount point for programs which usually come with your distro
+	./X11R6		The X Windowing System. The X files are placed here to
+			simplify the development and installation of X.
+	./bin		Almost all user binaries.
+	./sbin		System Administration binaries which are not necessary
+			on the root filesystem.
+	./share/man	Manual pages
+	./share/info	Info documents
+	./share/doc	Miscellaneous other documentation files.
+	./include	Header files for C progams.
+	./lib		Unchanging data files for programs and subsystems,
+			including some site-wide configuration files. Also used
+			to house static and shared-object libraries.
+	./local		Houses locally installed software and other files.
+			Reserved solely for the use of the local administrator,
+			so that these files may be isolated and preserved from
+			updates to the system.
+
+    /var    Mount point for variable data which is stored by programs during
+	    the normal operation of the system.
+	./cache/man Cache for manpages that are formatted on demand.
+	./games	    Any variable data belonging to games in /usr. This is in
+		    case /usr is mounted read-only.
+	./lib	    Files that change while the system is running normally.
+	./local	    Variable data for programs installed in /usr/local. This is
+		    mostly a catch-all for data that doesn't belong in other
+		    locations of var.
+	./lock	    Lock files. Many programs create a lock file here to
+		    indicate that they are using a particular device or file,
+		    for the sake of other programs to check.
+	./log	    Log files from various programs, especially `login' and
+		    `syslog'. Files here may require cleaning at regular
+		    intervals.
+	./mail	    FHS approved location for user mailbox files.
+	./run	    Files that contain information about the system that is
+		    valid until the next time the system is booted, such as
+		    currently logged in users.
+	./spool	    Directories for news, printer queues, and other queued
+		    work. Each spool has its own subdirectory here.
+	./tmp	    Temporary files that are large or need to exist for a
+		    longer time than what is allowed for /tmp (Implementation
+		    dependent).
+
+    /home   Mount point for the current user's home directory. This directory
+	    can ususally be referred to by `~' and may contain whatever files
+	    or directories the user creates.
+
+    /proc
+	    This is a mount point for an illusionary filesystem which the
+	    kernel creates in memory. It is used to store information about
+	    processes (hence the name) and other important parts of the system.
+	./1		Contains information about process number 1. Each PID
+			has a directory in /proc.
+	./cpuinfo	Information about the cpu, such as make, model, and
+			performance.
+	./devices	List of currently loaded/configured device drivers
+	./dma		Shows which DMA channels are currently in use
+	./filesystems	Filesystems configured into the kernel
+	./interrupts	Shows which interrupts are in use, and a count of each.
+	./ioports	Shows which IO ports are in use
+	./kcore		An image of all of the memory available to your system.
+	./kmsg		One of the kernel message buffers.
+	./ksyms		Symbol table for the kernel.
+	./loadavg	The `load average' of the system--mostly meaningless
+	./meminfo	Information about physical and swap memory usage
+	./modules	Information about loaded kernel modules
+	./net		Network status information
+	./self		A symlink to the process directory of the process
+			currently looking at /proc/self. If two different PID's
+			look at it simultaneously, they get different links.
+			This is mostly a convenience.
+	./stat		Various statistics about the system.
+	./uptime	The length of time that the system has been up.
+	./version	The kernel version.
+
+Unix Permissions
+****************
+# TODO: Unix Permissions
+
+###############################################################################
+# 10. FAILING AND LOGGING
+###
+
+# TODO: FAILING AND LOGGING
+
+###############################################################################
+# 11. VIRTUALIZATION
+###
+
+# TODO: VIRTUALIZATION
 
 ###############################################################################

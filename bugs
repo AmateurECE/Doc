@@ -1,12 +1,49 @@
+Misc/what-makes-a-kernel.txt: Monolithic drivers | id:02b276ad9323dbc900ec8df80052de352086034f
+Misc/what-makes-a-kernel.txt: More work on Traps. | id:04ea3391c26960fbdea1052b317a867f196cd4c1
 Misc/useful-tools.txt: ping | id:09e1980e8971671e4f3597a0de2646f35b0d502b
+Misc/what-makes-a-kernel.txt: FAILING AND LOGGING | id:0d316d30643d956eab7f825c090b98ba0472a903
+Misc/what-makes-a-kernel.txt: More work on Interrupts. | id:0e65ba6fd5a5e2cbe86690aea9bf1644d622fb97
+Misc/what-makes-a-kernel.txt: VIRTUALIZATION | id:1300e4c86b554e53ecd9fbab4713e4af8b13a91e
 Misc/useful-tools.txt: fdisk | id:14f5cd7c9f6d20f3dbec58f64f6493b48ef9427d
 Misc/useful-tools.txt: ifconfig | id:157f2a2757cbb88cd135537777b4b83c1ab06d0b
-Misc/learning.tex: Create a document template here. | id:167e6c2f8f6bbcd47f6bf418be985aa99b7bea46
 Misc/useful-tools.txt: netstat | id:19d94d854f2be4e4cc0c61aafbbc1af1ccda4cb8
+Programming/asm-style.txt: Update style guidelines here. | id:1d5e4d2a6bb0f3ddec50cf17bd55b8c56c70b391
+Misc/what-makes-a-kernel.txt: Microkernel drivers | id:2f55802c57489efdb7ba9455bed2805e01f22c87
+Misc/what-makes-a-kernel.txt: Hybrid drivers | id:31015ea3e77414759cafca5889658c46338f78eb
 Misc/useful-tools.txt: route | id:3f154d237f1ebc6f2bdeac59f6f541faae97cd80
+Misc/what-makes-a-kernel.txt: Shared Memory | id:3f186aeadd451589498d3b6cc3cb655ec1c1b832
+Misc/what-makes-a-kernel.txt: Barrier | id:49d1c7401f258a960050483de83b852e123b5336
 Misc/useful-tools.txt: route for OS X. It's different. | id:4d575ecd67b2457696e9150b795f68a23c03bf56
 Misc/useful-tools.txt: fstab | id:520708f551611819ff58cc14c1061735547044ca
+Programming/asm-style.txt: DEVELOPMENT PROCESS | id:56bf9b8bc6eb02509dfcbf5011582b3e1e2f070e
+Misc/what-makes-a-kernel.txt: Elaborate on all of these | id:57fe5dce24d6162b6238e51422de38690e5c79df
+Misc/what-makes-a-kernel.txt: Memory Protection (Without an MMU) | id:58485b7bb13721332ed0b795304b7ab8e04ef155
+Misc/what-makes-a-kernel.txt: Initial RAM-Disk (initrd) | id:5a4bef0a71e103ad1248241cfaecfa704896eaae
+Misc/what-makes-a-kernel.txt: Semaphores | id:5abc1a4575dd304ff3f8a7653bf2bc711a0c40b0
+Misc/what-makes-a-kernel.txt: Mutex (Mutual Exclusion) | id:5cc67eeae3cc6bcea3a6d1c6805c6bf275e0fca1
+Misc/what-makes-a-kernel.txt: More work on spinlocks | id:5cfb6a90419d6cc847ebcd4c064526239a37cdb5
+Misc/what-makes-a-kernel.txt: More work on Kernel Command Line | id:5f7dccaa6f3cc858523519093e866625043c0e2b
+Misc/what-makes-a-kernel.txt: Linux Driver Numbering | id:61468e08293236c67722651b4affd1c1717845f2
+Misc/what-makes-a-kernel.txt: File | id:648888284cef085b9532768c310e01bab1dd80c3
 Misc/useful-tools.txt: ip, explain difference between ifconfig | id:705b8d2676915462d153b154cfa207bf95e69892
+Misc/what-makes-a-kernel.txt: Message Queue | id:734df841540402d3656c90826936a7bb3273f180
+Misc/what-makes-a-kernel.txt: System Calls (syscalls) | id:761acc111f6aa3c37cef87c65972dcb80808b9e1
+Misc/what-makes-a-kernel.txt: Scheduling in Linux Kernel Versions 2.6+ | id:77b9c5c4768af617f2f42b11d09334c48af685bb
+Misc/learning.tex: Update this to include recent topics and topics from Calculus. | id:85a4f66a43b2c2ce882b649c72d0a3750f1f2b46
 Misc/learning.tex: Finish listing all the things to cover here.\ | id:85b914799d2a300b34e26ecec35c42264fd3b61d
+Misc/useful-tools.txt: useful-tools.txt | id:9aced15668d81030de527cb63da1cc9683f1f2a7
+Misc/what-makes-a-kernel.txt: Manual pages (manpages) | id:a6f4da7786859eaded1d0d2da6afa90d465bc511
 Misc/useful-tools.txt: diskutil | id:a8a84528cc9b3a886cbdf523665e7091c24a67f1
+Misc/what-makes-a-kernel.txt: Exokernel drivers | id:b94b290180235b4b8049d4073a06194b4ef7219c
+Misc/what-makes-a-kernel.txt: Sockets & Unix Domain Sockets | id:bc3c6e13193f7473dae29c2f7017f95f0b52282c
+Misc/what-makes-a-kernel.txt: Pipes & Named Pipes | id:c417eec0ccfbf56237f5f577b746577979aac2b6
+Misc/what-makes-a-kernel.txt: Message Passing | id:c6c4f2569b8ebe19bffcbbb9067ec500101a2dfb
+Misc/what-makes-a-kernel.txt: Introduction | id:caf09117b8ffc50e94717006a64b3485105ed77d
+Misc/what-makes-a-kernel.txt: Memory Protection (With a HW MMU) | id:cb2ccc83c459555ab353f8329e8ccfe56a01a4aa
+Misc/what-makes-a-kernel.txt: Drivers via the EFI | id:ccf5e0ae3c606cb75cf72c2d58367393a9556ea8
+Misc/what-makes-a-kernel.txt: Unix Permissions | id:d40bab2bb863f885e2a97fd701db48c8c97d0e25
+Misc/what-makes-a-kernel.txt: Memory-Mapped File | id:d59379e8057369197e701810aa3daca57d779442
+Misc/what-makes-a-kernel.txt: Signal | id:dd9e35aa05f5cc93eb9f67db886ec18e7c00d3d4
+Misc/parsing.txt: parsing.txt | id:ec8297112619d908564529f20728db5fb53dd681
+Misc/what-makes-a-kernel.txt: Graphical User Interfaces | id:ef50387754973f39cf51398a62d6bc100a9327e1
 Misc/useful-tools.txt: hdiutil, explain difference between hdid and hdik | id:fc0688ec4311644982e8f30ed67416eebd41464e
