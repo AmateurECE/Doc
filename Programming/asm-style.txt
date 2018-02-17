@@ -1,20 +1,18 @@
-################################################################################
-# TITLE: Assembly Reference.txt
+###############################################################################
+# NAME:		    assembly-reference.txt
 #
-# DESCRIPTION: This reference file contains useful information about Assembler
-#              programming on the x86_64 architecture for Mac OS X, but also
-#              general guidelines and instructions for assembler coding in
-#              general.
-# 
-# AUTHOR: Ethan D. Twardy
+# AUTHOR:	    Ethan D. Twardy
 #
-# DATE CREATED: 05/23/17
+# DESCRIPTION:	    This reference file contains useful information about
+#		    assembly programming in general.
+#		    TODO: Update style guidelines here.
 #
-# DATE LAST MODIFIED: 05/23/17
-################################################################################
+# CREATED:	    05/23/2017
+#
+# LAST EDITED:	    02/16/2018
+###
 
-
-################################################################################
+###############################################################################
 # REGISTERS
 ####
 
@@ -32,8 +30,8 @@ of a register. Each of the letters in the name have a specific meaning, all of
 which we will cover here.
 
 Size:
-    * /R/ - The whole of the register is being used; all 64-bits. Unavailable on
-      32-bit architectures. Ex. %rax
+    * /R/ - The whole of the register is being used; all 64-bits. Unavailable
+      on 32-bit architectures. Ex. %rax
     * /E/ - The lower half of the register is being used. (32 bits). Ex. %eax
     * /L/$ - signifies that the lowest 8 bits of a register are being used.
       Ex. %al. Used only for data registers.
@@ -66,9 +64,9 @@ Type:
             * SI - source index; used as a source index for string operations.
             * DI - destination index; used as destination index for string 
               operations.
-    * Control Registers - usually, each bit of these registers is referred to as
-      a flag, and contains data relevant to the type of flag. Some common flags
-      are:
+    * Control Registers - usually, each bit of these registers is referred to
+      as a flag, and contains data relevant to the type of flag. Some common
+      flags are:
         * Overflow Flag - indicates bit overflow after a signed operation.
         * Direction Flag - indicates left or right direction for comparing
           string data.
@@ -79,8 +77,8 @@ Type:
         * Zero Flag - indicates whether the result of an operation is 0.
         * Auxiliary Carry Flag - indicates if there was a carry from bit 3
           to bit 4. Used in a special kind of arithmetic.
-        * Parity Flag - indicates number of 1 bits in a result. Values depend on
-          whether the processor is even or odd parity.
+        * Parity Flag - indicates number of 1 bits in a result. Values depend
+          on whether the processor is even or odd parity.
         * Carry Flag - contains the carry of a high order bit after an
           arithmetic operation.
     * Segment Reigsters - registers for the purpose of containing large amounts
@@ -92,12 +90,12 @@ Type:
         * ES, FS, GS - extra segment registers for referencing other segments.
 
 
-################################################################################
+###############################################################################
 # CODE SEGMENTS
 ####
 
 
-################################################################################
+###############################################################################
 # VARIABLES
 ####
 
@@ -132,24 +130,46 @@ please refer to the sections ADDRESSING MODES and INSTRUCTIONS.
     _str:    .
 
 
-################################################################################
+###############################################################################
 # ADDRESSING MODES
 ####
 
 
-################################################################################
+###############################################################################
 # INSTRUCTIONS
 ####
 
 
-################################################################################
+###############################################################################
 # FUNCTIONS AND LOOPS
 ####
 
 
-################################################################################
+###############################################################################
 # COMPILATION
 ####
 
+###############################################################################
+# DEVELOPMENT PROCESS
+###
 
-################################################################################
+# TODO: DEVELOPMENT PROCESS
+This is where I will describe how I normally develop assembly programs--first
+begin by writing out a logically correct pseudocode, then slowly refine it
+to be more accomodating to assembly programming. Eventually, include register
+names or stack addresses before variable names (e.g. r0=pointer). Before
+writing a single line of actual code, there should be a 1:1 correspondence
+between the number of lines of pseudocode and the number of lines of eventual
+assembly code. It may not even be a bad idea to leave the commented pseudocode
+in after the development process has finished. Should make for some good
+documentation. Actual comments should be obviously denoted, for example by a
+`NOTE:' at the start.
+:= - Assignment
+== - equality
+=  - denotes a location/variable pair (e.g. r0=pointer)
+Shorthands are allowed for assignment:
+r1=size %= 4
+r1=size -= 8
+...etc
+
+###############################################################################

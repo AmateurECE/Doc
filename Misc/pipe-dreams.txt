@@ -1,13 +1,13 @@
-################################################################################
-# NAME:		    .idea
+###############################################################################
+# NAME:		    pipe-dreams.txt
 #
 # AUTHOR:	    Ethan D. Twardy
 #
-# DESCRIPTION:	    Just some ideas.
+# DESCRIPTION:	    Ideas for dumb projects that I'll probably never do.
 #
 # CREATED:	    09/11/2017
 #
-# LAST EDITED:	    09/11/2017
+# LAST EDITED:	    02/17/2018
 ###
 
 glove controller:
@@ -18,4 +18,4 @@ glove controller:
     This could get really fucking cool. Create a simple interface for it. You
     could write extensions to control web browsers, mice, anything.
 
-################################################################################
+###############################################################################

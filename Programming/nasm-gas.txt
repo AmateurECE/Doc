@@ -1,18 +1,18 @@
-################################################################################
+###############################################################################
 # NAME:		    nasm-vs-gas.txt
 #
 # AUTHOR:	    Ethan D. Twardy
 #
-# DESCRIPTION:	    This document, mostly for my personal use, is an overview of
-#		    the major differences between NASM and GAS syntaxes for
+# DESCRIPTION:	    This document, mostly for my personal use, is an overview
+#		    of the major differences between NASM and GAS syntaxes for
 #		    assembly programming.
 #
 # CREATED:	    12/12/2017
 #
-# LAST EDITED:	    12/12/2017
+# LAST EDITED:	    02/17/2018
 ###
 
-################################################################################
+###############################################################################
 # REGISTER ORDER
 ###
 
@@ -22,7 +22,7 @@ which is used by the GAS assembler, specifies sources first, and destinations
 second. In addition, in AT&T syntax, registers are specified with a percent (%)
 sign.
 
-################################################################################
+###############################################################################
 # DECLARING SYMBOLS
 ###
 
@@ -30,7 +30,7 @@ Intel (NASM)				AT&T (GAS)
 
 global _start				.globl _start
 
-################################################################################
+###############################################################################
 # SECTIONS
 ###
 
@@ -41,7 +41,7 @@ section .data				.section .data
 section .text				.section .text
 					.text
 
-################################################################################
+###############################################################################
 # VARIABLES AND MEMORY ACCESSES
 ###
 
@@ -63,4 +63,4 @@ var4	dq  0xdeadbedbeef		var4:
 mov ecx, [var1]				movl (var1),%ecx
 
 
-################################################################################
+###############################################################################
