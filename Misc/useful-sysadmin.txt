@@ -1,0 +1,52 @@
+###############################################################################
+1;95;0c# NAME:		    useful-sysadmin.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This is a file which contains some useful information for
+#		    DIY system administrations. Mostly little tools to set up
+#		    useful utilities and monitor system security.
+#
+# CREATED:	    03/01/2018
+#
+# LAST EDITED:	    03/02/2018
+###
+
+###############################################################################
+# TOOLS
+###
+
+To view the users
+*****************
+
+who		    View the users currently logged into the system, and the
+		    terminal used. `w' is similar.
+/var/log/auth.log   All kinds of user information and logins are kept here. To
+		    view successful and unsuccessful login attempts, etc.
+last		    View the last valid login attempts.
+lastlog		    View the last login of each user on the system.
+/etc/passwd	    Contains information about the users on the system.
+/etc/group	    Contains information about the groups on the system.
+/etc/securetty	    A list of terminals which allow root access.
+chvt		    Change virtual terminal.
+
+###############################################################################
+# SSH
+###
+
+# TODO: Change the port number on the server
+# TODO: Set up ssh certificates for the computers.
+# TODO: Set up /etc/hosts.allow
+
+/etc/ssh/sshd_config	Change PermitRootLogin to `No' to prevent root login
+			from the virtual terminal.
+
+###############################################################################
+# NFS
+###
+
+###############################################################################
+# LDAP
+###
+
+###############################################################################
