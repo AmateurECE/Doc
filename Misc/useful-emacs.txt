@@ -8,7 +8,7 @@
 #
 # CREATED:	    09/14/2017
 #
-# LAST EDITED:	    01/17/2018
+# LAST EDITED:	    03/05/2018
 ###
 
 Sharing the Screen With Another Buffer
@@ -22,6 +22,8 @@ Sharing the Screen With Another Buffer
     shrinks the window if there is empty space showing in the buffer.
     * C-x + Makes all of the windows the same height.
     * Use C-x o (oh) to switch to the other window.
+    * User command `fit-window-to-buffer' will resize a buffer if the line
+    number of the end-of-buffer marker is less than the window size.
 
 But What If I Don't Want to Share?
 **********************************
@@ -100,5 +102,17 @@ Replacing String
     do it unconditionally. This will instantly replace all instances.
     * M-x 'replace-regexp' This is good, too. Will interactively replace all
     strings that match the regexp with the replacement text.
+
+Macros and Repetition
+*********************
+
+    * <f3> Begins recording a keyboard macro. Once recording has begun, <f4>
+    will stop recording. All keystrokes in between these two commands will
+    become a `macro'.
+    * <f4> Will run the last-recorded macro. If there has been no record of a
+    keyboard macro since starting emacs, an error will be thrown.
+    * C-x z Will start Repetition. The last keystroke/command that was executed
+    before starting repetition will be repeated. Continuously pressing `z' will
+    repeat the command. C-g will quit Repetition.
 
 ###############################################################################

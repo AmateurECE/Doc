@@ -7,13 +7,16 @@
 #
 # CREATED:	    09/11/2017
 #
-# LAST EDITED:	    02/17/2018
+# LAST EDITED:	    04/04/2018
 ###
 
 ###############################################################################
 # MATHEMATICS
 ###
 
+*   Come up with a model to determine environmental effects on transistor beta.
+*   Be able to represent an FST (Finite State Transducer) in terms of a control
+    diagram? (And by extension, a state space model).
 *   Determine a mathematically accurate method for describing an algorithm.
     The purpose of this is to optimize and perfect interfaces and algorithms
     before translating them into source code. This has applications in
@@ -39,6 +42,18 @@
 # PROGRAMMING
 ###
 
+*   C - Use the breadth-first search method (and a stack to eliminate contrary
+    motion) to determine sub-algorithms which perform specific tranformations
+    of the 4 x 4 x 4 puzzle cube. The cube could be represented as six 4 x 4
+    matrices which contain enumerated values corresponding to the six colors.
+    They should, however, not be enums. To save space, they should be arrays of
+    single bytes which are aliased with preprocessor macros. This can be
+    thought of as an n-ary tree corresponding to an NFA. The root node is a
+    lambda transition (the only one) and each of it's 24 children correspond to
+    a unique primitive transformation on the cube. A binary (flattened)
+    representation will be used, so as to avoid muddling with the complexities
+    of n-ary trees. This also means that a `pure breadth-first' search cannot
+    be used. 
 *   Fortran,C,Verilog - A constant time logarithm calculator (base 2).
 *   Fortran,C - calculate the position of the stars in a constellation given a
     latitude, longitude, and date.
@@ -53,6 +68,17 @@
 # ENGINEERING
 ###
 
+*   Hardware compiler
+*   `Stutter' effect
+*   Discrete NMOS log2 calculator
+*   Automatic beer brewer, built literally from scratch
+*   RTOS CAN logger for the Highlander
+*   Mumbo Jumbo - Analog TV that visualizes analog signals (e.g. music) with
+    white noise.
+*   Embedded Hypervisor - An architecture that would support coprocessors which
+    would be responsible for performing binary translation to and from the ISA
+    of the pure metal core, essentially becoming a 'hardware hypervisor'. This
+    coprocessor could be implemented as an FPGA.
 *   Compact Cluster - A compact, loosely coupled computing cluster that uses
     dynamically replaceable mezzanine compute modules. These modules should
     have a common form factor--for example, (SO-)DIMM--as well as their own
