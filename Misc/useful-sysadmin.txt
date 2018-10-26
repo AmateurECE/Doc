@@ -9,7 +9,7 @@
 #
 # CREATED:	    03/01/2018
 #
-# LAST EDITED:	    03/02/2018
+# LAST EDITED:	    04/27/2018
 ###
 
 ###############################################################################
@@ -29,6 +29,7 @@ lastlog		    View the last login of each user on the system.
 /etc/group	    Contains information about the groups on the system.
 /etc/securetty	    A list of terminals which allow root access.
 chvt		    Change virtual terminal.
+ps		    Ultra-Useful process status tool.
 
 ###############################################################################
 # SSH

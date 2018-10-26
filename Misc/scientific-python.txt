@@ -1,0 +1,27 @@
+###############################################################################
+# NAME:		    scientific-python.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This is a brief overview of scientific programming in
+#		    Python.
+#
+# CREATED:	    04/25/2018
+#
+# LAST EDITED:	    04/25/2018
+###
+
+TODO: Install pip.
+SymPy - Symbolic Integration
+PyQt - Rapid GUI Programming
+NumPy
+SciPy
+MatPlotLib
+iPython
+Jupyter
+Pandas
+Nose
+
+TODO: www.scipy.org/install.html
+
+###############################################################################

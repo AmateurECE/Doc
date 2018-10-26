@@ -1,0 +1,134 @@
+###############################################################################
+# NAME:		    server-bringup.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    This file describes, in detail, all of the minutia that I
+#		    forget to do every time I bring my server back up after a
+#		    long period of rest.
+#
+# CREATED:	    06/25/2018
+#
+# LAST EDITED:	    06/26/2018
+###
+
+Disabling nfs-mountd at startup:
+********************************
+
+        sudo systemctl disable nfs-mountd.service
+
+    This is especially handy when Ubuntu will only boot into emergency mode
+    because nfs-mountd fails to come up. Virtually the same command can be used
+    to enable bringup of nfs-mountd at startup:
+    
+	sudo systemctl enable nfs-mountd.service
+
+Removing /export/Passport from fstab:
+*************************************
+
+    If mount can't find the disk its looking for, it will fail. LOUDLY.
+    sometimes, the best way to fix this is to simply comment out the line in
+    /etc/fstab. There have been times where Ubuntu will only boot into
+    emergency mode because mount is trying to make symlinks to places on an
+    unmounted partition.
+
+Connecting to a new Wi-Fi network:
+**********************************
+
+    This is always a pain in the ass to remember. To begin, make sure to
+    have the ESSID and WPA passkey to the network. The first thing to do is
+    ensure that the NIC can find your network:
+
+	iwlist scan | less
+
+    This will give you more information than you need to know about all
+    the networks within reach of the NIC. It may be useful to grep this to find
+    the SSID you need. Next, generate an object for the wpa.conf file:
+
+	wpa_passphrase "My SSID" "myPassphrase" >> /etc/network/wpa.conf
+
+    Then, edit the file /etc/network/wpa.conf--Comment out any uncommented
+    objects which don't correspond to the current network, and add a line above
+    your new object listing the address/business name at which the router
+    resides:
+
+	# 1149 Summit Street, Hancock, MI
+	network={
+	    ssid="Wu-Tang LAN"
+	    #key="camelCaseRocks"
+	    psk=(salted hash goes here)
+	}
+
+    Bring up the interface with the network in question, where "B" causes
+    wpa_supplicant to run in the background, "i" lists the name of the
+    interface, "D" lists the name of the driver, and "c" is the file path of
+    the configuration file containing the information just generated.
+
+	wpa_supplicant -B -iwlp12s0 -Dwext -c/etc/network/wpa.conf
+
+    Now that the interface is up, you are (hopefully) connected to the
+    network, the only thing that's left is to obtain an IP address:
+
+	dhclient wlp12s0
+
+    ***************************************************************************
+    DEBUGGING NOTES:
+
+    -	Only one instance of wpa_supplicant may be running at a time. If
+	the user attempts to start another, they will be confronted with an
+	error message from wpa_supplicant along the lines of
+	"ioctl: Device or resource busy"
+
+Exporting the filesystem:
+*************************
+
+    First, make sure nfs-mountd is running:
+
+	sudo service nfs-mountd start
+
+    Then, export the filesystem:
+
+	sudo exportfs -ra
+
+    ***************************************************************************
+    DEBUGGING NOTES:
+
+    -   Ensure that any drives in the /export/ directory have been soft
+	symlinked to their real counterparts. This is usually done by
+	editing /etc/fstab and running `mount -a.`
+    -   Ensure that the user has access to mount the partition. This can be
+	checked by opening /etc/exports.
+
+NFS after an IP change:
+***********************
+
+    Sometimes you need to update your RPC/MountD firewall to allow a new
+    IP address into your NFS Shares. To do this, two files need to be updated:
+
+	/etc/exports
+	/etc/hosts.allow
+
+    Updating these two files seems to work, as afterwards I can mount my
+    NFS Shares from the new IP with no problem. However, don't forget that a
+    simple 'grep' can find all the other places that I've forgotten to mention
+    here!
+
+Mounting an NFS Share on OS X:
+******************************
+
+    First, create a mount point in /Volumes. You'll need root access to do
+    this:
+
+	sudo mkdir /Volumes/etwardy
+
+    Then, mount the share:
+
+	sudo mount_nfs -o resvport,rw 192.168.1.29:/export/etwardy \
+	    /Volumes/etwardy
+
+    And it's really as simple as that. The downside to this method is that any
+    changes made by the user in the NFS Share will occur as root. In Linux,
+    we can get around this by adding our NFS share to /etc/fstab. In OSX, we
+    need to setup Autofs. There will be another section on this.
+
+###############################################################################

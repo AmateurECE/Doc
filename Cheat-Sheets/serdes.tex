@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             serdes.tex
+%
+% AUTHOR:           Ethan D. Twardy
+%
+% DESCRIPTION:      This is a Cheat Sheet about Serial transmission methods,
+%                   including PCI, SATA, Ethernet, and lower profile
+%                   transmission protocols, such as SPI and I2C.
+%
+% CREATED:          04/18/2018
+%
+% LAST EDITED:      04/18/2018
+%%%
+
+\documentclass[12pt]{article}
+\pagestyle{empty} % Prevent style conflicts with `fancy'
+\usepackage[margin=1in]{geometry} % Pretty much just to set the margins
+\usepackage{fancyhdr} % Header & Footer
+\usepackage{setspace} % Spacing.
+
+% Header
+% pdflatex will probably complain about \headheight.
+\setlength{\headheight}{28pt}
+\pagestyle{fancy}
+\fancyhf{}
+% Header
+\rhead{Ethan D.Twardy\\April 18, 2018{}}
+\lhead{SerDes Protocols\\Cheat-Sheets}
+
+% This may come in handy.
+%% \setlength{\emergencystretch}{15pt}
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\section{Ethernet and XAUI}
+% OSI Model and Network Device Architecture.
+\subsection{Physical Coding Sublayer}
+The Physical Coding Sublayer (PCS) is an abstraction layer which provides an
+interface between the PMA (Physical Medium Attachment) sublayer and the Media
+Independent Interface (MII). It is present in systems which offer greater than
+100 Mb/s bandwidth. This functional block is 
+
+\section{PCI Express}
+\section{SATA}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

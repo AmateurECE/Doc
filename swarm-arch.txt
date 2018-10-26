@@ -1,0 +1,24 @@
+###############################################################################
+# NAME:		    swarm-arch.txt
+#
+# AUTHOR:	    Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:	    This file outlines the Swarm optimized architecture.
+#
+# CREATED:	    10/18/2018
+#
+# LAST EDITED:	    10/18/2018
+###
+
+###############################################################################
+# INTRODUCTION
+###
+
+In the Information Age, some functions have become so ubiquitous as to exist in
+some fashion or another on nearly every machine. Because of the need to perform
+these functions correctly, quickly, and consistently, it may be pertinent for
+machine hardware to expose an interface which provides this functionality out
+of the box. SwarmArch is an architecture optimized for distributed systems and
+applications.
+
+##############################################################################

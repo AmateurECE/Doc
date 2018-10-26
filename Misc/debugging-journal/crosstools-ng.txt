@@ -1,0 +1,178 @@
+###############################################################################
+# NAME:		    2018-Sep-06.txt
+#
+# AUTHOR:	    Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:	    The first installment of the debugging journal. These
+#		    entries chronicle challenges that I have faced while
+#		    attempting to debug issues with my system or programs.
+#
+# CREATED:	    09/06/2018
+#
+# LAST EDITED:	    09/07/2018
+###
+
+System specs:
+*************
+
+Darwin Ethans-Air 17.2.0 Darwin Kernel Version 17.2.0:
+Fri Sep 29 18:27:05 PDT 2017;
+root:xnu-4570.20.62~3/RELEASE_X86_64 x86_64
+
+Introduction:
+*************
+
+Today I attempted to install Crosstool-NG version 1.23.0.418-d590 for the
+purpose of installing the arm-unknown-linux-gnueabi- toolchaiin.
+
+Error in bootstrap script:
+**************************
+
+The first issue occurred when attempting to run `./bootstrap`, which is
+apparently some new method of generating the configure scripts. This bootstrap
+script required BASH v4+, which I did not have.
+
+Solution:
+    Install bash 4.4.23(1)-release using Homebrew
+	`brew install bash`
+    Add it to the list of system shells
+	`sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'`
+    Change to the new shell
+	`chsh -s /usr/local/bin/bash`
+    Re-login
+
+gcc: No such file <libintl.h>:
+******************************
+
+In the initial `make` phase, I received an error which detailed that gcc could
+not locate the file lintl.h.
+
+Solution:
+    Locate libintl.h:
+	`locate libintl.h`
+    Add to C_INCLUDE_PATH. Note that this problem may have been better solved
+    by adding the directory to the Makefiles CFLAGS.
+	`echo \
+	'export C_INCLUDE_PATH="/opt/local/include/libintl.h:$C_LIBRARY_PATH"'\
+	>> ~/.bash_profile
+
+glibtool: Unresolved symbols
+****************************
+
+The next problem to occur during the initial `make` invocation, was related to
+unresolved symbols in the linking phase for an executable. The libtool
+invocation was not formatted to direct glibtool to be able to find the library
+libintl.
+
+Solution:
+kconfig/Makefile:120
+-conf_LDADD = $(LDADD)
++conf_LDADD = $(LDADD) $(INTLLIBS)
+
+kconfig/Makefile:246
+-INTLLIBS =
++INTLLIBS = $(INTL_MACOSX_LIBS)
+-INTL_MACOSX_LIBS =
++INTL_MACOSX_LIBS = -L/opt/local/lib -lintl
+
+kconfig/Makefile:409
+-nconf_LDADD = $(MENU_LIBS) $(PANEL_LIBS) $(CURSES_LIBS)
++nconf_LDADD = $(MENU_LIBS) $(PANEL_LIBS) $(CURSES_LIBS) $(INTLLIBS)
+
+kconfig/Makefile:414
+-mconf_LDADD = $(CURSES_LIBS)
++mconf_LDADD = $(CURSES_LIBS) $(INTLLIBS)
+
+I'm not sure exactly why neither of these variables were filled in, but I
+assume it occurred some time during the exception of the `./configure` script.
+
+dyld: lazy symbol binding failed
+********************************
+
+After configuring ct-ng using `menuconfig`, execution of `ct-ng build` fails
+conspicuously with little information. The following error message is thrown:
+
+dyld: lazy symbol binding failed: Symbol not found: _iconv_open
+  Referenced from: /usr/local/bin/bash
+  Expected in: /opt/local/lib/libiconv.2.dylib
+
+dyld: Symbol not found: _iconv_open
+  Referenced from: /usr/local/bin/bash
+  Expected in: /opt/local/lib/libiconv.2.dylib
+
+The error is obvious; There is no such symbold `_iconv_open`. The correct
+symbol name is `_libiconv_open`. This can be discovered by invoking `nm` on
+the libiconv dynamically linked shared library. The dynamic loader reports this
+error as referenced by `/usr/local/bin/bash`. At first I believed this to be
+only smoke. Perhaps some other executable, run from a bash script, attempts to
+use the incorrectly mangled symbol name? But that is not the case.
+
+Solution:
+
+    There is an error in the Homebrew Formula for installing Bash
+4.4.23(1)-release on my current release of OS X. It appears that Homebrew
+compiles Bash to reference `_iconv_open`, which is an incorrectly mangled
+symbol name. The correctly mangled symbol name would be `_libiconv_open`. The
+only work around for this issue is to change back to using the current version
+of Apple Bash, version 3.2.57(1)-release.
+	`chsh -s /bin/bash`
+
+No space left on device/Too many open files:
+********************************************
+
+The first two invocations of `ct-ng build` that made it to the build step
+failed somewhere along the way either because the process has exceeded its
+allowed number of open file descriptors or it has run out of space. Since Linux
+was meant to be compiled on the ext4 file system (which is case sensitive), it
+cannot easily be compiled on case-insensitive filesystems.
+
+Solution:
+    Create a sparse disk image with at least 20 GB of space, using Mac OS
+    (journaled, case-sensitive) with no partition map.
+    Also ensure that the shell allows greater than 8192 open file descriptors
+	`ulimit -n 8096`
+
+Building cross-gdb fails:
+*************************
+
+Crosstools exits during the building of cross-gdb. The cross-gdb configure
+script spits "The C compiler cannot create executables"; This is obviously not
+true. Luckily, Crosstools holds onto the config.log which contains more
+specific information about what autoconf was doing leading up to the error.
+The error is encountered after executing the following command. Gcc's response
+is detailed consecutively.
+
+x86_64-build_apple-darwin17.2.0-gcc -O2 -g -pipe -I/Volumes/case-sensitive/\
+cross-compilers/.build/arm-unknown-linux-gnueabi/buildtools/include \
+-fno-common -Qunused-arguments  -L/Volumes/case-sensitive/cross-compilers/\
+.build/arm-unknown-linux-gnueabi/buildtools/lib -framework CoreFoundation \
+conftest.c >&5
+
+gcc: error: unrecognized command line option '-Qunused-arguments'; did you mean
+ '-Wunused-parameter'?
+
+The error is obvious. The command line option supplied is NOT a valid option
+for GCC. However, it is valid for Clang. There is even a FIXME in the ct-ng
+source which suggests verifying that the host compiler is clang before
+executing autoconf
+(/Volumes/case-sensitive/ct-ng/share/crosstool-ng/scripts/build/debug/:109).
+
+Solution:
+    The Apple LLVM compiler still appears to be functioning, so I will simply
+    remove the simlink that points /usr/local/bin/gcc to Homebrew GCC 8.2.0 and
+    replace it with a symlink that points to Apple LLVM version 9.1.0.
+	`sudo rm /usr/local/bin/gcc`
+	`sudo ln -s /usr/bin/gcc /usr/local/bin/gcc`
+
+Binutils fails with Same error:
+*******************************
+
+After implementing the solution in the previous section, Crosstools fails with
+the same error while building binutils. I have done no investigation, and I do
+not plan to. I assume the error is because binutils builds using GCC specific
+command line options which are not compatible with Clang.
+
+Solution:
+    Disable installation of cross-gdb in Crosstools-NG config.
+
+###############################################################################

@@ -1,0 +1,66 @@
+###############################################################################
+# NAME:		    os-x-daemon-howto.txt
+#
+# AUTHOR:	    Ethan D. Twardy
+#
+# DESCRIPTION:	    A short tutorial on Daemon design and development on OS X.
+#
+# CREATED:	    04/24/2018
+#
+# LAST EDITED:	    04/24/2018
+###
+
+###############################################################################
+# PROPERTY LIST
+###
+
+*   Develop a .plist file containing the necessary fields used by launchd to
+    instantiate your daemon, and the conditions that call upon it.
+*   The plist-template tool was developed to aid in this.
+
+###############################################################################
+# DAEMON SOURCE
+###
+
+*   Source for the Daemon (the program which will be instantiated) should lie
+    in /usr/libexec/ with a name similar to com.<user>.<service>. This file can
+    be any kind of executable file.
+*   Register your daemon with launchd by:
+	% launchctl load <service>.plist
+	% launchctl start <service>
+
+###############################################################################
+# EXAMPLE PLIST
+###
+
+Shown below is an example .plist file. This property list is for a daemon which
+runs when the modification time of any of each `/etc/resolve.conf',
+`/var/run/resolve.conf', or `/private/var/run/resolve.conf' are upated. When
+this occurs, launchd will instantiate the Bash script in
+/Users/Shared/bin/networkchange.sh.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" \
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>networkchange</string>
+  <key>LowPriorityIO</key>
+  <true/>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/Shared/bin/networkchange.sh</string>
+  </array>
+  <key>WatchPaths</key>
+  <array>
+    <string>/etc/resolv.conf</string>
+    <string>/var/run/resolv.conf</string>
+    <string>/private/var/run/resolv.conf</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>
+
+###############################################################################
