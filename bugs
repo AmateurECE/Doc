@@ -1,9 +1,7 @@
 Misc/what-makes-a-kernel.txt: Monolithic drivers | id:02b276ad9323dbc900ec8df80052de352086034f
 Cheat-Sheets/data.tex: Add the method for including an image | id:03ac363f597e68f98a0fabeb622ec3897475336c
 Misc/what-makes-a-kernel.txt: More work on Traps. | id:04ea3391c26960fbdea1052b317a867f196cd4c1
-Cheat-Sheets/bjts.tex: Add the method for including a pdf | id:0874c216c4ae210cad082b8d305b007582a1ae69
 Misc/useful-tools.txt: ping | id:09e1980e8971671e4f3597a0de2646f35b0d502b
-Cheat-Sheets/numerical.tex: Add the method for including a pdf | id:0c66e3f8b1fdd5136e45a4debd487e11f66b9e60
 Misc/what-makes-a-kernel.txt: FAILING AND LOGGING | id:0d316d30643d956eab7f825c090b98ba0472a903
 Misc/what-makes-a-kernel.txt: More work on Interrupts. | id:0e65ba6fd5a5e2cbe86690aea9bf1644d622fb97
 Misc/what-makes-a-kernel.txt: VIRTUALIZATION | id:1300e4c86b554e53ecd9fbab4713e4af8b13a91e
@@ -16,7 +14,6 @@ Programming/asm-style.txt: Update style guidelines here. | id:1d5e4d2a6bb0f3ddec
 Cheat-Sheets/modulation.tex: Add the method for including an image | id:28fed38a7a802e495fcb822399d54c63e6441b6b
 Misc/what-makes-a-kernel.txt: Microkernel drivers | id:2f55802c57489efdb7ba9455bed2805e01f22c87
 Misc/what-makes-a-kernel.txt: Hybrid drivers | id:31015ea3e77414759cafca5889658c46338f78eb
-Cheat-Sheets/oscillator.tex: Add the method for including an image | id:33806b077c213a63e2fd693e4f5f620110dc73ac
 Cheat-Sheets/algorithms.tex: Add the method for including an image | id:345402ff43286b7a13616fda9d029c595c9e2cf0
 Misc/useful-tools.txt: route | id:3f154d237f1ebc6f2bdeac59f6f541faae97cd80
 Misc/what-makes-a-kernel.txt: Shared Memory | id:3f186aeadd451589498d3b6cc3cb655ec1c1b832
@@ -54,11 +51,9 @@ Misc/learning.tex: Update this to include recent topics and topics from Calculus
 Misc/learning.tex: Finish listing all the things to cover here.\ | id:85b914799d2a300b34e26ecec35c42264fd3b61d
 Cheat-Sheets/amplifier.tex: Add the method for including an image | id:89eca576bd8231b779c8dae92d0e19415e5c065a
 Cheat-Sheets/power.tex: Add the method for including an image | id:8fc180c89cd2cb156cf33b07a6134ed827df9ca2
-Cheat-Sheets/numerical.tex: Add the method for including an image | id:932344f519d784a1d13a16ec68cd50d5886a0261
 Cheat-Sheets/calculus.tex: Add the method for including an image | id:94b39792a9fe89bcb8910a6925ad8a14375f8f70
 Misc/useful-tools.txt: useful-tools.txt | id:9aced15668d81030de527cb63da1cc9683f1f2a7
 Cheat-Sheets/parsing.tex: Add the method for including an image | id:9b2677c20982adca626c5282dfb50b97ee62d4bd
-Cheat-Sheets/oscillator.tex: Add the method for including a pdf | id:a37eaad4109888cc34284dc6388dc594b92744e8
 Misc/what-makes-a-kernel.txt: Manual pages (manpages) | id:a6f4da7786859eaded1d0d2da6afa90d465bc511
 Misc/useful-tools.txt: diskutil | id:a8a84528cc9b3a886cbdf523665e7091c24a67f1
 Cheat-Sheets/op-amps.tex: Add the method for including an image | id:aaf2cbcf923f4d63c92e5fa773961727cbad854a
@@ -67,7 +62,6 @@ Cheat-Sheets/circuits.tex: Add stuff about transmission line modeling | id:b15e6
 Misc/what-makes-a-kernel.txt: Exokernel drivers | id:b94b290180235b4b8049d4073a06194b4ef7219c
 Misc/what-makes-a-kernel.txt: Sockets & Unix Domain Sockets | id:bc3c6e13193f7473dae29c2f7017f95f0b52282c
 Cheat-Sheets/diodes.tex: Add the method for including an image | id:bc4c4078eda4edad782b90742907926b49b078d9
-Cheat-Sheets/bjts.tex: Add the method for including an image | id:c0e24d809fac7c159fa017c92c808fe7399ce3f5
 Cheat-Sheets/power.tex: Cover power oscillators (document in Downloads) | id:c334413b3dde7dc18a57c02874b40450608c3399
 Misc/what-makes-a-kernel.txt: Pipes & Named Pipes | id:c417eec0ccfbf56237f5f577b746577979aac2b6
 Misc/what-makes-a-kernel.txt: Message Passing | id:c6c4f2569b8ebe19bffcbbb9067ec500101a2dfb
@@ -79,7 +73,6 @@ Misc/what-makes-a-kernel.txt: Memory-Mapped File | id:d59379e8057369197e701810aa
 Misc/what-makes-a-kernel.txt: Signal | id:dd9e35aa05f5cc93eb9f67db886ec18e7c00d3d4
 Cheat-Sheets/fets.tex: Add the method for including an image | id:def29489a51803dbf24180d6c13228a36a7206ef
 Cheat-Sheets/circuits.tex: Add the method for including an image | id:dfb6aa7e0908fbe21c58871e1333cf24bbd02333
-Misc/parsing.txt: parsing.txt | id:ec8297112619d908564529f20728db5fb53dd681
 Cheat-Sheets/diffeq.tex: Add the method for including an image | id:ed5d052a8eb3aa5f74c8859dc06ab3440353b569
 Cheat-Sheets/filters.tex: Add the method for including an image | id:ef0a07f9b073a7030e8d8944829439de6dc83163
 Misc/what-makes-a-kernel.txt: Graphical User Interfaces | id:ef50387754973f39cf51398a62d6bc100a9327e1

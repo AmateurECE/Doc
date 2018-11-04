@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             template.tex
+%
+% AUTHOR:           Ethan D. Twardy
+%
+% DESCRIPTION:      A LaTeX Template file, which contains most of the
+%                   formatting that I want.
+%
+% CREATED:          12/13/2017
+%
+% LAST EDITED:      10/26/2018
+%%%
+
+\documentclass[12pt]{article}
+\pagestyle{empty} % Prevent style conflicts with `fancy'
+\usepackage[margin=1in]{geometry} % Pretty much just to set the margins
+\usepackage{fancyhdr} % Header & Footer
+\usepackage{setspace} % Spacing.
+
+% Header
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+% Header
+\rhead{Ethan D. Twardy}
+\lhead{\today}
+
+% This may come in handy.
+\setlength{\parskip}{10pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\onlyinsubfile}[1]{#1}
+\newcommand{\notinsubfile}[1]{}
+
+\begin{document}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

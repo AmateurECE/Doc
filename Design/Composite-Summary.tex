@@ -1,0 +1,457 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             Composite-Summary.tex
+%
+% AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+%
+% DESCRIPTION:      This file 
+%
+% CREATED:          10/26/2018
+%
+% LAST EDITED:      11/04/2018
+%%%
+
+\documentclass[format.tex]{subfiles}
+
+\onlyinsubfile{\lhead{A Summary of Composite Design}}
+
+\begin{document}
+\section{Introduction}
+This document serves to summarize the most important points from the book
+{\it Composite/Structured Design}, by Glenford J. Meyers.
+
+\section{The Nine Fundamental Problems}
+Given below are nine of the most serious problems plaguing the software
+industry. These problems are so omnipresent that they are titled the nine
+{\it fundamental} problems.
+
+\begin{enumerate}
+\item The structure of the typical program is never designed. Rather, it is
+  created in an ad hoc manner as it is written.
+\item Most programs cannot adapt to changing requirements and environments.
+\item Programmers spend the majority of their time correcting their mistakes.
+\item Software reliability, once the subject of many jokes, is now a life and
+  death matter.
+\item The programming process is not improving as quickly as it could.
+\item Technical decisions are rarely objective.
+\item We do not stand on the shoulders of others.
+\item A project of $n$ programmsers usually has $n$ objectives.
+\item The program design phases are regarded too informally.
+\end{enumerate}
+
+\section{Terms Used in this Summary}
+\begin{enumerate}
+\item Function: what a module does; usually stated in verb/object form. (e.g.
+  ``Carve the roast beast'').
+\item Logic: How a module performs its function.
+\item Context: Module use case and conditions
+\item Subordinate Module: $A$ is subordinate to $B$ if $B$ calls $A$.
+\item Superordinate Module: $A$ is superordinate to $B$ if $A$ calls $B$.
+\item Fan-in: The number of distinct modules that call a module.
+\item Fan-out: the number of distinct modules called by this module.
+\item Homogeneous Datum: A scalar, a list with single field per entry, or an
+  array where each element has the same meaning.
+\item Restricted Module: A module that is over-specialized.
+\end{enumerate}
+
+\section{HIPO Diagrams}
+A particularly useful tool for the software engineer is the HIPO
+({\bf H}ierarchy {\bf I}nput {\bf P}rocess {\bf O}utput) diagram. As it is so
+named, this diagram illustrates the hierarchy of calling modules, and is
+usually accompanied by a table which describes inputs and outputs of each
+module.
+
+\section{A Good Design}
+A good design usually has the three following characteristics:
+\begin{enumerate}
+\item The program is partitioned into parts having identifiable and
+  understandable boundaries.
+\item The design is hierarchical in organization.
+\item The design maximizes dependence within a module and minimizes the
+  dependence between modules.
+\end{enumerate}
+
+In addition, the hierarchy should usually be balanced (i.e. not too stretched
+in one particular dimension). This is not always the case, but a balanced
+hierarchy is a good code smell. Finally, modules should be maximally
+independent. The highest form of coupling is no direct coupling.
+
+Design processes, however, are just as important. A good design process leads
+an engineer to design a strong system without thinking explicitly about the
+strength of the design.
+
+\section{Problems Encountered While Impelementing Modularity}
+\begin{enumerate}
+\item A module performs too many functions, which causes its logic to be
+  obscured.
+\item Common functions are distributed throughout many modules instead of being
+  isolated in one place.
+\item Modules interact on global state in unexpected ways.
+\end{enumerate}
+
+\section{Module Strength}
+A way to quantify (roughly) the strength of relationships within a module.
+There are seven categories of module strength, which are listed below in order
+from strongest to weakest. It's important to note that sometimes, it is
+acceptable or even necessary to allow a module with weaker strength, to
+minimize weakness in another part of the program. A module has the highest
+type of strength whose definition it meets.
+\begin{enumerate}
+\item Functional Strength, Informational Strength.
+\item Communicational Strength
+\item Procedural Strength
+\item Classical Strength
+\item Logical Strength
+\item Coincidental Strength
+\end{enumerate}
+
+\subsection{Coincidental Module}
+A module with coincidental strength either has a function which cannot be
+defined, or it performs multiple completely unrelated functions. The function
+\texttt{main()} is not coincidental because it usually has the function of the
+program itself.
+
+\subsection{Logical Module}
+A logical strength module performs a number of functions, one of which is
+explicitly selected by the caller. Note that in modern terms, this is referred
+to as {\it Command Pattern}.
+
+\subsection{Classical Module}
+A module with classical strength performs multiple sequential functions where
+there is a weak, but nonzero, relationship among the functions. A common
+example of a module with classical strength is an ``Initialization'' module,
+which does such things as: open the transaction record, open the master record,
+initialize the summary table, print the report headings. These functions are
+obviously related, but not strongly enough to warrant a single module dedicated
+to all of them.
+
+\subsection{Procedural Module}
+Performs multiple sequential functions, where the sequential relationship
+among these functions is implied by the problem or application statement. For
+example, if the problem statement implies that when an invalid transaction is
+encountered, the program should skip to the next transaction file, checkpoint
+the master file, and display an appropriate error message, and a single
+module is written which performs all of these functions, that module has
+procedural strength.
+
+\subsection{Communicational Module}
+A communicational strength module is a module that fits the description of a
+procedural module, {\it and} there is a data relationship among all of the
+functions.
+
+\subsection{Functional Strength}
+A module with functional strength performs a single, specific function. In
+addition, it is a module that does not conform to any of the qualifications of
+a lesser form of strength. If a set of functions can be collectively described
+as a single specific function in a coherent way, the module performing these
+functions has functional strength.
+
+\subsection{Informational Strength}
+This type of module is the standard object-oriented class, as long as it is
+efficiently designed. An informational strength module has a single interface,
+which encapsulates all of its data and related functions. Myers suggests that
+software should be designed for functional strength modules, which should be
+grouped into informational strength modules where appropiate.
+
+\section{Module Coupling}
+Is a notation for quantifying the dependency between modules. There are seven
+types of coupling, listed below in order from best case to worst case.
+\begin{enumerate}
+\item No Direct Coupling
+\item Data Coupling
+\item Stamp Coupling
+\item Control Coupling
+\item External Coupling
+\item Common Coupling
+\item Content Coupling
+\end{enumerate}
+As with module strength, we will cover these from the bottom up.
+
+\subsection{Content Coupling}
+Where one module directly references the internals of another module. An
+example is the relationship between coroutines. Spier has a fascinating
+story about this, in {\it Software Malpractice--A Distasteful Experience}
+(1976).
+
+\subsection{Common Coupling}
+When two or more modules reference the same global data structure.
+
+\subsection{External Coupling}
+A group of modules have external coupling when they reference a datum with
+\texttt{extern} linkage.
+
+\subsection{Control Coupling}
+One module explicitly passes elements of control to another module. ``Elements
+of control'' are arguments which control the behavior or a logical strength
+module. This is, as noted in the subsection on logical strength, commonly
+referred to as {\it Command Pattern}.
+
+\subsection{Stamp Coupling}
+Two or more modules have stamp coupling if they reference the same nonglobal
+data structures.
+
+\subsection{Data Coupling}
+Two ore more modules have data coupling if they do not have a lesser form of
+coupling, the modules directly communicate with each other (i.e. one calls
+another), and all interface data are homogeneous data items.
+
+\section{How to Minimize Stamp Coupling}
+One way to remove stamp coupling is to replace it with data coupling, where
+possible. If a module only needs access to one or a few fields of a struct,
+it is better to pass only those fields than to pass the whole struct. Another
+way is to use informational strength modules. If all transformations on a
+structure can be isolated to a single informational strength module, then all
+stamp coupling via this structure is eliminated. Finally, it is possible to
+reduce stamp coupling by passing pointers to structs. In this way, modules that
+must only pass on the information without modifying it are not privy to the
+structure of the info, and therefore not unnecessarily stamp coupled through a
+superordinate and subordinate module.
+
+\subsection{An Example: Coupling Tradeoffs}
+Many programs not developed in languages that support exception stacks
+experience difficulty in architecting an error reporting infrastructure. There
+are two common strategies in use. The first is to place the text of each
+message in the modules that detect the error condition. Each module will write
+the message directly (in some fashion). This is stamp coupling--the error
+writing mechanism references the data that are set by the calling module.
+However, this mechanism does not guarantee against redundancy or consistency.
+The second strategy is to place texts of all messages in a single module. Each
+module that detects an error will call this module and pass information to
+select the error. This is control coupling, which is a lower form of
+coupling--however it is usually recommended, because it better promotes
+information hiding and guards against redundancy.
+
+\section{Some Miscellaneous Tips}
+\begin{enumerate}
+\item Module Size: This should not be a primary target, but it does help with
+  code legibility. Generally, files should be less than a thousand lines, and
+  each particular module should be less than 20 statements.
+\item Syntax parsing and semantics interpretation are two different functions:
+  \begin{enumerate}
+  \item Only one module should be sensitive to the overall syntactic structure
+    of the commands so that a change to this structure requires changing only
+    one module.
+  \item Only one module should know the command names so that adding new
+    commands requires changing only one existing module.
+  \item Only one module should be sensitive to the keywords and operands of
+    each particular command or command type.
+  \end{enumerate}
+\item Be wary of situations where an interface does not completely match the
+  function of its module. This is an indication of low strength.
+\item Strive for high average module fan-in. (i.e. no repetition or spreading
+  logic into other modules).
+\item Design general modules which can be reused.
+\item Modules shall have no internal state which will remain between function
+  calls. Modules of this type are called {\it Predictable}.
+\item Try for reentrant and recursive-safe modules wherever possible.
+\item Don't over-constrain, over-specialize, or over-generalize modules.
+  Over-specialized modules are referred to as {\it Restricted} modules.
+\end{enumerate}
+
+\section{The Design Thought Process}
+In this section, we will cover module decomposition, or the act of decomposing
+a module into subordinate modules recursively. There are three major types of
+decomposition, with a quaternary method also mentioned. The particular
+technique is chosen based on the type of the problem. Composite design is a
+recursive divide-and-conquer problem. These decomposition techniques can
+therefore be applied recursively until the design is complete. When the logic
+of a module can easily be visualized, it probably needs no more than one level
+of further decomposition--and at that, probably no further decomposition. It's
+important to note that the designer should define the interfaces between the
+modules before performing another iteration of composition.
+
+Composite design is a process of stepwise refinement. If decomposing a
+particular module provides some further insight into how superordinate modules
+should be designed, the designer should not ignore this advice. It's common and
+not unreasonable to design a problem twice. The best way to become familiar
+with a problem is to design a solution for it.
+
+\subsection{Source/Transform/Sink Decomposition}
+This decomposition strategy should be used first. This scheme has four steps,
+outlined below. The idea behind STS Decomposition is to imagine a module as a
+logical process that refines an input data stream into an output data stream;
+the module takes a number of inputs, performs some logical process, then
+disperses the output data to the calling module.
+\begin{enumerate}
+\item Outline the structure of the problem:
+  Identify three to ten subproblems. Arrange these in the order that represents
+  the flow of data. If this is impossible, consider using another
+  decomposition.
+\item Define immediate submodules:
+  \begin{enumerate}
+  \item Identify the streams of input data and output data:
+  \item Identify the point where the input stream stops existing as a logical
+    entity (i.e. acquire the input stream in its most abstract form).
+  \item Transform the major input stream in its most abstract form into the
+    major output stream in its most abstract form.
+  \item Disperse the major output stream.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Transactional Decomposition}
+This decomposition scheme is used for data-driven modules. It works by
+decomposing a function into a set of immediate subordinate modules based on
+the syntax of the input data. As an example, consider the function ``Apply
+a transaction to the record file.'' This module is a prime candidate for
+transactional decomposition because the behavior of this module depends on the
+type of transaction that is applied. Notice that since the caller does not
+explicitly set the behavior of the module, this module does not have control
+coupling. If the module which applies the transactions to the record file is
+named {\it Applicator}, its subordinate modules may be called
+{\it Sale Applicator}, {\it Return Applicator}, {\it Order Applicator}, etc.
+
+\subsection{Functional Decomposition}
+This is the simplest form of decomposition. It works by pulling single
+subfunctions from a module to achieve certain purposes. These purposes are
+usually:
+\begin{enumerate}
+\item Isolating common subfunctions.
+\item Isolating functions within an informational-strength module.
+\end{enumerate}
+
+\subsection{Data Structure Decomposition}
+This type of decomposition depends on {\it data structure}, whereas STS
+Decomposition depends on {\it data flow}. It is not described in particular
+depth in the book, because the languages in common use at the time of its
+publishing did not support Object Oriented programming in the modern sense. The
+steps involved in data structure decomposition are described below.
+\begin{enumerate}
+\item Define the substructures of the input and output data.
+\item Find one-to-one relationships between components of those data
+  structures. If this cannot be done, define intermediate data structures.
+\item Form a structure based on these relationships.
+\item Allocate elementary operations to appropriate components.
+\end{enumerate}
+In general, this technique restricts one's thinking to four components: elementary, sequence, iteration, selection. An {\it elementary} component is an atomic
+datum; for example, a primitive type. A {\it sequence} component has more than
+one part, each appearing only once and in order; for example, a
+\texttt{struct}. An {\it iteration} component has a single part that occurs
+zero or more times; for example, an array. A {\it selection} component has more
+than one part, only one of which is present in each occurrence of the selection
+component; for example, a \texttt{union}. This decomposition technique is
+described further in {\it Principles of Program Design}, by M.A. Jackson
+(1975).
+
+\section{Post Design Review}
+Any design should be reviewed after it is believed to be finished. A number of
+questions and thought experiments are provided below to aid in this review
+process.
+
+\subsection{Structure Optimization}
+In this process, the general structure of the program is reviewed. As an
+example, one should ask the question ``Has module independence been
+maximized?'' To answer this question, one may go through the program and search
+for implicit or explicit dependencies, then consider eliminating these using an
+informational strength module. As another point of review, two more points of
+trade off are considered. Firstly, perhaps one should consider decomposing
+further before wrapping unrelated functions in an informational module.
+Secondly, one should prefer to exclude related functions rather than introduce
+a lesser form of coupling.
+
+\subsection{Static Code Review}
+In the context of this book, {\it static review} is a process by which the
+design of a program is visually inspected to check quality and correctness.
+This type of review tends to entail an independent observer asking questions of
+the designer. It is important to note that the purpose of the review is to find
+weaknesses in the design, not to make hot patches or on-the-fly improvements.
+Corrections of weakness should be deferred until after the review. Below is a
+reasonable set of questions to pose at a static review:
+
+\begin{enumerate}
+\item Does each module have functional or informational strength? If any do
+  not, why not? The designer should be expected to objectively justify any
+  tradeoffs which were made that result in a lesser form of strength.
+\item Is each pair of modules either data coupled or not directly coupled? If
+  any are not, why not?
+\item Is the decomposition complete? That is, can the logic of each module be
+  easily visualized?
+\item Where a module or entry point has a fan-in greater than one, are the
+  interface definitions to the module consistent? That is, does each interface
+  to the module have the same number of input arguments and the same number of
+  output arguments? Does each corresponding argument in each interface have the
+  same attributes?
+\item Are there any redundant data in any of the module interfaces? Redundant
+  data contributes to confusion about the module's use; however it may be
+  useful or even necessary in some cases.
+\item Are the interface data to each module consistent with the definition of
+  the module's function?
+\item Are there multiple modules in the program that seem to perform the same
+  function?
+\item Is each module described by its function rather than by its context or
+  logic? Has each function been stated correctly?
+\item Are there any preexisting modules that could have been used in this
+  program?
+\item Are there any restrictive modules (i.e., modules that are unnecessarily
+  overspecialized)?
+\item Are all moduled predictable (without state)?
+\item Are there instances where recursion either should have been used or
+  should not have been used?
+\item Is there any aspect of the design that is precluded by the programming
+  language to be used?
+\item Is the hierarchical structure too extreme (i.e. is the tree particularly
+  unbalanced in any way)? This is not directly an issue, but is a code smell
+  that should be explored.
+\item Has anything been left out? Are all functions in the external
+  specification reflected in the program?
+\item Has anything been included that should not be? Does the program do more
+  than that stated in the external specification?
+\item Is the design obscure? Does it contain anything that might be easily
+  misunderstood?
+\item Have any unstated assumptions been made?
+\end{enumerate}
+
+\subsection{Dynamic Design Review}
+In this section, a few use cases are outlined and the program is ``mentally''
+stepped through (using a whiteboard) to verify that the design covers certain
+edge cases and implements business logic correctly.
+
+\section{After Optimization \& Verification}
+After design review has been conducted, the designer should perform module
+interface design of all modules. This includes expressing all of the
+information needed to invoke the module, and nothing else (i.e., write the
+prototypes of each function and constructor in each module).
+
+\section{Final Notes on Composite Design}
+As a few final notes, designers should put more stock in qualitative feedback
+on design processes than in quantitative feedback. This is mostly because the
+standards of the qualitative feedback are unclear or not given. In the past,
+NASA has used Composite Design in the design of compilers, operating systems,
+and applications for the space shuttle.
+
+\subsection{Components of Composite Design}
+\begin{enumerate}
+\item A set of concepts about program structure.
+\item A set of design guidelines, measurements, and goals.
+\item A set of thought processes.
+\item Notation for describing program structure.
+\end{enumerate}
+
+\subsection{Reasons to Use Composite Design}
+\begin{enumerate}
+\item In general, programs created using composite design are easier to change
+  and maintain.
+\item Composite Design promotes increased reliability of programs.
+\item Composite Design may result in lower development costs.
+\item Composite Design promotes module reuse in future programs.
+\end{enumerate}
+
+\subsection{Objectives of Program Maintenance}
+Whenever a change to the program is performed, the following objective should
+be kept:
+\begin{enumerate}
+\item Have a global view of the program and a long-range view of the
+  consequences of each change to lessen the chances of deteriorating the
+  program's structure.
+\item Modify the program in such a way that the resultant program has the
+  appearance of being originally designed and coded that way.
+\end{enumerate}
+
+\section{Further Reading}
+\begin{enumerate}
+\item G.J. Meyers, ``Software Reliability: Principles and Practices''.
+\item M.J. Spier, ``Software Malpractice--A Distasteful Experience'', 1976.
+\item M.A. Jackson, ``Principles of Program Design'', 1975.  
+\end{enumerate}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
