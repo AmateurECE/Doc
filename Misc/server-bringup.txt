@@ -9,7 +9,7 @@
 #
 # CREATED:	    06/25/2018
 #
-# LAST EDITED:	    06/26/2018
+# LAST EDITED:	    02/10/2019
 ###
 
 Disabling nfs-mountd at startup:
@@ -130,5 +130,59 @@ Mounting an NFS Share on OS X:
     changes made by the user in the NFS Share will occur as root. In Linux,
     we can get around this by adding our NFS share to /etc/fstab. In OSX, we
     need to setup Autofs. There will be another section on this.
+
+Checking the Bandwidth of a Device and Using watch:
+***************************************************
+
+    Sometimes, it's useful to monitor the bandwidth of a device in /dev. The
+    iostat command is useful for this, but it's only instantaneous. Using
+    watch, we can continuously monitor the bandwidth:
+
+	watch -n 0.1 iostat
+
+    This command opens a curses session with the output of iostat and updates
+    the window every 0.1 seconds.
+
+    watch can also be used for other things:
+
+	watch -n 0.1 who
+
+    This command can be used to continuously monitor the logged in users on the
+    system.
+
+Updating git submodules:
+************************
+
+	git submodule update --recursive --remote
+    OR
+	git pull --recurse-submodules
+    OR
+	git submodule foreach git pull origin master
+
+Setting up SSH keys between host and client:
+********************************************
+
+    To be able to SSH into your server without entering your password, set up
+    SSH keys on the host and client computers. To generate the keys on the
+    client:
+
+	ssh-keygen -t rsa -f ~/.ssh/rock64_rsa -P ''
+
+    Then, copy the public key to the server:
+
+	scp -P 5000 ~/.ssh/rock64_rsa.pub edtwardy@edtwardy.hopto.org:~/.ssh/
+
+    Finally, Add the key to the list of authorized keys and change the access
+    modes for .ssh data:
+
+	cat ~/.ssh/rock64_rsa.pub >> ~/.ssh/authorized_keys
+	chmod 600 ~/.ssh/authorized_keys
+	chmod 700 ~/.ssh
+
+    It may be the case that the access modes for the home directory also need
+    be changed:
+
+	ls -ld ~ # Verify access mode of home directory
+	chmod 700 ~
 
 ###############################################################################

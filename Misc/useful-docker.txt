@@ -1,0 +1,16 @@
+###############################################################################
+# NAME:		    useful-docker.txt
+#
+# AUTHOR:	    Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:	    This document holds some useful docker commands.
+#
+# CREATED:	    11/07/2018
+#
+# LAST EDITED:	    11/07/2018
+###
+
+# TODO:
+docker system prune
+
+##############################################################################
