@@ -34,11 +34,11 @@ def getTitle(mdFilename):
         except IndexError:
             return mdFilename
 
-def makeGuides(mdFiles):
+def makeDirectory(mdFiles):
     """
     Generate Guides.md from the list of .md files in mdFiles
     """
-    with open('./Guides.md', 'w') as guideFile:
+    with open('./Directory.md', 'w') as guideFile:
         guideFile.write('# The Repository Directory #\n')
         for f in mdFiles:
             if f != './Guides.md':
@@ -53,7 +53,7 @@ def makeGuides(mdFiles):
 def main():
     """main@UpdateGuides.py"""
     mdFiles = findMDFiles()
-    makeGuides(mdFiles)
+    makeDirectory(mdFiles)
 
 if __name__ == '__main__':
     main()
