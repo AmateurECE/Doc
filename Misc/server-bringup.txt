@@ -9,7 +9,7 @@
 #
 # CREATED:	    06/25/2018
 #
-# LAST EDITED:	    02/10/2019
+# LAST EDITED:	    02/27/2019
 ###
 
 Disabling nfs-mountd at startup:
@@ -184,5 +184,10 @@ Setting up SSH keys between host and client:
 
 	ls -ld ~ # Verify access mode of home directory
 	chmod 700 ~
+
+Setting up a new system:
+************************
+
+    # TODO: How to set up Git repositories on a new system (work/server)
 
 ###############################################################################

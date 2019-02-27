@@ -1,13 +1,3 @@
-<!--
- NAME:				git-intro.md
-
- DESCRIPTION:		An introduction to the Git versioning system.
-
- CREATED:			12/28/2017
-
- LAST EDITED:		12/28/2017
--->
-
 # What is Git? #
 
 Git is a versioning control system, which is a fancy expression that describes
