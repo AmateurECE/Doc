@@ -38,12 +38,12 @@ def makeDirectory(mdFiles):
     """
     Generate Guides.md from the list of .md files in mdFiles
     """
-    with open('./Directory.md', 'w') as guideFile:
-        guideFile.write('# The Repository Directory #\n')
+    with open('./Repository.md', 'w') as directoryFile:
+        directoryFile.write('# The Repository Directory #\n')
         for f in mdFiles:
             if f != './Guides.md':
                 title = getTitle(f)
-                guideFile.write('\n[' + title + '](' + f + ')\n')
+                directoryFile.write('\n[' + title + '](' + f + ')\n')
     
 
 ###############################################################################
