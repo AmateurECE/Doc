@@ -1,1 +1,5 @@
 .DS_Store
+.venv/
+Pipfile.lock
+hash-cache/
+http/

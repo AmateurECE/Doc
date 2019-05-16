@@ -1,0 +1,32 @@
+###############################################################################
+# NAME:             useful-ffmpeg.txt
+#
+# AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:      Some useful ffmpeg commands
+#
+# CREATED:          05/05/2019
+#
+# LAST EDITED:      05/05/2019
+###
+
+Transcode FLAC to mp3:
+**********************
+
+    This command transcodes the file input.flac to the output file output.mp3,
+    at a bit rate of 320k. Metadata in the original file is preserved as best
+    as possible.
+
+        ffmpeg -i input.flac -ab 320k -map_metadata 0 -id3v2_version 3 \
+               output.mp3
+
+Clip a portion of audio:
+************************
+
+    This command takes a six second portion of the file input.mp3 starting at
+    ten seconds and places it into the file output.mp3. All file attributes are
+    preserved.
+
+        ffmpeg -ss 10 -t 6 -i input.mp3 output.mp3
+
+##############################################################################

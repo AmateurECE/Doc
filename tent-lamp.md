@@ -21,13 +21,6 @@ Electronic Materials:
 * 14	5mm White LED
 * 1		25 Ohm 1/4W Resistor
 
-<!-- Tools -->
+Tools:
 * 2		8 x 3/4 Self Drilling Screws (For drilling pilot holes)
 * 1		6" Round Bast File
-
-<!-- Idea for the LED globe: Solder the LED leads to sanded paper clips, then
-join with solder and electrical tape. Finally, bend the LEDs into a hemisphere.
--->
-
-
-<!-- EOF -->

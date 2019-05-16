@@ -1,0 +1,19 @@
+#!/bin/sh
+###############################################################################
+# NAME:		    pre-commit
+#
+# AUTHOR:	    Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:	    This hook runs before commit
+#
+# CREATED:	    02/27/2019
+#
+# LAST EDITED:	    02/27/2019
+###
+
+TOP=../..
+
+python3 $TOP/UpdateDirectory.py
+git add $TOP/Repository.md
+
+##############################################################################
