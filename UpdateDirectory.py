@@ -8,7 +8,7 @@
 #
 # CREATED:          02/27/2019
 #
-# LAST EDITED:      02/27/2019
+# LAST EDITED:      03/16/2019
 ###
 
 import os
@@ -38,13 +38,12 @@ def makeDirectory(mdFiles):
     """
     Generate Guides.md from the list of .md files in mdFiles
     """
-    with open('./Repository.md', 'w') as directoryFile:
+    with open('./Repository-content.tex', 'w') as directoryFile:
         directoryFile.write('# The Repository Directory #\n')
         for f in mdFiles:
             if f != './Guides.md':
                 title = getTitle(f)
                 directoryFile.write('\n[' + title + '](' + f + ')\n')
-    
 
 ###############################################################################
 # MAIN
@@ -54,6 +53,8 @@ def main():
     """main@UpdateGuides.py"""
     mdFiles = findMDFiles()
     makeDirectory(mdFiles)
+
+    # TODO: Add page about git feature branch workflow
 
 if __name__ == '__main__':
     main()

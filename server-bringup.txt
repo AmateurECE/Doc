@@ -9,7 +9,7 @@
 #
 # CREATED:	    06/25/2018
 #
-# LAST EDITED:	    02/27/2019
+# LAST EDITED:	    05/11/2019
 ###
 
 Disabling nfs-mountd at startup:
@@ -150,14 +150,29 @@ Checking the Bandwidth of a Device and Using watch:
     This command can be used to continuously monitor the logged in users on the
     system.
 
-Updating git submodules:
-************************
+Git submodules:
+***************
+
+    Working with these is a real pain, but they make code reuse all the more
+    easy. To create a submodule, use the git submodle command:
+
+	git sumbodule add <url> [directory-to-clone-to]
+
+    Note that if this repository contains submodules, those submodules will not
+    be initialized and will contain an empty tree. To remedy this:
+
+	git submodule update --init --recursive
+
+    When you have made commits to the origin of one of your submodules, and you
+    want to incorporate the commits into the image of your submodule, do this:
 
 	git submodule update --recursive --remote
     OR
 	git pull --recurse-submodules
     OR
 	git submodule foreach git pull origin master
+
+    As far as I know, they will all work.	
 
 Setting up SSH keys between host and client:
 ********************************************
@@ -185,9 +200,253 @@ Setting up SSH keys between host and client:
 	ls -ld ~ # Verify access mode of home directory
 	chmod 700 ~
 
+How to rsync with paths that contain spaces:
+********************************************
+
+    Paths need to be escaped on both the local machine and the remote:
+
+	rsync -rvz --progress -e 'ssh -p 5000' './path with spaces' \
+	    'edtwardy@edtwardy.hopto.org:/path\ with\ spaces'
+
+Using hdiutil to attach a disk image:
+*************************************
+
+    hdiutil attach -nomount boot.img
+
 Setting up a new system:
 ************************
 
     # TODO: How to set up Git repositories on a new system (work/server)
+
+Setting up a bare repository:
+*****************************
+
+    Bare repositories are those that are pushed to or pulled from. They exist
+    on a server and are usually referred to by local repositories as `remotes'.
+    To create:
+
+	user@server:/srv/usr/repo$ git init --bare
+
+    Then add to a local using the `git remote' command:
+
+	git remote add origin ssh://user@server:1234/srv/usr/repo
+
+Git submodule "detached HEAD":
+******************************
+
+    Sometimes, git submodules will become in a state of "detached HEAD." This
+    is because the module is not tracking a remote branch. To fix, ensure that
+    the module is tracking the correct remote branch:
+
+	git branch -u origin/master master
+	git checkout master
+
+    Or, more generally,
+
+	git branch -u <remote>/<branch> <branch>
+	git checkout <branch>
+
+Change serial terminal settings:
+********************************
+
+    # TODO: Using stty to change terminal settings.
+
+Stopping getty:
+***************
+
+    In order to change the settings on a serial terminal (one running getty),
+    it may be necessary to stop running getty on that terminal. These days,
+    getty is set up as a systemd service, so in order to stop it:
+
+	systemctl stop serial-getty@ttyS2.service
+
+Git tagging:
+************
+
+    Git tags are useful to mark certain commits as important. To create a tag:
+
+	git tag -a v1.0.0 -m 'Stable version 1.0.0'
+
+    Creates a tag with the name 'v1.0.0' with the message 'Stable version
+    1.0.0'. By default, git does not push tags to remote servers. To do so,
+
+	git push origin v1.0.0
+
+    Where 'v1.0.0' is substituted with the tag name.
+
+Setting Console Baud Rate in DTB:
+*********************************
+
+    I encountered an issue where the serial startup console used by the linux
+    kernel came up at a baud rate that I couldn't match on the rest of my
+    devices. I needed to change the device tree somehow, so that the kernel
+    would bring this interface up at a baud rate that I could support, e.g.
+    115200. I assume that there are multiple ways to do this. For example, one
+    could also make the change in the device tree source, recompile all the
+    DTBs, regenerate the zImage, and then install the newly compiled kernel as
+    well. But that's complicated and time consuming. I decided to do this using
+    fdtget.
+
+    At the time of this writing, the device tree blob used by my device stored
+    the baud rate in a property called "stdout-path" of a node named "chosen".
+    See below:
+
+        / {
+            // Other things...
+            chosen {
+                bootargs = earlycon=uart8250,mmio32,0xff130000";
+                stdout-path = "serial2:1500000n8";
+            };
+            // More things...
+        };
+
+    The tools fdtget and fdtput allow the user to make changes to the currently
+    installed device tree blob. The hardest part is discovering which device
+    tree blob is used by your machine. I was able to do this by cat'ing the
+    file /proc/device-tree/compatible and then manually searching for those
+    strings in the device tree sources of kernel/arch/arm64/boot/dts/rockchip/.
+
+    Once I located the device tree blob, which was located under /boot/dtbs/,
+    with the same name as it had in the linux kernel source, it's simple to
+    change the baud rate. The first line views the current property, the second
+    line changes it to 'serial2:115200n8'. Note that the quotes are
+    significant.
+
+        fdtget $DT_FILE /chosen "stdout-path"
+        fdtput -t s $DT_FILE /chosen "stdout-path" 'serial2:115200n8'
+
+    It may be important to know that these tools do not allow a user to make
+    a change that takes up more bytes than its previous setting (e.g. I can't
+    change the value of "stdout-path" back to its previous value), so a change
+    like that would probably require recompilation.
+
+Using VNC:
+**********
+
+    Start the VNC server on the remote machine with:
+
+        vncserver
+
+    Note that when a user logs in, they will then be logged in as the user that
+    started the VNC server. To connect to a VNC server from Mac OS X, first
+    create an SSH tunnel that forwards port 5901 on the local machine to port
+    5901 on the remote machine:
+
+        ssh -L 5901:127.0.0.1:5901 -C -N -l <remote user> <remote ip> -p 5000
+
+    Where <remote user> is the username of the user on the remote machine, and
+    <remote ip> is the ip of the machine. The '-p 5000' is only necessary if
+    the SSH server is listening on port 5000 of the remote machine, as mine is
+    already configured to do.
+
+    Next, open the already-installed Screen Sharing app on OS X:
+
+        open -a Screen\ Sharing
+
+    When you are prompted to enter the machine to connect to, enter:
+
+        localhost:5901
+
+    If the VNC server was configured to require a password, you will then be
+    prompted to enter it, and finally you will be connected.
+
+Setting up a cronjob
+********************
+
+    To set up a cronjob, use the command:
+
+        crontab -e
+
+    This will allow the user to edit the cronjob table. Each user account has
+    its own cronjob table, so running this with `sudo` will allow the user to
+    edit the cronjob table for the root user.
+
+    The cronjob table has a specific format. Each line, or entry, in the table
+    has at least six arguments. The format is
+
+        * * * * * command to be executed
+        - - - - -
+        | | | | |
+        | | | | ----- Day of week (0 - 7) (Sunday=0 or 7)
+        | | | ------- Month (1 - 12)
+        | | --------- Day of month (1 - 31)
+        | ----------- Hour (0 - 23)
+        ------------- Minute (0 - 59)
+
+    The sixth argument is a path to an executable. Optionally, the command may
+    take arguments. There are also a number of operators that have special
+    meanings when appearing in one of the first five arguments:
+
+        The asterisk (*): This operator specifies all possible values for a
+            field. For example, an asterisk in the hour time field would be
+            equivalent to every hour or an asterisk in the month field would be
+            equivalent to every month.
+        The comma (,): This operator specifies a list of values, for example:
+            "1,5,10,15,20, 25".
+        The dash (-): This operator specifies a range of values, for example:
+            "5-15" days , which is equivalent to typing "5,6,7,8,9,….,13,14,15"
+            using the comma operator.
+        The separator (/): This operator specifies a step value, for example:
+            "0-23/" can be used in the hours field to specify command execution
+            every other hour. Steps are also permitted after an asterisk, so if
+            you want to say every two hours, just use */2.
+
+    To list the cronjobs:
+
+        crontab -l
+
+    These keywords can also be used instead of the first five arguments to a
+    table entry to increase verbosity
+
+        @reboot     Run once, at startup.
+        @yearly     Run once a year, “0 0 1 1 *”.
+        @annually   (same as @yearly)
+        @monthly    Run once a month, “0 0 1 * *”.
+        @weekly     Run once a week, “0 0 * * 0”.
+        @daily      Run once a day, “0 0 * * *”.
+        @midnight   (same as @daily)
+        @hourly     Run once an hour, “0 * * * *”.
+
+    e.g.:
+
+        @hourly /etc/MyBackupScript.sh
+
+Setting up Plex DLNA with LG Smart TV
+*************************************
+
+    This one took me a while to figure out, and I only discovered it because of
+    some downvoted comment on the umpteenth page of a forgotten thread on LG's
+    forum website. As long as the DLNA server is enabled in Plex
+    (Settings->DLNA), the server will be discoverable on the network. However,
+    Plex requires (by default) some kind of authorization (I'm not sure what
+    kind), which the LG TV does not support. So, to bypass this, we must tell
+    Plex that the TV is allowed to use DLNA without auth. Go to
+    Settings->Network, and add the IP Address of the Smart TV to the "List of
+    IP addresses and networks that are allowed without auth", then save the
+    changes. To view this content on the Smart TV, hit the Smart Home button on
+    the remote, then go to "My Apps" down on the bottom right. Select
+    SmartShare from the list. Finally, select the Plex Media Server from the
+    list of linked devices. All of the Plex libraries should then appear as
+    folders, with their content as files within them. Enjoy.
+
+How to determine which repository contains a debian package
+***********************************************************
+
+    First, find the page on packages.debian.org. For example, if I wanted to
+    find the repository that contains libopenjpeg-dev, simply googling
+    libopenjpeg-dev returns this page in the list of results:
+
+        https://packages.debian.org/jessie/libopenjpeg-dev
+
+    You would think that the repository containing this package would be listed
+    on this page, but it is not. Scroll down to the header "Download <package>"
+    and click on your architecture in the table. This leads to a page that
+    contains a list of mirrors that provide this package. Select a mirror based
+    on your location, and use the directions in the red box to add that mirror
+    to the /etc/apt/sources.list, e.g.:
+
+        deb [arch=armhf] http://ftp.us.debian.org/debian jessie main
+
+    Then, do the usual `apt-get update`.
 
 ###############################################################################

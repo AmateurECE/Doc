@@ -4,16 +4,20 @@
 #
 # AUTHOR:	    Ethan D. Twardy <edtwardy@mtu.edu>
 #
-# DESCRIPTION:	    This hook runs before commit
+# DESCRIPTION:	    This script is symlinked to ./.git/hooks/pre-commit and
+#		    runs before every commit.
 #
 # CREATED:	    02/27/2019
 #
-# LAST EDITED:	    02/27/2019
+# LAST EDITED:	    02/28/2019
 ###
 
-TOP=../..
+set -e # Exit immediately if any error returns nonzero
 
+TOP=../..
 python3 $TOP/UpdateDirectory.py
-git add $TOP/Repository.md
+pdflatex $TOP/Repository.tex
+mv $TOP/Repository.pdf pdf/
+git add $TOP/pdf/Repository.pdf
 
 ##############################################################################

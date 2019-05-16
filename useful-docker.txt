@@ -7,10 +7,17 @@
 #
 # CREATED:	    11/07/2018
 #
-# LAST EDITED:	    11/07/2018
+# LAST EDITED:	    03/24/2019
 ###
 
 # TODO:
 docker system prune
+
+Get IP of docker container:
+***************************
+
+    docker inspect \
+    	   -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
+	   <ContainerName>
 
 ##############################################################################

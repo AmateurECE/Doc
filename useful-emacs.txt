@@ -8,7 +8,7 @@
 #
 # CREATED:	    09/14/2017
 #
-# LAST EDITED:	    02/04/2019
+# LAST EDITED:	    04/09/2019
 ###
 
 Sharing the Screen With Another Buffer
@@ -114,6 +114,13 @@ Macros and Repetition
     * C-x z Will start Repetition. The last keystroke/command that was executed
     before starting repetition will be repeated. Continuously pressing `z' will
     repeat the command. C-g will quit Repetition.
+
+LaTeX Mode:
+***********
+
+    * C-c C-o Insert `\begin' and `\end' tags and position point on a line
+    between them.
+    * C-c C-e Close the innermost LaTeX block not yet closed.
 
 # TODO: What does C-[ C-i do?
 

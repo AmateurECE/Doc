@@ -7,12 +7,63 @@
 %
 % CREATED:          05/01/2019
 %
-% LAST EDITED:      05/01/2019
+% LAST EDITED:      05/14/2019
 %%%
 
 \documentclass[format.tex]{subfiles}
 
 \begin{document}
+\section*{``Short'' Projects}
+\subsection*{Resume in \LaTeX}
+This is simple enough. Rewrite the resume in \LaTeX.
+
+\subsection*{SSH Keys}
+I used to have SSH keys set up to allow me to easily startup an SSH session on
+my Linux server at home. It should be easy enough to set that up again.
+
+\subsection*{Fontify Minted Blocks in \LaTeX}
+Set up an Emacs \LaTeX \texttt{polymode} to fontify blocks of text in
+\texttt{minted} blocks in \LaTeX source files. Should support basic languages
+like Bash, C/C++, Python, and R.
+
+\subsection*{Update Repository}
+The Repository is a cache of information that may be useful to me in the
+future. Currently, the Repository is in a transitionary period. Ideally, it is
+published using GitHub static web pages, and is simply a linked collection of
+PDF and plain text files. Also, all the PDFs will be generated from \LaTeX
+sources that all use a common class file.
+
+\subsection*{Backup The Passport}
+This needs to be done regularly. It's time to do it again.
+
+\subsection*{New House Server Setup Checklist}
+This is a document that goes in the Repository. It's purpose is to provide a
+step-by-step guide to setting up the server in a new house.
+
+\subsection*{Podscraper}
+A simple web-scraping script in Python to pull down some of my favorite
+podcasts.
+
+\subsection*{LaunchServices}
+This is a simple Swift application to change which applications are used to
+open certain files. I want to use this to make \texttt{/usr/bin/open} open
+PDF files using Chrome instead of Preview.
+
+\subsection*{SecurityTransforms}
+The idea is to create a robust and cross-platform encryption tool that will be
+long-living. This project was motivated because Apple recently deprecated
+OpenSSL in favor of its own encryption libraries. Unfortunately, these
+libraries are not portable to Linux, and currently I have a solution worked out
+using OpenSSL in a Docker container, but that won't last forever.
+
+\subsection*{VNC On the Server}
+Set up a VNC Server on the Rock64, so that I can run hefty software across the
+WAN, such as Ghidra, or the Lattice Diamond Programmer.
+
+\subsection*{Rewrite sortmusic}
+This program is a mess, in may senses of the word. Rewrite it to be more
+maintainable, user-friendly, etc.
+
 \subsection*{Minicom Patch}
 While working on
 \href{https://github.com/AmateurECE/SerialBridge}{SerialBridge}, I noticed that
@@ -20,13 +71,33 @@ minicom doesn't actually check to ensure that the baud rate was set correctly.
 I stumbled upon this while trying to set the baud rate of the serial port to
 1.5Mbaud. Minicom reported that the interface supposedly \textit{was} operating
 at 1.5Mbaud, however I was able to empirically confirm that it was in fact
-\textit{not}. By digging through the source, I determined that the check should
-go at the call to \mintinline{C}{ioctl} at
-\href{https://github.com/Distrotech/minicom/blob/54202fe0ea8510dc8fcd23ab49d39d
-  3d8cb2e529/src/sysdep1.c#L519}{line 519}:
+\textit{not}. This turned out to be because the driver did not support
+1.5Mbaud. By digging through the source, I determined that the check should go
+at the call to \mintinline{C}{ioctl} at
+\href{https://github.com/Distrotech/minicom/blob/54202fe0ea8510dc8fcd23ab49d39%
+  d3d8cb2e529/src/sysdep1.c#L519}{line 519}:
 \begin{minted}{C}
   ioctl(fd, TIOCSETP, &tty);
 \end{minted}
+
+\subsection*{Update Current Projects}
+Have you checked the output of
+\href{https://github.com/AmateurECE/Sysgit}{Sysgit} lately? Run the script to
+locate repositories on the system that need updating.
+
+\subsection*{Check forcefsck}
+% TODO: Check forcefsck
+
+\subsection*{Fix dma-names in dtb}
+% TODO: Fix dma-names in dtb
+
+% TODO: ServerSearcher
+% - A launchctl service that sends a packet to the broadcast IP whenever a new
+% - network is joined. The server would have a daemon listening on a particular
+% - port for this particular message. The server would then respond to the
+% - source IP with its own IP address. The launchctl service would then e.g.
+% - put this IP address into a file in /var/ or something.
+
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

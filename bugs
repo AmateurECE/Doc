@@ -1,84 +1,87 @@
-Misc/what-makes-a-kernel.txt: Monolithic drivers | id:02b276ad9323dbc900ec8df80052de352086034f
-Cheat-Sheets/data.tex: Add the method for including an image | id:03ac363f597e68f98a0fabeb622ec3897475336c
-Misc/what-makes-a-kernel.txt: More work on Traps. | id:04ea3391c26960fbdea1052b317a867f196cd4c1
-Misc/useful-tools.txt: ping | id:09e1980e8971671e4f3597a0de2646f35b0d502b
-Misc/what-makes-a-kernel.txt: FAILING AND LOGGING | id:0d316d30643d956eab7f825c090b98ba0472a903
-Misc/what-makes-a-kernel.txt: More work on Interrupts. | id:0e65ba6fd5a5e2cbe86690aea9bf1644d622fb97
-Misc/what-makes-a-kernel.txt: VIRTUALIZATION | id:1300e4c86b554e53ecd9fbab4713e4af8b13a91e
-Misc/useful-tools.txt: fdisk | id:14f5cd7c9f6d20f3dbec58f64f6493b48ef9427d
-Cheat-Sheets/algorithms.tex: Add the method for including a pdf | id:1517b7e812d719a0e65b451a5bfa3a1774778b3a
-Cheat-Sheets/modulation.tex: Add the method for including a pdf | id:15456b09a4f24ab0e0a000cea240e3bb6c48700f
-Misc/useful-tools.txt: ifconfig | id:157f2a2757cbb88cd135537777b4b83c1ab06d0b
-Misc/useful-tools.txt: netstat | id:19d94d854f2be4e4cc0c61aafbbc1af1ccda4cb8
-Programming/asm-style.txt: Update style guidelines here. | id:1d5e4d2a6bb0f3ddec50cf17bd55b8c56c70b391
-Cheat-Sheets/modulation.tex: Add the method for including an image | id:28fed38a7a802e495fcb822399d54c63e6441b6b
-Misc/what-makes-a-kernel.txt: Microkernel drivers | id:2f55802c57489efdb7ba9455bed2805e01f22c87
-Misc/what-makes-a-kernel.txt: Hybrid drivers | id:31015ea3e77414759cafca5889658c46338f78eb
-Cheat-Sheets/algorithms.tex: Add the method for including an image | id:345402ff43286b7a13616fda9d029c595c9e2cf0
-Misc/useful-tools.txt: route | id:3f154d237f1ebc6f2bdeac59f6f541faae97cd80
-Misc/what-makes-a-kernel.txt: Shared Memory | id:3f186aeadd451589498d3b6cc3cb655ec1c1b832
-Cheat-Sheets/diodes.tex: Add the method for including a pdf | id:3f686601b34a61ff39658f2d80da33cba1183e6b
-Cheat-Sheets/signal.tex: Add the method for including an image | id:4749bfe892fce9e923608bafb2d700cc762706cb
-Misc/what-makes-a-kernel.txt: Barrier | id:49d1c7401f258a960050483de83b852e123b5336
-Misc/useful-tools.txt: route for OS X. It's different. | id:4d575ecd67b2457696e9150b795f68a23c03bf56
-Cheat-Sheets/signal.tex: Add the method for including a pdf | id:50ad5f066be623e3c3f786c21e383dc6c613b437
-Misc/useful-tools.txt: fstab | id:520708f551611819ff58cc14c1061735547044ca
-Misc/useful-sysadmin.txt: Change the port number on the server | id:522a0b855c6b19dc5ace52c16e7037e1e5379f28
-Programming/asm-style.txt: DEVELOPMENT PROCESS | id:56bf9b8bc6eb02509dfcbf5011582b3e1e2f070e
-Misc/what-makes-a-kernel.txt: Elaborate on all of these | id:57fe5dce24d6162b6238e51422de38690e5c79df
-Misc/what-makes-a-kernel.txt: Memory Protection (Without an MMU) | id:58485b7bb13721332ed0b795304b7ab8e04ef155
-Misc/what-makes-a-kernel.txt: Initial RAM-Disk (initrd) | id:5a4bef0a71e103ad1248241cfaecfa704896eaae
-Misc/what-makes-a-kernel.txt: Semaphores | id:5abc1a4575dd304ff3f8a7653bf2bc711a0c40b0
-Cheat-Sheets/diffeq.tex: Add the method for including a pdf | id:5af5263c2613417c5824b18c3ce6e5460c53d3f3
-Misc/what-makes-a-kernel.txt: Mutex (Mutual Exclusion) | id:5cc67eeae3cc6bcea3a6d1c6805c6bf275e0fca1
-Misc/what-makes-a-kernel.txt: More work on spinlocks | id:5cfb6a90419d6cc847ebcd4c064526239a37cdb5
-Cheat-Sheets/fets.tex: Add the method for including a pdf | id:5f061377bd4fb505efdee85b473aeb73c7ffffe6
-Misc/what-makes-a-kernel.txt: More work on Kernel Command Line | id:5f7dccaa6f3cc858523519093e866625043c0e2b
-Misc/what-makes-a-kernel.txt: Linux Driver Numbering | id:61468e08293236c67722651b4affd1c1717845f2
-Misc/useful-sysadmin.txt: Set up /etc/hosts.allow | id:61e1a79fa3f3b71f7d27278001cdfdcdaffedb59
-Misc/what-makes-a-kernel.txt: File | id:648888284cef085b9532768c310e01bab1dd80c3
-Cheat-Sheets/isa.tex: Add the method for including an image | id:659885cf3bf49237554bf3285b7ae98f4810fef1
-Cheat-Sheets/power.tex: Add the method for including a pdf | id:6caf8ea5a7041a6fd2e41698101719d8bdc73507
-Misc/useful-tools.txt: ip, explain difference between ifconfig | id:705b8d2676915462d153b154cfa207bf95e69892
-Misc/what-makes-a-kernel.txt: Message Queue | id:734df841540402d3656c90826936a7bb3273f180
-Misc/what-makes-a-kernel.txt: System Calls (syscalls) | id:761acc111f6aa3c37cef87c65972dcb80808b9e1
-Misc/what-makes-a-kernel.txt: Scheduling in Linux Kernel Versions 2.6+ | id:77b9c5c4768af617f2f42b11d09334c48af685bb
-Cheat-Sheets/amplifier.tex: Add the method for including a pdf | id:7b5739bd826c40c6eaa7e0f9676b58886f4b14b3
-Cheat-Sheets/filters.tex: Add the method for including a pdf | id:7d35579886b61369af7fc283c64242ce39e7ba05
-Cheat-Sheets/data.tex: Add the method for including a pdf | id:7fbebefb95c91bcf2025a52c95184b49319fc245
-Cheat-Sheets/op-amps.tex: Add the method for including a pdf | id:8546405d5c12794f6e7736678a34698371522c41
-Misc/learning.tex: Update this to include recent topics and topics from Calculus. | id:85a4f66a43b2c2ce882b649c72d0a3750f1f2b46
-Misc/learning.tex: Finish listing all the things to cover here.\ | id:85b914799d2a300b34e26ecec35c42264fd3b61d
-Cheat-Sheets/amplifier.tex: Add the method for including an image | id:89eca576bd8231b779c8dae92d0e19415e5c065a
-Cheat-Sheets/power.tex: Add the method for including an image | id:8fc180c89cd2cb156cf33b07a6134ed827df9ca2
-Cheat-Sheets/calculus.tex: Add the method for including an image | id:94b39792a9fe89bcb8910a6925ad8a14375f8f70
-Misc/useful-tools.txt: useful-tools.txt | id:9aced15668d81030de527cb63da1cc9683f1f2a7
-Cheat-Sheets/parsing.tex: Add the method for including an image | id:9b2677c20982adca626c5282dfb50b97ee62d4bd
-Misc/what-makes-a-kernel.txt: Manual pages (manpages) | id:a6f4da7786859eaded1d0d2da6afa90d465bc511
-Misc/useful-tools.txt: diskutil | id:a8a84528cc9b3a886cbdf523665e7091c24a67f1
-Cheat-Sheets/op-amps.tex: Add the method for including an image | id:aaf2cbcf923f4d63c92e5fa773961727cbad854a
-Cheat-Sheets/isa.tex: Add the method for including a pdf | id:af2acb3447e1ade6ec1f81c986ba86a8c97db8c3
-Cheat-Sheets/circuits.tex: Add stuff about transmission line modeling | id:b15e67e9f8ddce1281a22044b9bda2859da9194b
-Misc/what-makes-a-kernel.txt: Exokernel drivers | id:b94b290180235b4b8049d4073a06194b4ef7219c
-Misc/what-makes-a-kernel.txt: Sockets & Unix Domain Sockets | id:bc3c6e13193f7473dae29c2f7017f95f0b52282c
-Cheat-Sheets/diodes.tex: Add the method for including an image | id:bc4c4078eda4edad782b90742907926b49b078d9
-Cheat-Sheets/power.tex: Cover power oscillators (document in Downloads) | id:c334413b3dde7dc18a57c02874b40450608c3399
-Misc/what-makes-a-kernel.txt: Pipes & Named Pipes | id:c417eec0ccfbf56237f5f577b746577979aac2b6
-Misc/what-makes-a-kernel.txt: Message Passing | id:c6c4f2569b8ebe19bffcbbb9067ec500101a2dfb
-Misc/what-makes-a-kernel.txt: Introduction | id:caf09117b8ffc50e94717006a64b3485105ed77d
-Misc/what-makes-a-kernel.txt: Memory Protection (With a HW MMU) | id:cb2ccc83c459555ab353f8329e8ccfe56a01a4aa
-Misc/what-makes-a-kernel.txt: Drivers via the EFI | id:ccf5e0ae3c606cb75cf72c2d58367393a9556ea8
-Misc/what-makes-a-kernel.txt: Unix Permissions | id:d40bab2bb863f885e2a97fd701db48c8c97d0e25
-Misc/what-makes-a-kernel.txt: Memory-Mapped File | id:d59379e8057369197e701810aa3daca57d779442
-Misc/what-makes-a-kernel.txt: Signal | id:dd9e35aa05f5cc93eb9f67db886ec18e7c00d3d4
-Cheat-Sheets/fets.tex: Add the method for including an image | id:def29489a51803dbf24180d6c13228a36a7206ef
-Cheat-Sheets/circuits.tex: Add the method for including an image | id:dfb6aa7e0908fbe21c58871e1333cf24bbd02333
-Cheat-Sheets/diffeq.tex: Add the method for including an image | id:ed5d052a8eb3aa5f74c8859dc06ab3440353b569
-Cheat-Sheets/filters.tex: Add the method for including an image | id:ef0a07f9b073a7030e8d8944829439de6dc83163
-Misc/what-makes-a-kernel.txt: Graphical User Interfaces | id:ef50387754973f39cf51398a62d6bc100a9327e1
-Misc/useful-sysadmin.txt: Set up ssh certificates for the computers. | id:f0eaef043dd55186a28552362b98dfedbb1bd09a
-Cheat-Sheets/calculus.tex: Add the method for including a pdf | id:f326bb0df9b9ddd579de72c6fc5f534f72c6712f
-Cheat-Sheets/circuits.tex: Add the method for including a pdf | id:f563ff86b066dd53c6e7fedf199305d09374ea64
-Misc/useful-tools.txt: hdiutil, explain difference between hdid and hdik | id:fc0688ec4311644982e8f30ed67416eebd41464e
-Cheat-Sheets/power.tex: Cover Delon circuit | id:fda8ecf62042e48fc62622f7691bca4c9ce0cdea
-Cheat-Sheets/parsing.tex: Add the method for including a pdf | id:fe846e7d47e11980eeb2e7e6277e8a0042580670
+./what-makes-a-kernel.txt: Signal | id:00adfdaac207e3c2af6d9ec671b2968c4ed3c7c1
+./Cheat-Sheets/isa.tex: Add the method for including an image | id:0bf0cf7568d0245ad06aa21667582ee49a84e087
+./what-makes-a-kernel.txt: Introduction | id:0ff83e066bd2b96234c3102cf4a8338d1165a019
+./Cheat-Sheets/power.tex: Add the method for including an image | id:1084a4a78636871d0be27df0860abe5f1b974b5e
+./Cheat-Sheets/circuits.tex: Add stuff about transmission line modeling | id:10f9a5cf439e01d316cf67abd71fb5cd79e97428
+./Cheat-Sheets/power.tex: Cover power oscillators (document in Downloads) | id:11da32c02692a217a8c70d9b09b42c80820143d2
+./useful-tools.txt: fstab | id:13f94d26dbf538b22b57e847c04aca23c35fd781
+./useful-sysadmin.txt: Change the port number on the server | id:159dfdbc4a48f851358da56570ab2c6645c5d90c
+./useful-tools.txt: fdisk | id:1f526aeb52bf76666441fc3e463e066ce4872d11
+./what-makes-a-kernel.txt: Sockets & Unix Domain Sockets | id:25b5ff62a67f71013a723337aa62363616e343c8
+./Cheat-Sheets/algorithms.tex: Add the method for including a pdf | id:2678f8031c7390598bb1cd0ef006739ea70be44e
+./Cheat-Sheets/circuits.tex: Add the method for including an image | id:26fb9a284af72bbb70c75af3efb1ec851b5cebdd
+./Cheat-Sheets/filters.tex: Add the method for including a pdf | id:27a5cea36db1757e77adf2ff2252fa1522db9e47
+./what-makes-a-kernel.txt: Semaphores | id:3a1a702ecd3ea8afd1bc1b8162e1097d825ed263
+./Cheat-Sheets/calculus.tex: Add the method for including a pdf | id:3b31801f0e3b5d5eb381e18bfc62e888d2ebd51b
+./what-makes-a-kernel.txt: FAILING AND LOGGING | id:47c69c24e920f193db393e3378d0a23299f9d97a
+./what-makes-a-kernel.txt: VIRTUALIZATION | id:4cafa27b820acc2d2b676004110c88b9ae979caf
+./Cheat-Sheets/signal.tex: Add the method for including a pdf | id:4f0872ba74a35a446b1a4ada042c20b09f5e52f5
+./what-makes-a-kernel.txt: Manual pages (manpages) | id:517e00397dafd090c6f1f22108daa50598e5e899
+./what-makes-a-kernel.txt: Scheduling in Linux Kernel Versions 2.6+ | id:55d51efbd28d353b2c9b4d6f6bc6d12d1ab8ad24
+./what-makes-a-kernel.txt: Monolithic drivers | id:55fd49f3cef5fb783c0866ef2ab4716f2747361c
+./Cheat-Sheets/signal.tex: Add the method for including an image | id:5603fb7429eed17f3777d267760b463c4c696b93
+./useful-tools.txt: diskutil | id:58942f51f0ff3f9e6961186d44849ec8918516d5
+./Cheat-Sheets/circuits.tex: Add the method for including a pdf | id:58ce7a0bf0567096987a956e766aa429a19b3695
+./what-makes-a-kernel.txt: Elaborate on all of these | id:58e8bb964d2803d10113e6335b94957f54db14fc
+./Cheat-Sheets/calculus.tex: Add the method for including an image | id:5a85313d9d1843a3ae6579c1b2cfccecf6e3b3a2
+./Cheat-Sheets/data.tex: Add the method for including a pdf | id:5b0a9c8c767c3b11da432ad4a419ce296fec4bb6
+./Cheat-Sheets/diodes.tex: Add the method for including a pdf | id:5cfdd619e18b8f4d7876b9e233a3aab90115035b
+./Cheat-Sheets/parsing.tex: Add the method for including an image | id:66cfb4ecac01cdfdf36a85d826373a4fa463ace2
+./Cheat-Sheets/filters.tex: Add the method for including an image | id:683794daf5c0cdabba2670988ec3aa95fa1aa268
+./what-makes-a-kernel.txt: More work on Traps. | id:69fa1417282abe1cb16de0d920d65655fb4b26b9
+./Cheat-Sheets/isa.tex: Add the method for including a pdf | id:6d5e611e524b0173ab1b68ed6da10b3c63db0c9b
+./Cheat-Sheets/modulation.tex: Add the method for including a pdf | id:71d3a1dc0d8b3e946d37fb8df4ecc10bd2bb8f33
+./useful-sysadmin.txt: Set up ssh certificates for the computers. | id:72d8a2dc3af86e7339ba9d28983aa2037afcb15e
+./Cheat-Sheets/op-amps.tex: Add the method for including a pdf | id:750287e31bfb62ee589fbf45dfda41b5c38b0259
+./useful-docker.txt:  | id:7a001de67abb97afaf4da8e2bf3b239a8df53bcd
+./Cheat-Sheets/parsing.tex: Add the method for including a pdf | id:7b770419f99d7b262c615b6a6fdd8acf1ab9c38c
+./Cheat-Sheets/diodes.tex: Add the method for including an image | id:7ca7598a4f6d486556cb4431ca6de9007e4f8869
+./what-makes-a-kernel.txt: Memory Protection (Without an MMU) | id:7ec61ce45b1a0fc82b709a07f45fa8455d78a49c
+./Cheat-Sheets/amplifier.tex: Add the method for including an image | id:7f60f2fb531ac210c7951c20311b0ebdb5ad08ac
+./Cheat-Sheets/power.tex: Add the method for including a pdf | id:811538079c4a3d4e0012b6195ea390bb58a8af1b
+./Cheat-Sheets/fets.tex: Add the method for including an image | id:82c69e4d7f225a019bc1589635bc604eaa50130e
+./what-makes-a-kernel.txt: Message Queue | id:8677a16782a5e7c868f86b357591c1446474eaa8
+./what-makes-a-kernel.txt: Drivers via the EFI | id:87225adb576bb60991cf44a9ca7a95ac4ef405b5
+./what-makes-a-kernel.txt: Exokernel drivers | id:87d1c5f22e6ed384444d4386fe61575dbceee823
+./Cheat-Sheets/algorithms.tex: Add the method for including an image | id:88366f75ecd0d062b673c19eb3a01e39de7841ea
+./what-makes-a-kernel.txt: Message Passing | id:88f0b148118173f72ad76e57684d144e01e6509d
+./Cheat-Sheets/data.tex: Add the method for including an image | id:8a85528ba8122d6ec2fefd0ab2621e059f0ca93c
+./what-makes-a-kernel.txt: System Calls (syscalls) | id:8b792f89eb6bec4263ea882f455932b069b1271a
+./Cheat-Sheets/power.tex: Cover Delon circuit | id:8d9cd4d1a5e4d56afe3d62c6b1f2d674c4228bd0
+./useful-tools.txt: netstat | id:94b6025f3edb21eda41f705cb07961df413cd90d
+./what-makes-a-kernel.txt: File | id:98e6c9ad954294e88e97be3ea6943bfc655cb228
+./useful-tools.txt: ip, explain difference between ifconfig | id:9a7e47237d54a91bc81c640fd09660327baebc24
+./Cheat-Sheets/op-amps.tex: Add the method for including an image | id:9cf56f81159b04ccc32d19b912d17880ec0c5ee5
+./useful-tools.txt: ifconfig | id:9dd48855111ac2836ed250872f18498cded45ad0
+./what-makes-a-kernel.txt: Initial RAM-Disk (initrd) | id:a9f9117a437528521913fd8318712c3985cbac16
+./what-makes-a-kernel.txt: Pipes & Named Pipes | id:acbdb6e102a90fd94f33ca5f21c5fade844bf3a1
+./Cheat-Sheets/diffeq.tex: Add the method for including a pdf | id:b00ed4258ac422621069a25a6f9112ed4ee37c7b
+./server-bringup.txt: How to set up Git repositories on a new system (work/server) | id:b54f497c00936da8399d59bc81e7ebd38af551b8
+./Cheat-Sheets/fets.tex: Add the method for including a pdf | id:b71effdd5c5ae93cf09bcc6fc1dd18ba0bcffc74
+./UpdateDirectory.py: Add page about git feature branch workflow | id:c2dc1e07d580f2f9020cbd0670e020d0894e5d20
+./useful-sysadmin.txt: Set up /etc/hosts.allow | id:c41c954273992482ac356b8f5d03353b4f59943f
+./what-makes-a-kernel.txt: Linux Driver Numbering | id:c49d5eeb939227397db1ed515a7e61692ab375e1
+./Programming/asm-style.txt: DEVELOPMENT PROCESS | id:cc6fe3ee94fff72dd3e775f8d1ae9cd7e7075a43
+./what-makes-a-kernel.txt: Memory-Mapped File | id:d0cd979455cad32cd7041c81e145e54cfee2d24e
+./Cheat-Sheets/modulation.tex: Add the method for including an image | id:d29bbf2611670ab5daba584b996cb946927e860c
+./what-makes-a-kernel.txt: Unix Permissions | id:d3257ea8156fbdf6e0a65c6506914033f339cbbc
+./useful-tools.txt: hdiutil, explain difference between hdid and hdik | id:d366c770a48b1cace03877fd3adcd8c858935d7d
+./what-makes-a-kernel.txt: More work on Interrupts. | id:d41f2a8bbcb2a7908dbbe573294eef8edeb5e47b
+./what-makes-a-kernel.txt: Memory Protection (With a HW MMU) | id:da3bc1625343ef8a3d1b12651a962472cae535d6
+./what-makes-a-kernel.txt: Mutex (Mutual Exclusion) | id:dc05009f7c4f03b1047476f2d1dc2423a5377292
+./Cheat-Sheets/diffeq.tex: Add the method for including an image | id:dcd3c5bc77d6ad597378aceab8080a8df0f65d24
+./useful-tools.txt: ping | id:e1f46fd93e5d5dee239982f7317940195bdf64b3
+./what-makes-a-kernel.txt: Barrier | id:e38c943aaaffd1bd877e5b163f0d561e6efb9cfc
+./Programming/asm-style.txt: Update style guidelines here. | id:e3cad1135c4ded98a6aa24a6e2efcc435da95fe2
+./what-makes-a-kernel.txt: Graphical User Interfaces | id:e7d512e66f65929190d0516f8c1b430c5b27c164
+./Cheat-Sheets/amplifier.tex: Add the method for including a pdf | id:e862593e3cb2a3f8ec70906a3332d265a04da78a
+./what-makes-a-kernel.txt: Shared Memory | id:ec3c7f6f099ae8fa79f303028548eefe1916f6d3
+./what-makes-a-kernel.txt: Hybrid drivers | id:ee58536377ad13d2163b8d978245db6df7294e11
+./useful-tools.txt: route for OS X. It's different. | id:f01a4828a2af4f78b85a6f049aa755cf1e4333ea
+./what-makes-a-kernel.txt: Microkernel drivers | id:f117377453c79a47ecb914ab14dd66a427c6362e
+./useful-tools.txt: route | id:f21d43ecfed999409c9c0a30c46da544a0dc0a15
+./what-makes-a-kernel.txt: More work on spinlocks | id:f4c46de2d2d4ddbbe899e90c1d304eeab00fecc5
+./useful-tools.txt: useful-tools.txt | id:f76f422e5b008670a301e456f1245f0b4b29ca57
+./learning.tex: Update this to include recent topics and topics from Calculus. | id:fa4b382e40078e2b6bdf130cdf454c80dd68ad0a
+./useful-emacs.txt: What does C-[ C-i do? | id:fb6c5d5fbbd7dfe95562d412351d02e963447f2a
+./what-makes-a-kernel.txt: More work on Kernel Command Line | id:fd6fb6e7cfb61a4dd073efc27e7ad4d892660681
