@@ -7,7 +7,7 @@
 #
 # CREATED:          05/05/2019
 #
-# LAST EDITED:      05/05/2019
+# LAST EDITED:      05/24/2019
 ###
 
 Transcode FLAC to mp3:
@@ -29,4 +29,56 @@ Clip a portion of audio:
 
         ffmpeg -ss 10 -t 6 -i input.mp3 output.mp3
 
-##############################################################################
+Convert DVD Rip to mkv:
+***********************
+
+    When you rip a DVD, you often end up with two directories:
+
+        AUDIO_TS/
+        VIDEO_TS/
+
+    In my experience, AUDIO_TS/ is almost always empty. The other directory
+    contains a number of .VOB files, each of which contains a part of the
+    movie. It is possible to convert these object files into a single, unified
+    Matroska video file; it just takes a few steps.
+
+    The first step is to combine all of the .VOB files into a single .vob file:
+
+        cat *.vob > movie.vob
+
+    This may take a while, because movie.vob will likely be a large file. The
+    next step is to identify the streams that movie.vob contains:
+
+        ffmpeg -i movie.vob
+
+    You may encounter a warning like this during the previous invocation:
+
+        [mpeg @ 0x7fe360000000] Could not find codec parameters for stream 3
+        (Audio: ac3, 0 channels): unspecified sample format
+        Consider increasing the value for the 'analyzeduration' and 'probesize'
+        options
+
+    Naturally, the best thing is to do what it says:
+
+        ffmpeg -analyzeduration 500M -probesize 500M -i movie.vob
+
+    The output from this command will be something like the following:
+
+        Input #0, mpeg, from 'movie.vob':
+        Duration: 02:00:05.18, start: 0.041500, bitrate: 5059 kb/s
+            Stream #0:0[0x1bf]: Data: dvd_nav_packet
+            Stream #0:1[0x1e0]: Video: mpeg2video (Main), yuv420p(tv, top
+            first), 720x480 [SAR 8:9 DAR 4:3], Closed Captions, 29.97 fps,
+            29.97 tbr, 90k tbn, 59.94 tbc
+            Stream #0:2[0x80]: Audio: ac3, 48000 Hz, 5.1(side), fltp, 384 kb/s
+            Stream #0:3[0x20]: Subtitle: dvd_subtitle
+            Stream #0:4[0x82]: Audio: ac3, 48000 Hz, 5.0(side), fltp, 384 kb/s
+            Stream #0:5[0x81]: Audio: ac3, 48000 Hz, stereo, fltp, 192 kb/s
+
+    It's from this information that we decide on our final invocation. We can
+    see that the stream 0:0 is labelled 'dvd_nav_packet'. Well, since this
+    isn't a DVD anymore, we can throw it away.
+
+ffmpeg -i movie.vob -map 0:1 -map 0:2 -codec:v libx264 -crf 21 -codec:a libmp3lame -qscale:a 2 movie.mkv
+
+###############################################################################

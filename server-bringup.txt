@@ -9,7 +9,7 @@
 #
 # CREATED:	    06/25/2018
 #
-# LAST EDITED:	    05/11/2019
+# LAST EDITED:	    06/15/2019
 ###
 
 Disabling nfs-mountd at startup:
@@ -448,5 +448,19 @@ How to determine which repository contains a debian package
         deb [arch=armhf] http://ftp.us.debian.org/debian jessie main
 
     Then, do the usual `apt-get update`.
+
+How to continuously monitor a process without `watch`
+*****************************************************
+
+    Watch is a great program. However, recently I encountered an issue where I
+    was working on a system that did not have it, and I needed to continuously
+    monitor the output of `ps` to look for processes. This is the solution I
+    came up with, which worked pretty well:
+
+        mkfifo tempPipe             # Command output goes to this FIFO
+        while [ 1 ]; do \
+            ps aux | grep 'python' > tempPipe; \
+        done &                      # Run in the background
+        tail -f tempPipe            # Read continuously from the FIFO.
 
 ###############################################################################

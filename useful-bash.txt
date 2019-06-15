@@ -1,0 +1,26 @@
+###############################################################################
+# NAME:             useful-bash.txt
+#
+# AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:      This is a document containing a number of "Bash Gotcha's"--
+#                   things that aren't obvious about scripting in Bash, but
+#                   very important nonetheless.
+#
+# CREATED:          05/31/2019
+#
+# LAST EDITED:      05/31/2019
+###
+
+# TODO: Modularity in Bash.
+# TODO: Variable substitution
+# TODO: Equality operators
+# TODO: Quote madness
+# TODO: Scope of variables
+# TODO: Hierarchy of objects (aliases vs. /bin commands vs. functions)
+# TODO: Source vs subshell
+# TODO: eval and xargs
+# TODO: sed, awk, and grep (a quick intro)
+# TODO: expr
+
+###############################################################################
