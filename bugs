@@ -55,7 +55,6 @@
 ./what-makes-a-kernel.txt: Message Passing | id:88f0b148118173f72ad76e57684d144e01e6509d
 ./useful-bash.txt: Hierarchy of objects (aliases vs. /bin commands vs. functions) | id:8a154300bc079eae8c97eea581dd068ded722b12
 ./Cheat-Sheets/data.tex: Add the method for including an image | id:8a85528ba8122d6ec2fefd0ab2621e059f0ca93c
-./format.tex: Remove format.tex in favor of specific class.cls files. | id:8add2e1400c3c6190b467a371511d133d97fb6d3
 ./what-makes-a-kernel.txt: System Calls (syscalls) | id:8b792f89eb6bec4263ea882f455932b069b1271a
 ./Cheat-Sheets/power.tex: Cover Delon circuit | id:8d9cd4d1a5e4d56afe3d62c6b1f2d674c4228bd0
 ./server-bringup.txt: Using stty to change terminal settings. | id:9267da02ba9297838e0a14899de286ac3b2e90e7

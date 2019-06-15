@@ -14,6 +14,11 @@
 flags=-shell-escape
 dep=
 
+srcs=$(shell find . | grep '\.tex')
+pdfs=$(patsubst %.tex,%.pdf,$(srcs))
+
+export PDF_ERRORS=
+
 # Force pipenv to put the package cache here
 export PIPENV_CACHE_DIR=$(PWD)
 # Force pipenv to put the venv in the project directory
@@ -23,6 +28,13 @@ export PIPENV_VENV_IN_PROJECT=1
 
 build:
 	pipenv run pdflatex $(flags) $(TGT) $(dep)
+
+all: $(pdfs)
+	@printf 'Could not convert files: %s\n' $$PDF_ERRORS
+
+%.pdf: %.tex
+	-pipenv run pdflatex $(flags) $< $(dep) \
+		|| export PDF_ERRORS="${PDF_ERRORS}, $<"
 
 pipenv:
 	pipenv install
