@@ -1,16 +1,21 @@
 ./what-makes-a-kernel.txt: Signal | id:00adfdaac207e3c2af6d9ec671b2968c4ed3c7c1
 ./Cheat-Sheets/isa.tex: Add the method for including an image | id:0bf0cf7568d0245ad06aa21667582ee49a84e087
+./project-notes.tex: Check forcefsck | id:0c8da94624aa3e4c407c12fc39f5c745687b55bd
 ./what-makes-a-kernel.txt: Introduction | id:0ff83e066bd2b96234c3102cf4a8338d1165a019
 ./Cheat-Sheets/power.tex: Add the method for including an image | id:1084a4a78636871d0be27df0860abe5f1b974b5e
 ./Cheat-Sheets/circuits.tex: Add stuff about transmission line modeling | id:10f9a5cf439e01d316cf67abd71fb5cd79e97428
 ./Cheat-Sheets/power.tex: Cover power oscillators (document in Downloads) | id:11da32c02692a217a8c70d9b09b42c80820143d2
 ./useful-tools.txt: fstab | id:13f94d26dbf538b22b57e847c04aca23c35fd781
 ./useful-sysadmin.txt: Change the port number on the server | id:159dfdbc4a48f851358da56570ab2c6645c5d90c
+./useful-bash.txt: Scope of variables | id:15e829411fe2af2c7bec22e6f94e06ac8e7984aa
+./asm-style.txt: DEVELOPMENT PROCESS | id:1ee9079ee97895203bc7ea8feacbcbd300486906
 ./useful-tools.txt: fdisk | id:1f526aeb52bf76666441fc3e463e066ce4872d11
 ./what-makes-a-kernel.txt: Sockets & Unix Domain Sockets | id:25b5ff62a67f71013a723337aa62363616e343c8
 ./Cheat-Sheets/algorithms.tex: Add the method for including a pdf | id:2678f8031c7390598bb1cd0ef006739ea70be44e
 ./Cheat-Sheets/circuits.tex: Add the method for including an image | id:26fb9a284af72bbb70c75af3efb1ec851b5cebdd
 ./Cheat-Sheets/filters.tex: Add the method for including a pdf | id:27a5cea36db1757e77adf2ff2252fa1522db9e47
+./useful-bash.txt: eval and xargs | id:29e24783485aa49ce26ef684a16d704cf5239438
+./asm-style.txt: Update style guidelines here. | id:2e80de3fc11258ae5155a1a7cf2926eafaf854d2
 ./what-makes-a-kernel.txt: Semaphores | id:3a1a702ecd3ea8afd1bc1b8162e1097d825ed263
 ./Cheat-Sheets/calculus.tex: Add the method for including a pdf | id:3b31801f0e3b5d5eb381e18bfc62e888d2ebd51b
 ./what-makes-a-kernel.txt: FAILING AND LOGGING | id:47c69c24e920f193db393e3378d0a23299f9d97a
@@ -24,12 +29,15 @@
 ./Cheat-Sheets/circuits.tex: Add the method for including a pdf | id:58ce7a0bf0567096987a956e766aa429a19b3695
 ./what-makes-a-kernel.txt: Elaborate on all of these | id:58e8bb964d2803d10113e6335b94957f54db14fc
 ./Cheat-Sheets/calculus.tex: Add the method for including an image | id:5a85313d9d1843a3ae6579c1b2cfccecf6e3b3a2
+./useful-bash.txt: sed, awk, and grep (a quick intro) | id:5aef5adc3ea6ce97fa94493ef0a8dfef1a4db028
 ./Cheat-Sheets/data.tex: Add the method for including a pdf | id:5b0a9c8c767c3b11da432ad4a419ce296fec4bb6
 ./Cheat-Sheets/diodes.tex: Add the method for including a pdf | id:5cfdd619e18b8f4d7876b9e233a3aab90115035b
 ./Cheat-Sheets/parsing.tex: Add the method for including an image | id:66cfb4ecac01cdfdf36a85d826373a4fa463ace2
 ./Cheat-Sheets/filters.tex: Add the method for including an image | id:683794daf5c0cdabba2670988ec3aa95fa1aa268
 ./what-makes-a-kernel.txt: More work on Traps. | id:69fa1417282abe1cb16de0d920d65655fb4b26b9
 ./Cheat-Sheets/isa.tex: Add the method for including a pdf | id:6d5e611e524b0173ab1b68ed6da10b3c63db0c9b
+./project-notes.tex: Fix dma-names in dtb | id:6eb50787143c46d626331a8c6c69ac8944e08729
+./useful-bash.txt: Variable substitution | id:6fafbfa1c51aa00f5c31d58ea39aba914ce6092a
 ./Cheat-Sheets/modulation.tex: Add the method for including a pdf | id:71d3a1dc0d8b3e946d37fb8df4ecc10bd2bb8f33
 ./useful-sysadmin.txt: Set up ssh certificates for the computers. | id:72d8a2dc3af86e7339ba9d28983aa2037afcb15e
 ./Cheat-Sheets/op-amps.tex: Add the method for including a pdf | id:750287e31bfb62ee589fbf45dfda41b5c38b0259
@@ -45,24 +53,30 @@
 ./what-makes-a-kernel.txt: Exokernel drivers | id:87d1c5f22e6ed384444d4386fe61575dbceee823
 ./Cheat-Sheets/algorithms.tex: Add the method for including an image | id:88366f75ecd0d062b673c19eb3a01e39de7841ea
 ./what-makes-a-kernel.txt: Message Passing | id:88f0b148118173f72ad76e57684d144e01e6509d
+./useful-bash.txt: Hierarchy of objects (aliases vs. /bin commands vs. functions) | id:8a154300bc079eae8c97eea581dd068ded722b12
 ./Cheat-Sheets/data.tex: Add the method for including an image | id:8a85528ba8122d6ec2fefd0ab2621e059f0ca93c
+./format.tex: Remove format.tex in favor of specific class.cls files. | id:8add2e1400c3c6190b467a371511d133d97fb6d3
 ./what-makes-a-kernel.txt: System Calls (syscalls) | id:8b792f89eb6bec4263ea882f455932b069b1271a
 ./Cheat-Sheets/power.tex: Cover Delon circuit | id:8d9cd4d1a5e4d56afe3d62c6b1f2d674c4228bd0
+./server-bringup.txt: Using stty to change terminal settings. | id:9267da02ba9297838e0a14899de286ac3b2e90e7
 ./useful-tools.txt: netstat | id:94b6025f3edb21eda41f705cb07961df413cd90d
 ./what-makes-a-kernel.txt: File | id:98e6c9ad954294e88e97be3ea6943bfc655cb228
 ./useful-tools.txt: ip, explain difference between ifconfig | id:9a7e47237d54a91bc81c640fd09660327baebc24
 ./Cheat-Sheets/op-amps.tex: Add the method for including an image | id:9cf56f81159b04ccc32d19b912d17880ec0c5ee5
 ./useful-tools.txt: ifconfig | id:9dd48855111ac2836ed250872f18498cded45ad0
+./booting.tex: Linux Image Types | id:9fe0abf805e9884dc446a620ac59473c3189c1ab
+./useful-bash.txt: expr | id:a3820f0ec3acc9e0f4616b9588828af1b2075e71
 ./what-makes-a-kernel.txt: Initial RAM-Disk (initrd) | id:a9f9117a437528521913fd8318712c3985cbac16
 ./what-makes-a-kernel.txt: Pipes & Named Pipes | id:acbdb6e102a90fd94f33ca5f21c5fade844bf3a1
 ./Cheat-Sheets/diffeq.tex: Add the method for including a pdf | id:b00ed4258ac422621069a25a6f9112ed4ee37c7b
 ./server-bringup.txt: How to set up Git repositories on a new system (work/server) | id:b54f497c00936da8399d59bc81e7ebd38af551b8
+./useful-bash.txt: Quote madness | id:b6ae5710edb10c09790c5e8a225377abfa543963
 ./Cheat-Sheets/fets.tex: Add the method for including a pdf | id:b71effdd5c5ae93cf09bcc6fc1dd18ba0bcffc74
-./UpdateDirectory.py: Add page about git feature branch workflow | id:c2dc1e07d580f2f9020cbd0670e020d0894e5d20
+./useful-bash.txt: Modularity in Bash. | id:c3262256fce3f7693529be878e3661aa1d8fca2a
 ./useful-sysadmin.txt: Set up /etc/hosts.allow | id:c41c954273992482ac356b8f5d03353b4f59943f
 ./what-makes-a-kernel.txt: Linux Driver Numbering | id:c49d5eeb939227397db1ed515a7e61692ab375e1
-./Programming/asm-style.txt: DEVELOPMENT PROCESS | id:cc6fe3ee94fff72dd3e775f8d1ae9cd7e7075a43
 ./what-makes-a-kernel.txt: Memory-Mapped File | id:d0cd979455cad32cd7041c81e145e54cfee2d24e
+./useful-bash.txt: Source vs subshell | id:d2073f31b0767e12b4b8432e5ec3a4817a02e656
 ./Cheat-Sheets/modulation.tex: Add the method for including an image | id:d29bbf2611670ab5daba584b996cb946927e860c
 ./what-makes-a-kernel.txt: Unix Permissions | id:d3257ea8156fbdf6e0a65c6506914033f339cbbc
 ./useful-tools.txt: hdiutil, explain difference between hdid and hdik | id:d366c770a48b1cace03877fd3adcd8c858935d7d
@@ -70,17 +84,19 @@
 ./what-makes-a-kernel.txt: Memory Protection (With a HW MMU) | id:da3bc1625343ef8a3d1b12651a962472cae535d6
 ./what-makes-a-kernel.txt: Mutex (Mutual Exclusion) | id:dc05009f7c4f03b1047476f2d1dc2423a5377292
 ./Cheat-Sheets/diffeq.tex: Add the method for including an image | id:dcd3c5bc77d6ad597378aceab8080a8df0f65d24
+./booting.tex: System Reset | id:e0a07d933cf6cf9bbb7909a4138e48192e4ea52d
 ./useful-tools.txt: ping | id:e1f46fd93e5d5dee239982f7317940195bdf64b3
 ./what-makes-a-kernel.txt: Barrier | id:e38c943aaaffd1bd877e5b163f0d561e6efb9cfc
-./Programming/asm-style.txt: Update style guidelines here. | id:e3cad1135c4ded98a6aa24a6e2efcc435da95fe2
 ./what-makes-a-kernel.txt: Graphical User Interfaces | id:e7d512e66f65929190d0516f8c1b430c5b27c164
 ./Cheat-Sheets/amplifier.tex: Add the method for including a pdf | id:e862593e3cb2a3f8ec70906a3332d265a04da78a
 ./what-makes-a-kernel.txt: Shared Memory | id:ec3c7f6f099ae8fa79f303028548eefe1916f6d3
 ./what-makes-a-kernel.txt: Hybrid drivers | id:ee58536377ad13d2163b8d978245db6df7294e11
+./project-notes.tex: ServerSearcher | id:ef256b677be29b5c425762652ccf64d161f570fd
 ./useful-tools.txt: route for OS X. It's different. | id:f01a4828a2af4f78b85a6f049aa755cf1e4333ea
 ./what-makes-a-kernel.txt: Microkernel drivers | id:f117377453c79a47ecb914ab14dd66a427c6362e
 ./useful-tools.txt: route | id:f21d43ecfed999409c9c0a30c46da544a0dc0a15
 ./what-makes-a-kernel.txt: More work on spinlocks | id:f4c46de2d2d4ddbbe899e90c1d304eeab00fecc5
+./useful-bash.txt: Equality operators | id:f6c8e4da9c746fc44f86734e85073afdd99b1ef4
 ./useful-tools.txt: useful-tools.txt | id:f76f422e5b008670a301e456f1245f0b4b29ca57
 ./learning.tex: Update this to include recent topics and topics from Calculus. | id:fa4b382e40078e2b6bdf130cdf454c80dd68ad0a
 ./useful-emacs.txt: What does C-[ C-i do? | id:fb6c5d5fbbd7dfe95562d412351d02e963447f2a

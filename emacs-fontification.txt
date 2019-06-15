@@ -1,4 +1,4 @@
-################################################################################
+###############################################################################
 # NAME:		    fontification.txt
 #
 # AUTHOR:	    Ethan D. Twardy
@@ -8,7 +8,7 @@
 #
 # CREATED:	    09/20/2017
 #
-# LAST EDITED:	    09/20/2017
+# LAST EDITED:	    06/15/2019
 ###
 
 Fontification:
@@ -38,10 +38,11 @@ Fontification:
 		    (t
 			(rx-to-string (car regexps) t))))))
 
-    3. Define a variable `mode-font-lock-keywords' which is a list of regex-face
-	OR symbol-face pairs to be utilized by emacs' internal matching
-	function. If one wishes to use symbols, the symbols must evaluate to a
-	regex which can be used for matching. An example is given below:
+    3. Define a variable `mode-font-lock-keywords' which is a list of
+        regex-face OR symbol-face pairs to be utilized by emacs' internal
+        matching function. If one wishes to use symbols, the symbols must
+        evaluate to a regex which can be used for matching. An example is given
+        below:
 
 	(defvar <mode>-font-lock-keywords
 	    ;; Regex example
@@ -60,7 +61,8 @@ Fontification:
 		...))
 
     4. In the definition of the mode, create a buffer-local variable with the
-	name `font-lock-keywords' and set it to the value of the result obtained
-	from 3. Note: Steps 1 & 2 Can be put into an (eval-and-compile) block.
+	name `font-lock-keywords' and set it to the value of the result
+        obtained from 3. Note: Steps 1 & 2 Can be put into an
+        (eval-and-compile) block.
 
-################################################################################
+###############################################################################
