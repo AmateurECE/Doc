@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             SoftwareDevelopmentPlan.tex
+%
+% AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+%
+% DESCRIPTION:      This is my generic software development plan. Used on all
+%                   of my projects unless specified otherwise.
+%
+% CREATED:          06/15/2019
+%
+% LAST EDITED:      06/15/2019
+%%%
+
+\documentclass{designdoc}
+\lhead{Software Development Plan}
+
+\begin{document}
+\section{Introduction}
+This document presents a Software Development Plan for general use. This plan
+will be used on all of my projects, unless specified otherwise in the project's
+repository \texttt{README.md} file. In some cases, it may be necessary to skip
+certain steps of this design.
+
+This design process is meant to be iterative. At each step of the design, the
+engineer should consider the implications of the current design on further
+levels. It may be possible to repeat certain steps.
+
+The other issue of concern is the FMEA (Failure Mode Effects and Analysis).
+This design step should be completed concurrently with the other steps, as the
+mitigations put into place to prevent failure should be well integrated into
+the design. Quality Engineers would say that the FMEA should ``drive the
+design.''
+
+\section{UI Requirements}
+In this section, all use cases, interfaces, state machines and other
+necessary resources that illustrate direct interactions with the end user are
+specified.
+
+\section{System Verification Plan}
+This step is used to develop the test plan for verification of the system from
+a black-box perspective.
+
+\section{UI Design}
+In this step, the UI is actually designed. That is, use case diagrams are used
+to describe system state and user interaction.
+
+\section{System Requirements}
+These requirements detail high-level features of the system, ideally being
+implementation agnostic.
+
+\section{System Design}
+The design of the high level components.
+
+\section{Component Interface Verification Test Plan}
+A plan is created to test every facet of the interface between high-level
+components.
+
+\section{Component Interface Design}
+In this section, every facet of the interface between high-level software
+components is designed.
+
+\section{Component Design}
+Breaks down a single high-level component into a series of atomic Software
+Units.
+
+\section{Unit Test Plan}
+A test plan is created to verify the interfaces and behaviors of all atomic
+Software Units in the system.
+
+\section{Unit Interface Design}
+Units and their interfaces are laid out. This design should account for all
+Unit Tests.
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
