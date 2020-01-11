@@ -9,7 +9,7 @@
 #
 # CREATED:	    06/25/2018
 #
-# LAST EDITED:	    06/15/2019
+# LAST EDITED:	    09/28/2019
 ###
 
 Disabling nfs-mountd at startup:
@@ -462,5 +462,20 @@ How to continuously monitor a process without `watch`
             ps aux | grep 'python' > tempPipe; \
         done &                      # Run in the background
         tail -f tempPipe            # Read continuously from the FIFO.
+
+Backing up the server
+*********************
+
+    This command backs up the entire contents of one drive to another. The
+    drive to backup is mounted on /mnt/Passport. The backup drive is mounted on
+    /mnt/Backup.
+
+        rsync -rvz --progress --delete /mnt/Passport /mnt/Backup \
+            2>&1 > Rsync.log
+
+    Next, use Ctrl-Z to stop the process, then `bg' to continue in the
+    background. You can observe the progress of the backup with:
+
+        tail -f Rsync.log
 
 ###############################################################################

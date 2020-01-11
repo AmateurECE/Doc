@@ -7,7 +7,7 @@
 #
 # CREATED:          05/05/2019
 #
-# LAST EDITED:      05/24/2019
+# LAST EDITED:      11/13/2019
 ###
 
 Transcode FLAC to mp3:
@@ -28,6 +28,16 @@ Clip a portion of audio:
     preserved.
 
         ffmpeg -ss 10 -t 6 -i input.mp3 output.mp3
+
+Add album artwork to an mp3 file:
+*********************************
+
+    Add an album artwork stream to an mp3 file. The concept should be similar
+    for other codecs, but I haven't ever tried it.
+
+        ffmpeg -i music.mp3 -i artwork.jpg -map 0:0 -map 1:0 \
+               -c copy -id3v2_version 3 -metadata:s:v title="Album cover" \
+               -metadata:s:v comment="Cover (front)" outputFile.mp3
 
 Convert DVD Rip to mkv:
 ***********************
@@ -80,5 +90,13 @@ Convert DVD Rip to mkv:
     isn't a DVD anymore, we can throw it away.
 
 ffmpeg -i movie.vob -map 0:1 -map 0:2 -codec:v libx264 -crf 21 -codec:a libmp3lame -qscale:a 2 movie.mkv
+
+Change metadata:
+****************
+
+    It's important to note that for audio only files, you must replace -codec
+    with -acodec
+
+        ffmpeg -i input.avi -metadata key=value -codec copy output.avi
 
 ###############################################################################

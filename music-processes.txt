@@ -1,0 +1,41 @@
+###############################################################################
+# NAME:             music-processes.txt
+#
+# AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:      This is a document that describes processes for maintaining
+#                   the music library.
+#
+# CREATED:          07/16/2019
+#
+# LAST EDITED:      07/16/2019
+###
+
+Creating an Album of Audiobook Chapters:
+****************************************
+
+    It's more convenient to have an album of separate audio files, each of
+    which represents one chapter in the audiobook. The bash script at
+    Git/Tools/chapter.sh is used to split an audiobook into chapters (one file
+    for each chapter). However, this script does not set tag information for
+    these files, and they are simply named based on the chapter that they
+    contain. The script, if run with no arguments, will display usage
+    information.
+
+Renaming and Retagging Audiobooks:
+**********************************
+
+    After the split script has been used, it's important to retag and rename
+    the files to be more easily recognized by the media serving application.
+    The script to do this is Git/Tools/retag.sh. This script also will print
+    usage information if invoked with no arguments, -h, or --help. This script
+    takes a path to a directory containing a number of music files in the form
+    "Chapter-XX.mp3" where "XX" is replaced with the chapter number. The script
+    will incrementally play each one to allow the user to get the name of the
+    chapter from the beginning of the file. Once the user has discovered the
+    title, they may press ^C to quit playback. The script will then prompt for
+    the title. The user enters the title, and then the script will set the
+    tags in the mp3 file and rename the file accordingly. This will be done for
+    all files in the directory that match the rules.
+
+###############################################################################

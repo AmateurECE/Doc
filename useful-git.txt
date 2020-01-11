@@ -1,4 +1,4 @@
-################################################################################
+###############################################################################
 # NAME:		    useful-git.txt
 #
 # AUTHOR:	    Ethan D. Twardy
@@ -7,7 +7,7 @@
 #
 # CREATED:	    12/21/2017
 #
-# LAST EDITED:	    12/21/2017
+# LAST EDITED:	    06/30/2019
 ###
 
 *   Sometimes it's nice to push to a repository that's on a remote filesystem,
@@ -19,4 +19,18 @@
     Then you can delete all files except for the .git directory, and push to
     this repository like a normal remote.
 
-################################################################################
+Ignoring an accidentally committed file:
+****************************************
+
+    When using and IDE, a lot of files that need not be tracked may be
+    generated. Since the user is usually not aware of these files, it may be
+    possible to accidentally commit some of them. If this happens, use:
+
+        git update-index --assume-unchanged path/to/file
+
+    If, for some reason, you want to begin tracking changes to this file again,
+    you may use:
+
+        git update-index --no-assume-unchanged path/to/file
+
+###############################################################################
