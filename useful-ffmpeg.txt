@@ -7,7 +7,7 @@
 #
 # CREATED:          05/05/2019
 #
-# LAST EDITED:      11/13/2019
+# LAST EDITED:      01/24/2020
 ###
 
 Transcode FLAC to mp3:
@@ -98,5 +98,32 @@ Change metadata:
     with -acodec
 
         ffmpeg -i input.avi -metadata key=value -codec copy output.avi
+
+How the map flag actually works:
+********************************
+
+    The map flag is position specific. It is used to indicate the mapping
+    between input and output streams. Consider the following command:
+
+        ffmpeg -i aFile.mp4 -i anotherOne.aac -map 0:0 -map 0:1 -map 1:0 a.mp4
+
+    The first map flag specifies the source stream for the zeroeth (first)
+    stream in the output file, the second flag specifies the first, etc. The
+    flags are taken as follows:
+
+        -map 0:0        The first stream in the output file is the first stream
+                        in the first input file.
+        -map 0:1        The second stream in the output file is the second
+                        stream in the first input file.
+        -map 1:0        The third stream in the output file is the first stream
+                        in the second input file.
+
+How to mix Dolby 5.1 down to stereo:
+************************************
+
+    To do this, use the -ac (audio channel) specification. This specification
+    cannot be used with the "-coded copy" option.
+
+        ffmpeg -i input.aac -ac 2 output.aac
 
 ###############################################################################
