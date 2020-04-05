@@ -9,7 +9,7 @@
 #
 # CREATED:	    06/25/2018
 #
-# LAST EDITED:	    09/28/2019
+# LAST EDITED:	    02/16/2020
 ###
 
 Disabling nfs-mountd at startup:
@@ -477,5 +477,27 @@ Backing up the server
     background. You can observe the progress of the backup with:
 
         tail -f Rsync.log
+
+Changing the locale, or setting it on first use:
+************************************************
+
+    Locale is responsible for setting keyboard layout, language, and other
+    things. The standard way to change the keyboard layout is to use
+
+        sudo dpkg-reconfigure locales
+
+    And select the correct locale (probably en_US.UTF-8). Sometimes we might
+    see
+
+        sudo locale-gen [en_US en_US.UTF-8]
+        sudo dpkg-reconfigure locales
+
+    I'm not sure why. However, on debian, the file /etc/locale.gen overrides
+    all command line and Dialog selected options, so these previous commands
+    will not work. First, open /etc/locale.gen and edit the file to un-comment
+    all locales that you want to be generated, then comment out all other
+    locales. Finally, run:
+
+        sudo locale-gen
 
 ###############################################################################

@@ -1,0 +1,59 @@
+###############################################################################
+# NAME:             useful-openssl.txt
+#
+# AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:      Common uses for openssl command line tool and how to
+#                   perform them.
+#
+# CREATED:          04/04/2020
+#
+# LAST EDITED:      04/04/2020
+###
+
+Create a new self-signed certificate with a new RSA key:
+********************************************************
+
+    Self-signed certificates are not suitable for usage with internet browsers,
+    but they do have many other uses. This is the command:
+
+        openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem \
+            -days 365
+
+    The program will then ask you for some details about your server, e.g.
+    where it is located, the name of the company, etc., as well as a passphrase
+    for the new key.
+
+Create a new self-signed certificate with an existing RSA key:
+**************************************************************
+
+    You might already have a key pair from setting up, for example, a pair of
+    keys for an SSH server. The following set of commands can be used to
+    generate a new certificate using an existing key. In this example,
+    privkey.pem is the private key.
+
+        # Generate a new certificate request
+        openssl req -new > cert.csr
+
+        # Remove the passphrase on privkey.pem
+        openssl rsa -in privkey.pem -out key.pem
+
+        # Sign the certificate request
+        openssl x509 -in cert.csr -out cert.pem -req -signkey key.pem -days 365
+        cat key.pem >> cert.pem
+
+Connect to an SSL service:
+**************************
+
+    This is useful to, for example, test that a custom-written TLS server is
+    functioning correctly.
+
+        openssl s_client -connect localhost:443
+
+    This will attempt a connection to the server at localhost on port 443.
+    After printing out a bunch of diagnostic information, the client will give
+    the user the opportunity to write, in plain text, the information that will
+    be sent to the server. The user could, for example, write a complete HTTP
+    request.
+
+###############################################################################

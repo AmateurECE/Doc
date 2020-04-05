@@ -7,7 +7,7 @@
 #
 # CREATED:          05/05/2019
 #
-# LAST EDITED:      01/24/2020
+# LAST EDITED:      03/24/2020
 ###
 
 Transcode FLAC to mp3:
@@ -125,5 +125,18 @@ How to mix Dolby 5.1 down to stereo:
     cannot be used with the "-coded copy" option.
 
         ffmpeg -i input.aac -ac 2 output.aac
+
+Add external SRT subtitles to MP4 file:
+***************************************
+
+    To add an external SRT subtitle file to an MP4 file:
+
+        ffmpeg -i theMovie.mp4 -i theSutitles.srt -c copy -c:s mov_text out.mp4
+
+    The order of the codec arguments is very important. The oder above
+    instructs ffmpeg to:
+
+        1: Use copy codec for movie, audio, subtitle.
+        2: Use mov_text codec for subtitle.
 
 ###############################################################################

@@ -1,0 +1,17 @@
+Your Name               Postmaster
+E-mail Address          postmaster@harmonyfoodsonline.com
+Account Type            POP3
+Incoming mail server    ungeziefer.harmonyfoodsonline.com
+Outgoing mail server    ungeziefer.harmonyfoodsonline.com
+User Name               postmaster@harmonyfoodsonline.com
+Password                (the password)
+
+In More Settings...
+Check 'My outgoing mailbox needs authentication'
+Set POP3 to require SSL
+Set SMTP port to 587, change security type to TLS
+
+sudo ldappasswd -x -D 'cn=Manager,dc=harmonyfoodsonline,dc=com' -W -S 'mail=stwardy@harmonyfoodsonline.com,ou=Users,domainName=harmonyfoodsonline.com,o=domains,dc=harmonyfoodsonline,dc=com'
+
+sudo bash create_mail_user_OpenLDAP.sh harmonyfoodsonline.com stwardy
+

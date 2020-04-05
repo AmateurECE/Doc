@@ -7,7 +7,7 @@
 #
 # CREATED:          06/08/2019
 #
-# LAST EDITED:      11/19/2019
+# LAST EDITED:      03/10/2020
 ###
 
 Crop image:
@@ -45,6 +45,13 @@ Get the resolution of an image:
 Convert pdf to image:
 *********************
 
-    convert -density 300 a.pdf a.png
+    To convert a pdf to a png image, for example:
+
+        convert -density 300 a.pdf a.png
+
+    This will create a new file for each page. To put them all into a single
+    file:
+
+        convert -density 300 a.pdf -append a.png
 
 ###############################################################################
