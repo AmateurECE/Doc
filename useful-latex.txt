@@ -1,0 +1,43 @@
+###############################################################################
+# NAME:             useful-latex.txt
+#
+# AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+#
+# DESCRIPTION:      Things I frequently want to do in LaTeX but often forget
+#                   how.
+#
+# CREATED:          04/05/2020
+#
+# LAST EDITED:      04/05/2020
+###
+
+Installing packages using CTAN:
+*******************************
+
+    The program used to perform this function is called tlmgr.
+
+        sudo tlmgr install <package>
+
+    Will install the package. While the name of this program is *awful*, it is
+    actually a really easy program to use, and if something goes wrong, it will
+    tell you what to fix. For example, if you haven't installed a package in a
+    while, you may need to update the package index:
+
+        sudo tlmgr update --self
+
+    But if this is necessary, tlmgr will tell you.
+
+    You can also update specific packages:
+
+        sudo tlmgr update <package>
+
+    Or update all installed packages:
+
+        sudo tlmgr update --all
+
+Using the default Sans Serif font:
+**********************************
+
+    \renewcommand{\familydefault}{\sfdefault}
+
+###############################################################################

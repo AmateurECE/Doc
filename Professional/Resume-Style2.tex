@@ -1,0 +1,153 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             Resume-Style2.tex
+%
+% AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+%
+% DESCRIPTION:      My resume, in LaTex
+%
+% CREATED:          04/05/2020
+%
+% LAST EDITED:      04/05/2020
+%%%
+
+\documentclass[11pt]{article}
+\usepackage[margin=0.5in]{geometry} % Set margins
+\usepackage{setspace} % \setlength
+\usepackage{enumitem} % \setlist
+\usepackage{multicol} % multicols environment
+\usepackage{titlesec} % \titleformat and \titlesec functions
+
+% Clear style presets
+\pagestyle{empty}
+
+% Change font to sans serif
+%% \renewcommand{\familydefault}{\sfdefault}
+
+% Change the fontsize of the section headers
+\titleformat*{\section}{\Huge\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+
+% Change the spacing before and after the section headers
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{12pt}{0pt}
+
+% Remove space between \item(s)
+\setlist{nosep}
+
+% Remove paragraph indent
+\setlength{\parindent}{0pt}
+
+% Change whitespace before and after multicols environment
+% This is 50% of the original values
+\setlength{\multicolsep}{1.5pt plus 0pt minus 0pt}
+
+\begin{document}
+\section*{Ethan Twardy}
++1 (906) 203-4482\\
+edtwardy@mtu.edu
+\hfill
+305 Armory Place\\
+github.com/AmateurECE
+\hfill
+Sault Ste. Marie, MI 49783
+
+\hrulefill
+
+{
+  \titlespacing{\subsection}{0pt}{0pt}{0pt}
+  \subsection*{Summary}
+  Fifth year student with broad internship experience in a diverse range of
+  fields and in multiple branches of Software Development. Has proficiency in
+  foreign language and completed professional leadership development with
+  experience in student government and Agile teams.
+}
+
+\subsection*{Education}
+\textbf{Michigan Technological University}, Houghton, MI\\
+Computer Engineering
+\hfill
+Since Fall 2015, Graduating Spring 2020\\
+German Minor
+
+\subsection*{Experience}
+\textbf{Software Engineering Intern}
+\hfill
+Plexus Corp., Neenah, WI\\
+Summer 2019\\
+Developed software for industrial refrigeration control board using Modern C++
+and TouchGFX. Interfaced closely with the customer to consistently deliver
+value. Used previous experience in Object Oriented Design to develop flexible
+and maintainable source. Quickly became familiar with new tools and APIs.
+
+\vspace{12pt}
+\textbf{Software Engineering Intern}
+\hfill
+Plexus Corp., Neenah, WI\\
+Summer 2018\\
+Authored and executed software verification testing for an IEC 62304 Class C
+medical device. Contributed to aftermarket service of a successful and mature
+product. Became familiar with Agile Scrum operation. Gained experience working
+with products under strict regulation.
+
+\vspace{12pt}
+\textbf{Embedded Engineering Co-Op}
+\hfill
+X-ES Engineering, Madison, WI\\
+Summer and Fall of 2017\\
+Wrote an application to sanitize non-volatile memory devices on company
+products in secure applications. Contributed patches to global U-Boot
+repository. Quickly learned new scripting languages and developed a compiler
+for custom language extensions.
+
+%% \vspace{12pt}
+%% \textbf{Civil Engineering Intern}
+%% \hfill
+%% C2AE Engineering, Lansing, MI\\
+%% Summers of 2015 and 2016\\
+%% Implemented a map of local storm and wastewater systems. Collected and
+%% organized massive amounts of field data. Worked closely with local engineers
+%% and contractors to coordinate resources and solve problems.
+
+\subsection*{Campus Involvement}
+\begin{itemize}
+\item \textbf{Alpha Phi Omega} (Co-ed collegiate service organization):
+  Coordinated over 1,200 man hours of volunteer work as the Service Vice
+  President in the 2019 calendar year. The program saw tremendous growth under
+  my leadership. Led workshops on leadership and working in self-organizing
+  teams.
+\item \textbf{LeaderShape Institute} (Intensive leadership development
+  program): Attended in Winter 2016.
+\item \textbf{Wadsworth Hall Student Association}: Served as both President and
+  Vice President in 2016-2017 year.
+\item \textbf{WMTU} (Campus radio station): Deejay for three semesters.
+\end{itemize}
+
+\subsection*{Foreign Languages}
+\begin{itemize}
+\item \textbf{German} (5 years): Conversationally fluent, capable of reading
+  technical documents with relative ease. Experience in conversation with
+  native speakers.
+\item \textbf{French} (1 year): Quickly learning and on the way to
+  conversational fluency.
+\end{itemize}
+
+\begin{multicols}{3}
+  [
+    \subsection*{Technical Proficiencies}
+  ]
+  \begin{itemize}
+    \raggedright
+  \item C/C++ (Primary)
+  \item Python
+  \item Java
+  \item Bash
+  \item Git \& SVN
+  \item Agile Practices
+  \item Object-Oriented Design
+  \item Network Programming
+  \item Android
+  \end{itemize}
+\end{multicols}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,161 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NAME:             Resume-Style1.tex
+%
+% AUTHOR:           Ethan D. Twardy <edtwardy@mtu.edu>
+%
+% DESCRIPTION:      My resume, in LaTex
+%
+% CREATED:          04/05/2020
+%
+% LAST EDITED:      04/05/2020
+%%%
+
+\documentclass[11pt]{article}
+\usepackage[margin=0.5in]{geometry} % Set margins
+\usepackage{setspace} % \setlength
+\usepackage{enumitem} % \setlist
+\usepackage{multicol} % multicols environment
+\usepackage{titlesec} % \titleformat and \titlesec functions
+
+% Clear style presets
+\pagestyle{empty}
+
+% Change font to sans serif
+%% \renewcommand{\familydefault}{\sfdefault}
+
+% Change the fontsize of the section headers
+\titleformat*{\section}{\Huge\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+
+% Change the spacing before and after the section headers
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{12pt}{0pt}
+
+% Remove space between \item(s)
+\setlist{nosep}
+
+% Remove paragraph indent
+\setlength{\parindent}{0pt}
+
+% Change whitespace before and after multicols environment
+% This is 50% of the original values
+\setlength{\multicolsep}{1.5pt plus 0pt minus 0pt}
+
+\begin{document}
+\section*{Ethan Twardy}
++1 (906) 203-4482\\
+edtwardy@mtu.edu
+\hfill
+305 Armory Place\\
+github.com/AmateurECE
+\hfill
+Sault Ste. Marie, MI 49783
+
+\hrulefill
+
+{
+  \titlespacing{\subsection}{0pt}{0pt}{0pt}
+  \subsection*{Summary}
+  Fifth year student with broad internship experience in  multiple branches of
+  Software Development. Has proficiency in German and other foreign languages,
+  and has completed professional leadership development.
+}
+
+\subsection*{Education}
+\textbf{Michigan Technological University}, Houghton, MI\\
+Computer Engineering
+\hfill
+Since Fall 2015, Graduating Spring 2020\\
+German Minor
+
+\subsection*{Experience}
+\textbf{Software Engineering Intern}
+\hfill
+Plexus Corp., Neenah, WI\\
+Summer 2019\\
+Developed software for industrial refrigeration control board using Modern C++
+and TouchGFX. Interfaced closely with the customer to consistently deliver
+value and exceed expectations.\\
+Experiences gained:
+\begin{itemize}
+\item Became familiar with software development in small teams.
+\item Fast on-boarding to an Agile team requiring new development practices and
+  familiarization with new APIs.
+\item Programming in asynchronous embedded environments.
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Software Engineering Intern}
+\hfill
+Plexus Corp., Neenah, WI\\
+Summer 2018\\
+Performed formal software verification testing on product software. Authored
+and executed verification test procedures for experimental features. Worked in
+a team to correct discovered defects.\\
+Experiences gained:
+\begin{itemize}
+\item Formally verified IEC 62304 Class C medical software.
+\item Observed and contributed to aftermarket service of mature product.
+\item Gained experience in a high-velocity Agile Scrum team.
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Embedded Engineering Co-Op}
+\hfill
+X-ES Engineering, Madison, WI\\
+Summer and Fall of 2017\\
+Wrote low-level driver software for an application to sanitize non-volatile
+memory devices on company products in secure applications. Contributed changes
+to the global open-source bootloader U-Boot.\\
+Experiences gained:
+\begin{itemize}
+\item Wrote drivers for proprietary memory and communication devices in secure
+  applications.
+\item Quickly learned new languages for scripting and programming.
+\item Developed a compiler for custom language extensions.
+\end{itemize}
+
+%% \vspace{12pt}
+%% \textbf{Civil Engineering Intern}
+%% \hfill
+%% C2AE Engineering, Lansing, MI\\
+%% Summers of 2015 and 2016\\
+%% Implemented a map of local storm and wastewater systems.\\
+%% Experiences:
+%% \begin{itemize}
+%% \item Collection, organization, and interpretation of relevant field data.
+%% \item Worked closely with local engineers and contractors to coordinate
+%%   resources and solve problems.
+%% \end{itemize}
+
+\subsection*{Campus Involvement}
+\begin{itemize}
+\item \textbf{Alpha Phi Omega} (Co-ed collegiate service organization):
+  Coordinated over 1,200 man hours of volunteer work as the Service Vice
+  President in 2019. Led workshops on leadership and self-organizing teams.
+\item \textbf{LeaderShape Institute} (Intensive leadership development
+  program): Attended in Winter 2016.
+\item \textbf{Wadsworth Hall Student Association}: Served as both President and
+  Vice President in 2016-2017 year.
+\end{itemize}
+
+\begin{multicols}{3}
+  [
+    \subsection*{Languages and Proficiencies}
+  ]
+  \begin{itemize}
+    \raggedright
+  \item C/C++ (Primary)
+  \item Python
+  \item Java
+  \item Bash
+  \item Git \& SVN
+  \item Agile Practices
+  \item Object-Oriented Design
+  \item Network Programming
+  \item Android
+  \end{itemize}
+\end{multicols}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
